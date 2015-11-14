@@ -1,0 +1,15 @@
+<div data-role="header" data-theme="b">  
+<a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+<h1>Cam-NGOsearch</h1>             
+    <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right">Search</a>
+    <br/>
+
+</div>
+
+<div data-role="main" class="ui-content">
+    <ul data-role="listview">        
+        {{#each categories}}
+        <li><a href='#'><h2>{{name}}</h2></a></li>
+        {{/each}}        
+    </ul>
+</div>    
