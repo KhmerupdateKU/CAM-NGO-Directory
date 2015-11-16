@@ -21,5 +21,5 @@ var AppTemplate = {
     var template = Handlebars.compile(templateText);    
     var content = template(templateData);    
     callback(content);
-  },
+  }
 };
