@@ -770,6 +770,25 @@
         };
 
     })($);
+    
+    new $.nd2Toast({ // The 'new' keyword is important, otherwise you would overwrite the current toast instance
+   message : "Sample Message", // Required
+   action : { // Optional (Defines the action button on the right)
+     title : "Pick phone", // Title of the action button
+     link : "/any/link.html", // optional (either link or fn or both must be set to define an action)
+     fn : function() { // function that will be triggered when action clicked
+        console.log("Action Button clicked'");
+     },
+     color : "red" // optional color of the button (default: 'lime')
+   },
+   ttl : 8000 // optional, time-to-live in ms (default: 3000)
+ });
+
+
+
+
+
+
 
     exports.chartThemeGenerator = function(color) {
 
