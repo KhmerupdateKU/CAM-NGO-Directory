@@ -3,5 +3,5 @@ var CategoryController={
         var $element = $('pa');
         CategoryView.renderCategory($element,content);
     }
-}
+};
 
