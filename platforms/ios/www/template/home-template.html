@@ -1,17 +1,16 @@
 <div data-role="header" data-role="back">  
-
     <h1>NGO Directory</h1>
-    
+    <h6></h6>
 </div>
 <input  name="search-mini" id="search-mini" value="" data-mini="true" id="filterBasic-input" data-type="search" />
 
 <div data-role="main" class="ui-content">
-    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filterBasic-input">        
+    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filterBasic-input" themes>        
         {{#each categories}}
         <li><a href='#page-ngo'​​ id={{id}}><img src="{{image}}"/><h2>{{name}}</h2></a></li>
         {{/each}}        
     </ul>
 </div>    
 <div data-role="footer"> 
-	<h4>Copy Right</h4> 
+	<h4>InSTEDD</h4> 
 </div> 
