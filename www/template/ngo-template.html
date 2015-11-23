@@ -1,13 +1,11 @@
-<div data-role="header">
-    <a href="#page-home" class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left">&nbsp;</a>
-    <a href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Search</a>
+<div data-role="header">    
     <h1 id="page-ngo-header"></h1>
     <input  name="search-mini" id="search-mini" value="" data-mini="true" id="filterBasic-input" data-type="search" />      
 </div>
 <div data-role="content">
     <ul data-role="listview" id="list-ngo" data-filter="true" data-input="#filterBasic-input">        
         {{#each ngos}}
-        <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = {{ngo_id}}>
+        <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>
                 <img src="img/ngo/{{logo}}"<h2>{{name_kh}}</h2></a></li>
         {{/each}}        
     </ul>

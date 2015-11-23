@@ -3,7 +3,7 @@ var NgoController = {
     getNgos: function () {
         var $element = $('#page-ngo');
         AppCache.clearAll();
-        NgoModel.fetByCat_id(function (ngos) {
+        NgoModel.fetByCat_id(function (ngos) {           
             NgoView.renderNgos($element, JSON.parse(ngos));                        
         }, function (error) {
             console.log('error ; ', error);
