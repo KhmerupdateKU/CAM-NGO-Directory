@@ -1,3 +1,30 @@
 .category-logo{
     padding: 1px 1px 1px 1px;
 }
+core-toolbar {color: #f1f1f1;fill: #f1f1f1;}core-toolbar {color: #f1f1f1;fill: #f1f1f1;}core-list {
+      height: 100%;
+    }
+    core-list .item {
+      box-sizing: border-box;
+      height: 80px;
+      border-bottom: 1px solid #ddd;
+      padding: 4px;
+      cursor: default;
+      background-color: white;
+      overflow: hidden;
+    }core-list {
+      height: 100%;
+    }
+    core-list .item {
+      box-sizing: border-box;
+      height: 80px;
+      border-bottom: 1px solid #ddd;
+      padding: 4px;
+      cursor: default;
+      background-color: white;
+      overflow: hidden;
+    }
+    .logo{
+        width: 50px;
+        width: 50px;
+    }

@@ -6,7 +6,11 @@
     <ul data-role="listview" id="list-ngo" data-filter="true" data-input="#filterBasic-input">        
         {{#each ngos}}
         <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>
-                <img src="img/ngo/{{logo}}"<h2>{{name_kh}}</h2></a></li>
+                <img src="img/category/political.png"/>
+                     <h1>{{name_en}}</h1>
+                     <h3>{{name_kh}}</h3>
+            </a>
+        </li>
         {{/each}}        
     </ul>
 </div>    

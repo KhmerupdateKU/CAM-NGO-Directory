@@ -3,7 +3,12 @@
     <h1 id="page-detail-header"></h1>    
 </div>
 <div data-role="main" class="ui-content">       
+    <div class="ui-grid-a">
+	<div class="ui-block-a">Block A</div>
+	<div class="ui-block-b">Block B</div>	
+</div>
     {{#each detail}}    
+    <img class="logo" src="img/ngo/{{logo}}"/>
     <label>Khmer name:</label>{{name_kh}}
     <label>English name:</label>{{name_en}}
     <label>Short name:</label>{{name_short}}
@@ -12,6 +17,6 @@
     <label>Email:</label>{{email}}
     <label>Website:</label>{{website}}
     <label>Address:</label>{{address}}
-    <label>Map:</label>        
+    <label>Map:</label>           
     {{/each}}
 </div>    
