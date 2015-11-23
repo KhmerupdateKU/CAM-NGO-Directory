@@ -1,6 +1,6 @@
 var CategoryController={
     getCategory:function (){
-        var $element = $('pa');
+        var $element = $('#page-home');
         CategoryView.renderCategory($element,content);
     }
 };

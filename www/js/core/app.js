@@ -1,17 +1,22 @@
+var URL='http//localhost:8088/Ad-ngos/index.php/';
+var ENDPOINT;
 var App = {
-  initialize: function () {
-    this.bindEvents();
-  },
-  bindEvents: function () {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-  },
-  onDeviceReady: function () {   
-    AppCache.clearAll();   
-    CategoryModel.setCategory();
-    NgoDetailModel.setNgoDetail();
-    NgoModel.setNgosCat();
-    NgoModel.setNgo(); 
-    
-  }
+    initialize: function () {
+        this.bindEvents();
+    },
+    bindEvents: function () {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function () {
+        AppCache.clearAll();
+        HomeController.getHome();
+    },
+    use: function (req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        res.header('Access-Control-Allow-Headers', 'Content-Type');
+        next();
+    }
 };
+
 App.initialize();
