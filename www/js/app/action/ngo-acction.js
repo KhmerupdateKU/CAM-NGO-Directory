@@ -1,11 +1,13 @@
 $(function () {
     $(document).delegate("#page-ngo", "pagebeforeshow", function () {
-        $("#page-ngo-header").html(CategoryModel.getCatName());
-        NgoController.getNgoCat();
-    });    
+        NgoController.getNgos();
+    });
     $(document).delegate("#list-ngo-cat li a", "click", function () {
-        NgoDetailModel.setNgoId($(this).attr("data-ngo_id"));       
-   });
+        NgoDetailModel.setNgoId($(this).attr("data-ngo_id"));
+    });
+    $(document).delegate("#page-ngo", "pageshow", function () {        
+        $("#page-ngo-header").html(CategoryModel.getName());
+    });
 });
 
 

@@ -1,13 +1,15 @@
 <div data-role="header">
     <a href="#page-home" class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left">&nbsp;</a>
     <a href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Search</a>
-      <h1>NGO Directory</h1>
+      <h1 id="page-ngo-header"></h1>
       <br>
   </div>
 <div data-role="content">
     <ul data-role="listview" id="list-ngo-cat">        
         {{#each ngos}}
-        <li><a href="#page-ngo-detail" id={{id}} data-cat_name = {{cat_name}} data-ngo_id = {{ngo_id}}><h2>{{ngo_name}} {{ngo_id}}</h2></a></li>
+        <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = {{ngo_id}}>
+                <img src="img/ngo/{{logo}}"
+                <h2>{{name_kh}}</h2></a></li>
         {{/each}}        
     </ul>
 </div>    

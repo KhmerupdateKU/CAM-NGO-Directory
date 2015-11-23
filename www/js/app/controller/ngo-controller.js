@@ -2,8 +2,12 @@ var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
         var $element = $('#page-ngo');
-        var ngos = NgoModel.getNgos();
-        NgoView.renderNgos($element, ngos);
+        AppCache.clearAll();
+        NgoModel.fetByCat_id(function (ngos) {
+            NgoView.renderNgos($element, JSON.parse(ngos));                        
+        }, function (error) {
+            console.log('error ; ', error);
+        });
     },
     getNgoCat: function () {
         var $element = $('#page-ngo');
@@ -30,9 +34,9 @@ var NgoController = {
     getNgoDetail: function () {
         var $element = $('#page-ngo-detail');
         var ngoId = NgoDetailModel.getNgoId();
-        var ngoDetails = NgoDetailModel.getNgoDetails();        
-        $.map(ngoDetails, function (ngoDetail) {            
-            if (ngoDetail.ngo_id === ngoId) {                
+        var ngoDetails = NgoDetailModel.getNgoDetails();
+        $.map(ngoDetails, function (ngoDetail) {
+            if (ngoDetail.ngo_id === ngoId) {
                 NgoView.renderNgosDetail($element, ngoDetail);
                 return;
             }
