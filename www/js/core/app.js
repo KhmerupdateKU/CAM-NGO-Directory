@@ -1,3 +1,4 @@
+var url ="localhost:8088/Ad-ngos/index.php/";
 var App = {
   initialize: function () {
     this.bindEvents();
