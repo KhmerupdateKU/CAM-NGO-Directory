@@ -1,14 +1,11 @@
 <div data-role="header" data-role="back" data-position="fixed" >  
-    <h1>Cam-NGOsearch</h1>    
+    <h1>ស្វែងរក​​ NGO</h1>
+    <input  name="search-mini" id="search-mini" value="" data-mini="true" id="filterBasic-input" data-type="search" placeholder="serch all NGO" />
 </div>
 <div data-role="main" class="ui-content">
-    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filterBasic-input">                
-        {{#each categories}}        
-        <li><a href='#page-ngo'​​><img src="img/category/{{logo}}"/><h2>{{name_kh}}</h2></a></li>
+    <ul data-role="listview" data-icon="false" id="list-categories" data-filter="true" data-input="#filterBasic-input" class="ui-li-has-thumb ui-btn ui-btn-icon-right ui-li ui-btn-down-c ui-btn-up-c" role="option" tabindex="0" data-theme="c">        
+        {{#each categories}}
+        <li><a href='#page-ngo'​​ id={{cat_id}}><img src="img/category/{{logo}}"/><h2>{{name_kh}}</h2></a></li>
         {{/each}}        
     </ul>
 </div>    
-
-<div data-role="footer"> 
-	<h4>InSTEDD</h4> 
-</div> 
