@@ -28,3 +28,21 @@ core-toolbar {color: #f1f1f1;fill: #f1f1f1;}core-toolbar {color: #f1f1f1;fill: #
         width: 50px;
         width: 50px;
     }
+    .label{
+        font-family: monospace;
+        font-size: 14pt;
+    }
+    .khmer{
+        font-style: italic;
+        font-family: fantasy;
+        font-size: 14pt;
+    }
+    .c-header{
+        background-color: #2196f3;
+    }
+    .c-background{
+        background-color: #90caf9;
+    }
+    .ui-header{
+        background-color: #2196f3;
+    }

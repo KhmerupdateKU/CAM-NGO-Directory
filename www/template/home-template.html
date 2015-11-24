@@ -1,15 +1,15 @@
-<div data-role="header" data-role="back">     
+<div data-role="header" id="header-home">     
     <h1>NGO Directory</h1>                     
 </div>
 <div data-role="main" class="ui-content">
-    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filterBasic-input">        
+    <ul data-role="listview" id="list-categories" data-filter="true" data-filter-placeholder="Search your category hear..">        
         {{#each categories}}
         <li><a href='#page-ngo'​​ id={{cat_id}} data-cat_name = '{{name_kh}}'>
                 <img class='category-logo' src="img/category/{{logo}}"/>
                 <h1>{{name_en}}</h1>
                 <h3>{{name_kh}}</h3>
+                <span class="ui-li-count">{{ngo}} NGO</span>
             </a></li>
         {{/each}}        
-    </ul>
-    
+    </ul>    
 </div>    

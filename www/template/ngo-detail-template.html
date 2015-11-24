@@ -1,17 +1,24 @@
-<div data-role="header">
+<div data-role="header" class="c-header">
     <a href="#" data-rel='back' class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left"></a>    
     <h1 id="page-detail-header"></h1>    
 </div>
-<div data-role="main" class="ui-content">       
+<div data-role="main" class="ui-content c-header">       
     <div class="ui-grid-a">
-	<div class="ui-block-a">Block A</div>
-	<div class="ui-block-b">Block B</div>	
-</div>
+        <div class="ui-block-a">
+
+        </div>
+        <div class="ui-block-b">Block B</div>	
+    </div>
+
     {{#each detail}}    
-    <img class="logo" src="img/ngo/{{logo}}"/>
-    <label>Khmer name:</label>{{name_kh}}
-    <label>English name:</label>{{name_en}}
-    <label>Short name:</label>{{name_short}}
+    <div class="ui-panel-inner" style="background-color: #aaa">
+        <img class="logo" src="img/ngo/{{logo}}"/>
+    </div>
+    <div class="" data-role="" style="background-color: lightgrey">        
+        <label class="label">Khmer name:</label><h3>{{name_kh}}</h3>
+        <label>English name:</label>{{name_en}}
+        <label>Short name:</label>{{name_short}}
+    </div>
     <label>Description:</label>{{description}}
     <label>Phone:</label>{{phone}}
     <label>Email:</label>{{email}}
