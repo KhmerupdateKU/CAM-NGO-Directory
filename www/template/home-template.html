@@ -1,8 +1,21 @@
-<div data-role="header" id="header-home">     
-    <h1>NGO Directory</h1>                     
+<div data-role="header" id="header-home" data-position="fixed">     
+    <div class="ui-grid-b" style="height: 100%">
+        <div class="ui-block-a" style="width: 10%">
+            <a href="#panel-left" id="btn-bar" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-theme="b"></a>
+        </div>
+        <div class="ui-block-b" style="width: 80%">
+            <label id="home-title">NGO Directory</label>                     
+            <form class="ui-filterable ui-hidden-accessible" id="frm-search-category">
+                <input id="filter-category" data-type="search" placeholder="Search your category hear..">
+            </form>
+        </div>
+        <div class="ui-block-c" style="width: 10%">
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all search-right" id="search-category"></a>            
+        </div>
+    </div>
 </div>
 <div data-role="main" class="ui-content">
-    <ul data-role="listview" id="list-categories" data-filter="true" data-filter-placeholder="Search your category hear..">        
+    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filter-category">        
         {{#each categories}}
         <li><a href='#page-ngo'​​ id={{cat_id}} data-cat_name = '{{name_kh}}'>
                 <img class='category-logo' src="img/category/{{logo}}"/>
@@ -13,3 +26,4 @@
         {{/each}}        
     </ul>    
 </div>    
+<div data-role="panel" id="panel-left" data-theme="b"></div>

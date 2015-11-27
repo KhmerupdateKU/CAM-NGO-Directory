@@ -1,29 +1,44 @@
-<div data-role="header" class="c-header">
-    <a href="#" data-rel='back' class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left"></a>    
-    <h1 id="page-detail-header"></h1>    
-</div>
-<div data-role="main" class="ui-content c-header">       
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
+<div data-role="header" class="c-header" data-position="fixed">
+    <div class="ui-grid-b" style="height: 100%">
+        <div class="ui-block-a" style="width: 10%">
+            <a href="#" data-rel='back' class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
+        </div>
+        <div class="ui-block-b" style="width: 80%">
+            <label id="page-detail-header"></label>                
+        </div>
+        <div class="ui-block-c" style="width: 10%">
 
         </div>
-        <div class="ui-block-b">Block B</div>	
-    </div>
-
+    </div>        
+</div>
+<div data-role="main" class="ui-content">       
     {{#each detail}}    
-    <div class="ui-panel-inner" style="background-color: #aaa">
-        <img class="logo" src="img/ngo/{{logo}}"/>
+    <div class="ui-grid-a">
+        <div class="ui-block-a" style="width: 25%">
+            <img src="img/ngo/{{logo}}" style="width: 100%"/>
+        </div>
+        <div class="ui-block-b" style="width: 75%">
+            
+        </div>	
+    </div>                
+    <hr>
+    <div>        
+        <h4>Khmer name</h4><label>{{name_kh}}</label>
+        <h4>English name</h4><label>{{name_en}}</label>
+        <h4>Abbreviation</h4><label>{{name_short}}</label>
+    </div>    
+    <hr>
+    <div>
+        <h4>Description</h4><label>{{description}}</label>
     </div>
-    <div class="" data-role="" style="background-color: lightgrey">        
-        <label class="label">Khmer name:</label><h3>{{name_kh}}</h3>
-        <label>English name:</label>{{name_en}}
-        <label>Short name:</label>{{name_short}}
+    <hr>
+    <div>
+        <h4>Telephone</h4><label>{{phone}}</label>
+        <h4>Email</h4><label>{{email}}</label>
+        <h4>Website</h4><label><a href="{{website}}" style="text-decoration: none">{{website}}</a></label>
+        <h4>Address</h4><label>{{address}}</label>
     </div>
-    <label>Description:</label>{{description}}
-    <label>Phone:</label>{{phone}}
-    <label>Email:</label>{{email}}
-    <label>Website:</label>{{website}}
-    <label>Address:</label>{{address}}
-    <label>Map:</label>           
+    <hr>
+    <h4>Location</h4>           
     {{/each}}
 </div>    

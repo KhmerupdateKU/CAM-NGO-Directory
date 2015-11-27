@@ -9,6 +9,17 @@ $(function () {
     $(document).delegate("#page-ngo", "pageshow", function () {        
         $("#page-ngo-header").html(CategoryModel.getName());
     });
+    $(document).delegate("#search-ngo", "click", function () {
+        $(this).toggleClass('ui-hidden-accessible');
+        $('#frm-search-ngo').toggleClass('ui-hidden-accessible');                
+        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
+        $('#filter-ngo').trigger( "focus" );
+    });   
+    $(document).delegate("#frm-search-ngo", "blur", function () {        
+        $(this).toggleClass('ui-hidden-accessible');
+        $('#search-ngo').toggleClass('ui-hidden-accessible');                
+        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
+    }); 
 });
 
 
