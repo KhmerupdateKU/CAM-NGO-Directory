@@ -1,3 +1,19 @@
+<!--<div data-role="header" id="header-home" data-position="fixed">     
+    <div class="ui-grid-b" style="height: 100%">
+        <div class="ui-block-a" style="width: 10%">
+            <a href="#panel-left" id="btn-bar" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-theme="b"></a>
+        </div>
+        <div class="ui-block-b" style="width: 80%">
+            <label id="home-title">NGO Directory</label>                     
+            <form class="ui-filterable ui-hidden-accessible" id="frm-search-category">
+                <input id="filter-category" data-type="search" placeholder="Search your category hear.." class="input-search">
+            </form>
+        </div>
+        <div class="ui-block-c" style="width: 10%">
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all search-right" id="search-category"></a>            
+        </div>
+    </div>
+</div>-->
 <div data-role="header" id="header-home" data-position="fixed">     
     <div class="ui-grid-b" style="height: 100%">
         <div class="ui-block-a" style="width: 10%">
@@ -15,15 +31,27 @@
     </div>
 </div>
 <div data-role="main" class="ui-content">
-    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filter-category">        
+    <!--    <ul data-role="listview" id="list-categories" data-filter="true" data-input="#filter-category">        
+            {{#each categories}}        
+            <li><a href='#page-ngo'​​ id={{cat_id}} data-cat_name = '{{name_kh}}'>
+                    <img class='category-logo' src="img/category/{{logo}}"/>                
+                    <h1 class="zmdi">{{name_kh}}</h1>
+                    <span class="ui-li-count">{{ngo}} NGO</span>
+                </a></li>
+            {{/each}}        
+        </ul>    -->
+    <div class="ui-grid-a">
         {{#each categories}}
-        <li><a href='#page-ngo'​​ id={{cat_id}} data-cat_name = '{{name_kh}}'>
-                <img class='category-logo' src="img/category/{{logo}}"/>
-                <h1>{{name_en}}</h1>
-                <h3>{{name_kh}}</h3>
-                <span class="ui-li-count">{{ngo}} NGO</span>
-            </a></li>
-        {{/each}}        
-    </ul>    
-</div>    
-<div data-role="panel" id="panel-left" data-theme="b"></div>
+
+        <div class='{{block}}'>                        <div class="ui-bar" style="padding: 1px 1px 1px 1px">
+                <div class="menu-elem"> 
+                    <a class="ui-link" href="#">
+                        <div class="menu-img"> <img width="100%"  src="img/category/{{logo}}"> </div>                                                
+                    </a> 
+                </div>
+            </div>
+        </div>        
+
+        {{/each}}            
+    </div>
+    <div data-role="panel" id="panel-left" data-theme="b"></div>

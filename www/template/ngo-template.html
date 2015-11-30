@@ -1,12 +1,13 @@
 <div data-role="header" data-position="fixed">           
+<!--    /<a href="#" data-rel='button' class="ui-btn ui-icon-arrow-l ui-btn-icon-notext"></a>-->
     <div class="ui-grid-b" style="height: 100%">
         <div class="ui-block-a" style="width: 10%">
             <a href="#" data-rel='back' class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
         </div>
         <div class="ui-block-b" style="width: 80%">
-            <label id="page-ngo-header"></label>
+            <label style="font-family: "Khmer" id="page-ngo-header"></label>
             <form class="ui-filterable ui-hidden-accessible" id="frm-search-ngo">
-                <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear..">
+                <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear.." class="input-search">
             </form>    
         </div>
         <div class="ui-block-c" style="width: 10%">
@@ -18,9 +19,8 @@
     <ul data-role="listview" id="list-ngo" data-filter="true" data-input="#filter-ngo">        
         {{#each ngos}}
         <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>
-                <img src="img/category/political.png"/>
-                <h1>{{name_en}}</h1>
-                <h3>{{name_kh}}</h3>
+                <img src="img/category/political.png"/>               
+                <h1 class="zmdi">{{name_kh}}</h1>
             </a>
         </li>
         {{/each}}        

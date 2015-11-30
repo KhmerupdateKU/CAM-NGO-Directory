@@ -1,3 +1,8 @@
+@font-face{
+    font-family:Khmer;
+    src:url(font/KhmerOSNew-Regular.ttf) format('woff'),
+        url(font/KhmerOSNew-Regular.ttf) format('truetype')       
+}
 .category-logo{
     padding: 1px 1px 1px 1px;
 }
@@ -67,7 +72,7 @@ h4{
     color: #000;
 }
 hr { 
-    
+
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -85,4 +90,14 @@ hr {
 }
 .search-right{
     float: right;
+}
+.input-search{
+    font-size: 9pt;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.zmdi{    
+     font-family:'Khmer';
+     font-size:14pt;      
 }

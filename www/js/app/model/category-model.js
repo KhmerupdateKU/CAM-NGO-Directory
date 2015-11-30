@@ -1,6 +1,6 @@
-var CategoryModel = {    
+var CategoryModel = {
     id: null,
-    name: null,
+    name: null,    
     setId: function (id) {
         CategoryModel.id = id;
     },
@@ -12,13 +12,13 @@ var CategoryModel = {
     },
     getName: function () {
         return CategoryModel.name;
-    },    
+    },
     fetch: function (successCallback, errorCallback) {
         $.ajax({
             type: "POST",
             datatype: "JSON",
-            crossDomain: true,            
-            url: "http://localhost:8088/Ad-ngos/index.php/category/fetchcategory",            
+            crossDomain: true,
+            url: "http://localhost:8088/Ad-ngos/index.php/category/fetchcategory",
             success: successCallback,
             error: errorCallback
         });
