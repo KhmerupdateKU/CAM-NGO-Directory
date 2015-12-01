@@ -23,3 +23,4 @@ var AppTemplate = {
     callback(content);
   }
 };
+
