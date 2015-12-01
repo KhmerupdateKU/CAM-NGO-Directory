@@ -1,8 +1,7 @@
 var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
-        var $element = $('#page-ngo');
-        AppCache.clearAll();
+        var $element = $('#page-ngo');       
         NgoModel.fetByCat_id(function (ngos) {           
             NgoView.renderNgos($element, JSON.parse(ngos));                        
         }, function (error) {

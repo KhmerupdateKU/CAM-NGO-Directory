@@ -1,30 +1,22 @@
 var HomeController = {
-    data: [],
     getHome: function () {
         var $element = $('#page-home');
-        AppCache.clearAll();
-        ch = true;
+        ch = 1;
         CategoryModel.fetch(function (categories) {
-            cats = JSON.parse(categories)
+            var cats = JSON.parse(categories);
             $.map(cats, function (category) {
-                if (ch) {
-                    HomeController.data.push(
-                            {'cat_id': category.cat_id, 'name_en': category.name_en,
-                                'name_hk': category.name_kh, 'logo': category.logo, 'ngo': category.ngo,
-                                'block': 'ui-block-a'}
-                    );
-                    ch = false;
+                if (ch === 1) {
+                    category.block = 'ui-block-a';
+                    ch += 1;
+                } else if (ch === 2) {
+                    category.block = 'ui-block-b';
+                    ch += 1;
                 } else {
-                    HomeController.data.push(
-                            {'cat_id': category.cat_id, 'name_en': category.name_en,
-                                'name_hk': category.name_kh, 'logo': category.logo, 'ngo': category.ngo,
-                                'block': 'ui-block-b'}
-                    );
-
-                    ch = true;
+                    category.block = 'ui-block-c';
+                    ch = 1;
                 }
             });
-            HomeView.renderHome($element, HomeController.data);
+            HomeView.renderHome($element, cats);
         }, function (error) {
             console.log('error ; ', error);
         });

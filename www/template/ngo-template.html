@@ -1,28 +1,28 @@
-<div data-role="header" data-position="fixed">           
-<!--    /<a href="#" data-rel='button' class="ui-btn ui-icon-arrow-l ui-btn-icon-notext"></a>-->
-    <div class="ui-grid-b" style="height: 100%">
-        <div class="ui-block-a" style="width: 10%">
-            <a href="#" data-rel='back' class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-        </div>
-        <div class="ui-block-b" style="width: 80%">
-            <label style="font-family: "Khmer" id="page-ngo-header"></label>
-            <form class="ui-filterable ui-hidden-accessible" id="frm-search-ngo">
-                <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear.." class="input-search">
-            </form>    
-        </div>
-        <div class="ui-block-c" style="width: 10%">
-            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all search-right" id="search-ngo"></a>
-        </div>
-    </div>    
+<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">    
+    <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" style="font-size: 25px" data-wow-delay='0.8s'>
+        <i class="zmdi zmdi-arrow-back"></i>
+    </a>
+    <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header"></h2>
+    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" 
+       class="ui-btn ui-btn-right wow fadeIn" style="font-size: 25px" data-wow-delay='0.2s' id="search-ngo">
+        <i class="zmdi zmdi-search"></i>
+    </a>
+    <div class="col-xs-offset-2">
+        <form class="ui-filterable ui-hidden-accessible" id="frm-search-ngo">
+            <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear.." 
+                   class="input-search wow fadeIn">
+        </form>            
+    </div>
 </div>
-<div data-role="content">
-    <ul data-role="listview" id="list-ngo" data-filter="true" data-input="#filter-ngo">        
+<div data-role="content">    
+    <ul data-role="listview" data-filter="true" data-filter-reveal="false" data-filter-placeholder="Searching for NGO...." data-input="#filter-ngo">
         {{#each ngos}}
         <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>
-                <img src="img/category/political.png"/>               
-                <h1 class="zmdi">{{name_kh}}</h1>
+                <img src="img/category/political.png" class="ui-thumbnail ui-thumbnail-circular"/>               
+<!--                <img src="img/category/political.png" class="ui-thumbnail ui-thumbnail-circular"/>               -->
+                <h1 class="khmer-regular">{{name_kh}}</h1>
             </a>
         </li>
         {{/each}}        
-    </ul>
+    </ul>        
 </div>    
