@@ -18,7 +18,7 @@ var NgoModel = {
             type: "POST",
             datatype: "JSON",
             crossDomain: true,
-            url: "http://localhost:8088/Ad-ngos/index.php/ngo/fetchngobycat_id/" + CategoryModel.getId(),
+            url: "http://www.camngo.netau.net/index.php/ngo/fetchngobycat_id/" + CategoryModel.getId(),
             success: successCallback,
             error: errorCallback
         });

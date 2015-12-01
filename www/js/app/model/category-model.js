@@ -15,10 +15,10 @@ var CategoryModel = {
     },
     fetch: function (successCallback, errorCallback) {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
-            crossDomain: true,
-            url: "http://localhost:8088/Ad-ngos/index.php/category/fetchcategory",
+            crossDomain: true,            
+            url: "http://www.camngo.netau.net/index.php/category/fetchcategory",
             success: successCallback,
             error: errorCallback
         });
