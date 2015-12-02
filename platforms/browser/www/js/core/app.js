@@ -1,3 +1,5 @@
+//var URL ="http://localhost:8088/Ad-ngos/";
+var URL ="http://camngo.website/";
 var App = {
   initialize: function () {
     this.bindEvents();
@@ -6,8 +8,7 @@ var App = {
     document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function () {   
-    CategoryModel.setCategory();
-    console.log("isset");
+    AppCache.clearAll();           
   }
 };
 App.initialize();
