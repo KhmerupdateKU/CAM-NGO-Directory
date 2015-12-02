@@ -5,7 +5,7 @@
             <url>www/template/ngo-detail-template.html</url>
             <bookmark id="1">
                 <name/>
-                <line>43</line>
+                <line>42</line>
                 <key/>
             </bookmark>
         </file>
@@ -13,7 +13,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/home-template.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/css/index.css</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/ngo-template.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/ngo-detail-template.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/action/ngo-detail-acction.js</file>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/action/ngo-acction.js</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/index.html</file>
         </group>
     </open-files>
 </project-private>
