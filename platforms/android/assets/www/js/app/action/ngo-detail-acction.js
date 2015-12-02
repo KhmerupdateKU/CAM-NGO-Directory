@@ -1,7 +1,3 @@
-function onerr() {
-    $('#ngo-logo').attr('src', 'img/app/na.png');
-}
-;
 $(function () {
     $(document).delegate("#page-ngo-detail", "pagebeforeshow", function () {
         NgoDetailController.getDetail();
@@ -10,6 +6,3 @@ $(function () {
         $('#map').toggleClass('ui-hidden-accessible');
     });
 });
-
-
-

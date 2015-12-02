@@ -2,23 +2,23 @@
     <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" style="font-size: 25px" data-wow-delay='0.8s'>
         <i class="zmdi zmdi-arrow-back"></i>
     </a>
-    <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h2>
-    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" 
-       class="ui-btn ui-btn-right wow fadeIn" style="font-size: 25px" data-wow-delay='0.2s' id="search-ngo">
-        <i class="zmdi zmdi-search"></i>
+    <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h2>    
+    <a href="#search" data-rel="popup" data-inline="true" data-transition="slide"
+       class="ui-btn ui-btn-right" style="font-size: 25px" data-wow-delay='0.2s'>
+        <i class="zmdi zmdi-search"></i>       
     </a>
-    <div class="col-xs-offset-2">
-        <form class="ui-filterable ui-hidden-accessible" id="frm-search-ngo">
+    <div id="search" data-role="popup" class="col-xs-offset-2">
+        <div class="">
             <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear.." 
                    class="input-search wow fadeIn">
-        </form>            
-    </div>
+        </div>
+    </div>   
 </div>
 <div data-role="content">    
     <ul data-role="listview" data-filter="true" data-filter-reveal="false" data-filter-placeholder="Searching for NGO...." data-input="#filter-ngo" id="list-ngo">
         {{#each ngos}}
         <li><a href="#page-ngo-detail" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>
-                <img src="img/category/political.png" class="ui-thumbnail ui-thumbnail-circular"/>
+                <img src="{{../url}}img/ngo/{{logo}}" class="ui-thumbnail ui-thumbnail-circular" onError="this.onerror=null;this.src='img/app/na.png';"/>                
                 <h1 class="khmer-regular">{{name_kh}}</h1>
             </a>
         </li>

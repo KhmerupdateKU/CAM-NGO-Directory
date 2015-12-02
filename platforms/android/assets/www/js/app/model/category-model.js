@@ -18,7 +18,7 @@ var CategoryModel = {
             type: "POST",
             datatype: "JSON",
             crossDomain: true,            
-            url: "http://www.camngo.netau.net/index.php/category/fetchcategory",
+            url: URL + "index.php/category/fetchcategory",
             success: successCallback,
             error: errorCallback
         });

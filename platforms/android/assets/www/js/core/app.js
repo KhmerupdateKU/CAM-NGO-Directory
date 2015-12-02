@@ -1,4 +1,4 @@
-var url ="localhost:8088/Ad-ngos/index.php/";
+var URL ="http://www.camngo.website/";
 var App = {
   initialize: function () {
     this.bindEvents();

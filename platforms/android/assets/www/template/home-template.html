@@ -1,19 +1,29 @@
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
-    <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" 
-       data-transition="pop" class="ui-btn ui-btn-right wow fadeIn iconside" style="font-size: 25px" data-wow-delay='0.2s'><i class="zmdi zmdi-more-vert"></i></a>
     <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>ក្រុមនៃអង្គការ</h2>
-</div>
+    <a href="#popupDialog" data-rel="popup" data-inline="true" data-transition="pop"
+       class="ui-btn ui-btn-right" style="font-size: 25px" data-wow-delay='0.2s'>
+        <i class="zmdi zmdi-more-vert"></i>       
+    </a>
 
+    <div data-role="popup" id="popupDialog">    
+        <ul data-role="listview">
+            <li><a href="">About us</a></li>
+            <li><a href="">Rate us</a></li>
+            <li><a href="">Exit</a></li>
+        </ul>
+    </div>
+</div>
 <div data-role="main" class="ui-content">
-    <div class="ui-grid-b" >
+    <div class="ui-grid-b" >        
         {{#each categories}}
         <div class='{{block}}'>                        
             <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
                 <div class="menu-elem" id="card-menu"> 
-                    <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}},{{ngo}}'>
-                        <div class="menu-img"> 
-                            <img width="100%" src="img/category/{{logo}}"  style="border-radius:15%" id="category-logo" onerror="onerrcat()"/> 
-                        </div>                                                
+                    <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                        <div class="menu-img">                           
+
+                            <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/> 
+                        </div>                                                                        
                     </a> 
                 </div>
             </div>
@@ -21,7 +31,8 @@
         {{/each}}            
     </div>
 </div>
-<div data-role="popup" id="popupDialog">
+
+<!--<div data-role="popup" id="popupDialog">
     <div data-role="header">
         <h1 class='nd-title'>About Us</h1>
     </div>
@@ -31,7 +42,7 @@
         <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-check'></i> Find more on Facebook</a>
         <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-cancel'></i> Close</a>
     </div>
-</div>
+</div>-->
 <!--
 <div data-role="popup" id="popupDialog">
     <div data-role="header">

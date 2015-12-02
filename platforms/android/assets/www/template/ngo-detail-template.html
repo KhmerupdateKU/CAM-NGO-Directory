@@ -1,5 +1,4 @@
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">    
-
     <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" style="font-size: 25px" data-wow-delay='0.8s'>
         <i class="zmdi zmdi-arrow-back"></i>
     </a>
@@ -10,7 +9,7 @@
 
     <div class="nd2-card">
         <div class="card-media">
-            <img id="ngo-logo" src="img/ngo/{{logo}}" onerror="onerr()"/>
+            <img id="ngo-logo" src="{{../url}}img/ngo/{{logo}}" onError="this.onerror=null;this.src='img/app/na.png';"/>
             <div class='card-media-overlay with-background card-supporting-text'>            
                 <div class="box" style="width: 100%">
                     <h3 class="khmer-regular" style="color: white;margin-bottom: 20px">{{name_kh}}</h3>
@@ -59,7 +58,7 @@
                 </div>
                 <div class="align-right">                    
                     <h5 class="khmer-regular ui-btn-inline">{{website}}</h5>                                
-                    <a href="#" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email'></i></a>                    
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe'></i></a>                    
                 </div>
             </div>
         </div>

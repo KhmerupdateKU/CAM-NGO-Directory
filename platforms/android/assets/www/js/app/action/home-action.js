@@ -1,14 +1,12 @@
-function onerrcat(){     
-    $("#category-logo").attr('src', 'img/app/na.png');
-};
+
 $(function () {
     $(document).delegate("#page-home", "pagebeforeshow", function () {
-        HomeController.getHome();
+        HomeController.getHome();      
     });
     $(document).delegate("#card-menu a", "click", function () {        
         CategoryModel.setId(this.id);        
         CategoryModel.setName($(this).attr("data-cat_name"));        
-    });    
+    });       
 });
 
 
