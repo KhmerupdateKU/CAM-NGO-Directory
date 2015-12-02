@@ -62,7 +62,6 @@ core-list .item {
     color: #000;
 }
 hr { 
-
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -88,6 +87,7 @@ hr {
 }
 
 .khmer-regular{    
-     font-family:'Khmer';     
-     margin: 0 0 0 0;
+    font-family:'Khmer';     
+    margin: 0 0 0 0;
 }
+body { opacity: 0; }
