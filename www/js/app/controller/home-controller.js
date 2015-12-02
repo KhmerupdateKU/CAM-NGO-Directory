@@ -1,6 +1,7 @@
 var HomeController = {
     getHome: function () {
         var $element = $('#page-home');
+        $element.html("");
         ch = 1;
         CategoryModel.fetch(function (categories) {
             var cats = JSON.parse(categories);
@@ -16,7 +17,8 @@ var HomeController = {
                     ch = 1;
                 }
             });
-            HomeView.renderHome($element, cats);
+            var data = {categories: cats, url: URL};
+            HomeView.renderHome($element, data);
         }, function (error) {
             console.log('error ; ', error);
         });

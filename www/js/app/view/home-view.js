@@ -1,6 +1,7 @@
 var HomeView = {
-    renderHome: function ($element, categories) {
-        AppTemplate.process("home-template.html", {categories: categories}, function (content) {
+    renderHome: function ($element, data) {
+        AppTemplate.process("home-template.html", data, function (content) {
+            console.log(data);
             $element.html(content);
             $element.trigger('create');
         });
