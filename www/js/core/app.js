@@ -1,5 +1,7 @@
 //var URL ="http://localhost:8088/Ad-ngos/";
 var URL ="http://www.camngo.website/";
+//var URL ="http://www.camngo.netau.net/";
+
 var App = {
   initialize: function () {
     this.bindEvents();

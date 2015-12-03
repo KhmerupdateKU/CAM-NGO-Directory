@@ -1,14 +1,5 @@
-var connectionStatus = false;
 $(function () {
-    $(document).on('pagebeforeshow', '#page-home', function () {
-        setInterval(function () {
-            connectionStatus = navigator.onLine ? 'online' : 'offline';
-        }, 100);
-        $(document).on('click', '#check-connection', function () {
-            alert(connectionStatus);
-        });
-    });
-    $(document).delegate("#page-home", "pagebeforeshow", function () {        
+    $(document).delegate("#page-home", "pagebeforeshow", function () {
         HomeController.getHome();
     });
     $(document).delegate("#home-footer", "click", function () {

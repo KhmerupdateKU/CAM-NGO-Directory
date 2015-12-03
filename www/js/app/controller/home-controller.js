@@ -5,7 +5,8 @@ var HomeController = {
             var $element = $('#page-home');
             $element.html("");            
             var cats = CategoryModel.getCategories();            
-            var data = {categories: cats, url: URL};
+            var data = {categories: cats, url: URL};          
+            console.log('data:',data);
             HomeView.renderHome($element, data);
         } else {
             alert('you are offline');
