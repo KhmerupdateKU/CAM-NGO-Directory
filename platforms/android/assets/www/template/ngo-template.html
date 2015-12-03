@@ -1,18 +1,13 @@
-<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">    
-    <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" style="font-size: 25px" data-wow-delay='0.8s'>
-        <i class="zmdi zmdi-arrow-back"></i>
-    </a>
-    <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h2>    
-    <a href="#search" data-rel="popup" data-inline="true" data-transition="slide"
-       class="ui-btn ui-btn-right" style="font-size: 25px" data-wow-delay='0.2s'>
-        <i class="zmdi zmdi-search"></i>       
-    </a>
-    <div id="search" data-role="popup" class="col-xs-offset-2">
-        <div class="">
-            <input id="filter-ngo" data-type="search" placeholder="Search your NGO hear.." 
-                   class="input-search wow fadeIn">
-        </div>
-    </div>   
+<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+    <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>        
+    <a href="#s1" data-rel="popup" data-transition="slide" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-search zmd-2x"></i></a>    
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h1>
+
+</div>
+<div data-role="popup" id="s1" class="search-right" style="right: 0px;left: 0px;background-color: none;width: 100%;padding: 0 0 0 0">
+    <form class="ui-filterable">
+        <input id="filter-ngo" data-type="search" placeholder="find"/>
+    </form>
 </div>
 <div data-role="content">    
     <ul data-role="listview" data-filter="true" data-filter-reveal="false" data-filter-placeholder="Searching for NGO...." data-input="#filter-ngo" id="list-ngo">

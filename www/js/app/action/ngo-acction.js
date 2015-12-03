@@ -20,6 +20,17 @@ $(function () {
 //        $('#search-ngo').toggleClass('ui-hidden-accessible');                
 //        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
 //    });
+//    new $.nd2Search({
+//        placeholder: "Input Placeholder", // Placeholder in the search field
+//        defaultIcon: "globe-alt", // optional: icon | null
+//        source: [{label: 'Displayed Value', value: 'real-value', icon: 'custom-icon'}], // autocomplete : option-source
+//        fn: function (result) { // this function will be executed when a valid result item is selected
+//            console.log('--- Your custom handling ---');
+//            console.log('you picked: ');
+//            console.log(result);
+//        }
+//    });
+           
 });
 
 

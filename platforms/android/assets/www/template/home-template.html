@@ -1,17 +1,9 @@
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
-    <h2 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>ក្រុមនៃអង្គការ</h2>
-    <a href="#popupDialog" data-rel="popup" data-inline="true" data-transition="pop"
-       class="ui-btn ui-btn-right" style="font-size: 25px" data-wow-delay='0.2s'>
-        <i class="zmdi zmdi-more-vert"></i>       
-    </a>
-
-    <div data-role="popup" id="popupDialog">    
-        <ul data-role="listview">
-            <li><a href="">About us</a></li>
-            <li><a href="">Rate us</a></li>
-            <li><a href="">Exit</a></li>
-        </ul>
-    </div>
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>ក្រុមនៃអង្គការ</h1>
+    <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"        
+       style="visibility: visible; animation-name: fadeIn; animation-delay: 1.2s;" href="#home-bottom" data-role="button" 
+       data-rel="popup"
+       data-wow-delay="1.2s"><i class="zmdi zmdi-more-vert zmd-2x"></i></a>
 </div>
 <div data-role="main" class="ui-content">
     <div class="ui-grid-b" >        
@@ -21,7 +13,6 @@
                 <div class="menu-elem" id="card-menu"> 
                     <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
                         <div class="menu-img">                           
-
                             <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/> 
                         </div>                                                                        
                     </a> 
@@ -31,28 +22,26 @@
         {{/each}}            
     </div>
 </div>
-
-<!--<div data-role="popup" id="popupDialog">
-    <div data-role="header">
-        <h1 class='nd-title'>About Us</h1>
+<div data-role="panel" id="home-bottom" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
+    <div class="ui-panel-inner">        
+        <div class="row around-xs">
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
+                   waves-effect waves-button" href="#" data-ajax="false"><i class="zmdi zmdi-rate-review zmd-2x"></i>
+                    <strong>Rate Us</strong>
+                </a>
+            </div>
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                   waves-effect waves-button" href="#" data-ajax="false"><i class="zmdi zmdi-collection-text zmd-2x"></i>
+                    <strong>About Us</strong>
+                </a>
+            </div>
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                   waves-effect waves-button" href="#" onclick="exitApp()" data-ajax="false"><i class="zmdi zmdi-close zmd-2x"></i>
+                    <strong>Exit</strong>
+                </a>
+            </div>
+        </div>        
     </div>
-
-    <div data-role="content">
-        <p>According to me Dennis MacAlistair Ritchie (inventor of C language and key player in creating Unix) was the best programmer the world has ever seen. Some of the worlds best languages including Python and PHP are actually interpreted languages written in C (Facebook,twitter and thousands of scripts are written on php while major part of google and quora is written in Python). If he wouldn't have invented the C language, you wouldnt have been able to ask the question on quora. But he died in 2011 </p>
-        <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-check'></i> Find more on Facebook</a>
-        <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-cancel'></i> Close</a>
-    </div>
-</div>-->
-<!--
-<div data-role="popup" id="popupDialog">
-    <div data-role="header">
-        <h1 class='nd-title'>About Us</h1>
-    </div>
-
-    <div data-role="content">
-        <p>According to me Dennis MacAlistair Ritchie (inventor of C language and key player in creating Unix) was the best programmer the world has ever seen. Some of the worlds best languages including Python and PHP are actually interpreted languages written in C (Facebook,twitter and thousands of scripts are written on php while major part of google and quora is written in Python). If he wouldn't have invented the C language, you wouldnt have been able to ask the question on quora. But he died in 2011 </p>
-        <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-check'></i> Find more on Facebook</a>
-        <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true" class="ui-btn ui-btn-primary"><i class='zmdi zmdi-cancel'></i> Close</a>
-    </div>
-</div>
-<div data-role="panel" id="panel-left" data-theme="b"></div>-->
