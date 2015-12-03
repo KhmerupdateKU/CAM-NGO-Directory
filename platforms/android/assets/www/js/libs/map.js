@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 function getMap(element, map_latlng) {
-=======
-function getMap(element,map_latlng) {
->>>>>>> 231b9ce2e9f2024e5bb95eea83572d11bcf16ebb
     var split_latlng = map_latlng.split(",");
     var lat = split_latlng[0];
     var lng = split_latlng[1];
@@ -31,10 +27,4 @@ function getMap(element,map_latlng) {
             title: "Greetings!"
         });
     }
-<<<<<<< HEAD
 }
-=======
-    
-}
-
->>>>>>> 231b9ce2e9f2024e5bb95eea83572d11bcf16ebb

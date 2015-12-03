@@ -6,6 +6,11 @@ $(function () {
         NgoModel.setId($(this).attr("data-ngo_id"));
         NgoModel.setName($(this).attr("data-ngo_name"));        
     });
+    $(document).delegate("#btn-search", "click", function () {                
+        $(this).toggleClass('ui-hidden-accessible');
+        $('#search-block').toggleClass('ui-hidden-accessible');
+        $('#filter-ngo').trigger("focus");
+    });
     
 //    $(document).delegate("#page-ngo", "pageshow", function () {        
 //        $("#page-ngo-header").html(CategoryModel.getName());       
@@ -16,11 +21,11 @@ $(function () {
 //        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
 //        $('#filter-ngo').trigger( "focus" );
 //    });   
-//    $(document).delegate("#frm-search-ngo", "blur", function () {        
-//        $(this).toggleClass('ui-hidden-accessible');
-//        $('#search-ngo').toggleClass('ui-hidden-accessible');                
+    $(document).delegate("#filter-ngo", "blur", function () {        
+        $('#search-block').toggleClass('ui-hidden-accessible');
+        $('#btn-search').toggleClass('ui-hidden-accessible');                
 //        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
-//    });
+    });
 //    new $.nd2Search({
 //        placeholder: "Input Placeholder", // Placeholder in the search field
 //        defaultIcon: "globe-alt", // optional: icon | null

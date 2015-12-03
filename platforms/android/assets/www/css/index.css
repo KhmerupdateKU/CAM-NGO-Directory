@@ -99,3 +99,9 @@ body { opacity: 0; }
     z-index: 0;
     position: relative;
 }
+.detail-logo{
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+    position: relative;    
+}
