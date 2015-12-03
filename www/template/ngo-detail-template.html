@@ -5,20 +5,23 @@
     {{#each detail}}    
     <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-detail-header">{{name_kh}}</h1>    
 </div>
-<div data-role="main" class="">           
+<div data-role="main" class="nd2-banner">           
     <div class="nd2-card">
         <div class="card-media">
-            <img id="ngo-logo" src="{{../url}}img/ngo/{{logo}}" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            <img src="img/app/logobackground.png" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            <div class="card-media-overlay">
+                <img src="{{../url}}img/ngo/{{logo}}" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            </div>
             <div class='card-media-overlay with-background card-supporting-text'>            
                 <div class="box" style="width: 100%">
-                    <h3 class="khmer-regular" style="color: white;margin-bottom: 20px">{{name_kh}}</h3>
+                    <h4 class="khmer-regular" style="color: white;margin-bottom: 20px">{{name_kh}}</h4>
                 </div>               
             </div>
         </div>
         <div class="card-action">
             <div class='card-supporting-text'>            
                 <div class="box" style="width: 100%">                    
-                    <h3 class="khmer-regular" >{{name_en}} ({{name_short}})</h3>                                          
+                    <h4 class="khmer-regular" >{{name_en}} ({{name_short}})</h4>                                          
                 </div>               
             </div>
         </div>
@@ -33,9 +36,12 @@
     </div>
     <div class="nd2-card">
         <div class="card-title">            
-            <h4 class="khmer-regular"><strong>លេខទូរស័ព្ទ</strong></h4>
+            <h4 class="khmer-regular"><strong>ទំនាក់ទំនង</strong></h4>
         </div>        
         <div class="card-supporting-text">            
+            <div class="align-left">            
+                <h4 class="khmer-regular">លេខទូរស័ព្ទ</h4>
+            </div>        
             {{#each ../phones}}
             <div class="align-right col-xs-12">  
                 <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{phone}}
@@ -43,13 +49,11 @@
                 </h5>                                
             </div>
             {{/each}}                                    
-        </div>        
-    </div>
-    <div class="nd2-card">
-        <div class="card-title">            
-            <h4 class="khmer-regular"><strong>សារអេឡិចត្រូនិច</strong></h4>
-        </div>        
+        </div>                
         <div class="card-supporting-text">            
+            <div class="align-left">            
+                <h4 class="khmer-regular">សារអេឡិចត្រូនិច</h4>
+            </div>        
             {{#each ../emails}}
             <div class="align-right col-xs-12">  
                 <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{email}}
@@ -58,50 +62,37 @@
             </div>
             {{/each}}                                    
         </div>        
-    </div>
-    <div class="nd2-card">
         <div class="card-supporting-text">          
+
             <div class="col-xs-0 align-left">                    
-                <h5 class="khmer-regular ui-btn-inline"><b>វេបសាយ</b></h5>                                                    
+                <h5 class="khmer-regular ui-btn-inline">វេបសាយ</h5>                      
             </div>
             <div class="align-right col-xs-12">  
-                <div class="align-right col-xs-12">  
-                    <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{website}}
-                        <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe'></i></a>
-                    </h5>  
-                </div>                    
+                <div class="row between-xs">                    
+                    <div class="align-right col-xs-12">  
+                        <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{website}}
+                            <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe'></i></a>
+                        </h5>  
+                    </div>                    
+                </div>
             </div>
-        </div>
-    </div>        
-    <div class="nd2-card">
-        <div class="card-title">
-            <h4 class="khmer-regular"><strong>អាស័យដ្ឋាន</strong></h4>
-        </div>
+        </div>                
         <div class="card-supporting-text">
+            <div class="align-left">
+                <h4 class="khmer-regular" style="margin-bottom: 10px">អាស័យដ្ឋាន</h4>
+            </div>
             <p class="khmer-regular">{{address}}</p>
         </div>
     </div>
     <div class="nd2-card">
-        <div class="card-action">
-            <div class="card-supporting-text">                                
-                <div class="row between-xs">                    
-                    <div class="col-xs-12 align-right">
-                        <div class="box">
-                            <h5 class="khmer-regular ui-btn-inline">ផែនទី</h5>
-                            <a href="#" id="btn-map" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-map'></i></a>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>        
-        <div class="card-media">
-            <div id="map-block"></div>
-            <div class='card-media-overlay with-background ui-hidden-accessible' id="map-address">                    
-                <div class="card-title has-supporting-text">
-                    <h3 class="card-primary-title">{{name_short}}</h3>
-                    <h5 class="card-subtitle">{{address}}</h5>
-                </div>
-            </div>
+        <div class="card-title">                          
+            <h4 class="khmer-regular ui-btn-inline"><strong>ផែនទី</strong></h4>                            
+        </div>
+        <div class="card-media">            
+            <div id="map-block"></div>           
+            <script>
+                getMap("map-block", '{{map}}');
+            </script>
         </div>            
     </div>
 </div>    
