@@ -8,7 +8,7 @@ $(function () {
             alert(connectionStatus);
         });
     });
-    $(document).delegate("#page-home", "pagebeforeshow", function () {
+    $(document).delegate("#page-home", "pagebeforeshow", function () {        
         HomeController.getHome();
     });
     $(document).delegate("#home-footer", "click", function () {

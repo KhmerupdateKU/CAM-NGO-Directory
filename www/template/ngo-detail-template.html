@@ -60,13 +60,7 @@
         </div>        
     </div>
     <div class="nd2-card">
-        <div class="card-title">            
-            <h4 class="khmer-regular"><strong>វេបសាយ</strong></h4>
-        </div>        
-        <div class="card-supporting-text">
-            <div class="col-xs-0 align-left">                    
-                <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px"><b>សាអេឡិចត្រូនិច</b></h5>                                                    
-            </div>              
+        <div class="card-supporting-text">          
             <div class="col-xs-0 align-left">                    
                 <h5 class="khmer-regular ui-btn-inline"><b>វេបសាយ</b></h5>                                                    
             </div>
@@ -99,23 +93,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="ui-hidden-accessible" id="map">
-            <div class="card-media">
-                <img src="img/app/map.png">
-
-                <div class='card-media-overlay with-background'>
-                    <div class="card-title has-supporting-text">
-                        <h3 class="card-primary-title">{{name_short}}</h3>
-                        <h5 class="card-subtitle">{{address}}</h5>
-                    </div>
+        </div>        
+        <div class="card-media">
+            <div id="map-block"></div>
+            <div class='card-media-overlay with-background ui-hidden-accessible' id="map-address">                    
+                <div class="card-title has-supporting-text">
+                    <h3 class="card-primary-title">{{name_short}}</h3>
+                    <h5 class="card-subtitle">{{address}}</h5>
                 </div>
             </div>
-        </div>
-    </div>   
+        </div>            
+    </div>
 </div>    
 {{/each}}      
-
 
 
 
