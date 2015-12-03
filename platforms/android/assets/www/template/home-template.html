@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
     <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>ក្រុមនៃអង្គការ</h1>
     <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"        
@@ -45,3 +46,52 @@
             </div>
         </div>        
     </div>
+=======
+<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>ក្រុមនៃអង្គការ</h1>
+    <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"        
+       style="visibility: visible; animation-name: fadeIn; animation-delay: 1.2s;" href="#home-bottom" data-role="button" 
+       data-rel="popup"
+       data-wow-delay="1.2s"><i class="zmdi zmdi-more-vert zmd-2x"></i></a>
+</div>
+<div data-role="main" class="ui-content">
+    <div class="ui-grid-b" >        
+        {{#each categories}}
+        <div class='{{block}}'>                        
+            <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
+                <div class="menu-elem" id="card-menu"> 
+                    <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                        <div class="menu-img">                           
+                            <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/> 
+                        </div>                                                                        
+                    </a> 
+                </div>
+            </div>
+        </div>        
+        {{/each}}            
+    </div>
+</div>
+<div data-role="panel" id="home-bottom" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
+    <div class="ui-panel-inner">        
+        <div class="row around-xs">
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
+                   waves-effect waves-button" href="#" data-ajax="false"><i class="zmdi zmdi-rate-review zmd-2x"></i>
+                    <strong>Rate Us</strong>
+                </a>
+            </div>
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                   waves-effect waves-button" href="#" data-ajax="false"><i class="zmdi zmdi-collection-text zmd-2x"></i>
+                    <strong>About Us</strong>
+                </a>
+            </div>
+            <div class="col-xs-auto">
+                <a class="ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                   waves-effect waves-button" href="#" onclick="exitApp()" data-ajax="false"><i class="zmdi zmdi-close zmd-2x"></i>
+                    <strong>Exit</strong>
+                </a>
+            </div>
+        </div>        
+    </div>
+>>>>>>> 231b9ce2e9f2024e5bb95eea83572d11bcf16ebb
