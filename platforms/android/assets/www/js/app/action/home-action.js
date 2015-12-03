@@ -14,11 +14,22 @@ $(function () {
     $(document).delegate("#home-footer", "click", function () {
         $('#home-bottom').toggleClass('ui-hidden-accessible');
     });
+<<<<<<< HEAD
     $(document).delegate("#card-menu a", "click", function () {
         CategoryModel.setId(this.id);
         CategoryModel.setName($(this).attr("data-cat_name"));
     });
 
+=======
+    $(document).delegate("#home-footer", "click", function () {
+        $('#home-bottom').toggleClass('ui-hidden-accessible');
+    });
+    $(document).delegate("#card-menu a", "click", function () {        
+        CategoryModel.setId(this.id);        
+        CategoryModel.setName($(this).attr("data-cat_name"));        
+    });       
+    
+>>>>>>> 3f85f0e39614989070d0eaec91d45df943e1e964
 });
 
 
