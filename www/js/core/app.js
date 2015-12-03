@@ -8,7 +8,10 @@ var App = {
     document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function () {   
-    AppCache.clearAll();           
+    AppCache.clearAll();
+    CategoryModel.fetch();
+    NgoModel.fetch();
+    NgoDetailModel.fetch();
   }
 };
 App.initialize();
