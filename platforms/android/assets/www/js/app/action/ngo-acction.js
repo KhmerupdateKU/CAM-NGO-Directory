@@ -20,7 +20,6 @@ $(function () {
 //        $('#search-ngo').toggleClass('ui-hidden-accessible');                
 //        $('#page-ngo-header').toggleClass('ui-hidden-accessible');                
 //    });
-<<<<<<< HEAD
 //    new $.nd2Search({
 //        placeholder: "Input Placeholder", // Placeholder in the search field
 //        defaultIcon: "globe-alt", // optional: icon | null
@@ -32,8 +31,6 @@ $(function () {
 //        }
 //    });
            
-=======
->>>>>>> 3f85f0e39614989070d0eaec91d45df943e1e964
 });
 
 
