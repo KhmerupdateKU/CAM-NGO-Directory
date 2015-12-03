@@ -20,29 +20,31 @@ var CategoryModel = {
             datatype: "JSON",
             crossDomain: true,
             url: URL + "index.php/category/fetchcategory",
-            success: function (cats) {
-                var json = (JSON.parse(cats));
+            success: function (categories) {
                 var ch = 1;
-                $.map(json, function (cat) {
+                var cats = JSON.parse(categories);
+                $.map(cats, function (category) {
                     if (ch === 1) {
-                        cat.block = 'ui-block-a';
+                        category.block = 'ui-block-a';
                         ch += 1;
                     } else if (ch === 2) {
-                        cat.block = 'ui-block-b';
+                        category.block = 'ui-block-b';
                         ch += 1;
                     } else {
-                        cat.block = 'ui-block-c';
+                        category.block = 'ui-block-c';
                         ch = 1;
                     }
-                    CategoryModel.categoris.push(cat);
+                    CategoryModel.set(category);
                 });
-            },
-            error: function (e) {
+            }, error: function (e) {
                 console.log("error:", e);
             }
         });
     },
-    getCategories: function () {
+    set: function (cat) {
+        CategoryModel.categoris.push(cat);
+    },
+    get: function () {
         return CategoryModel.categoris;
     }
 };
