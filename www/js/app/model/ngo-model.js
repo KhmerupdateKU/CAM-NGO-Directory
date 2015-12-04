@@ -14,17 +14,14 @@ var NgoModel = {
     setName: function (name) {
         NgoModel.name = name;
     },
-    fetch: function (successCallback, errorCallback) {
+    fetch: function () {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
             crossDomain: true,
             url: URL + "index.php/ngo/fetchngo",
             success: function (ngos) {
-                var json = (JSON.parse(ngos));
-                $.map(json, function (ngo) {
-                    NgoModel.ngos.push(ngo);
-                });
+                NgoModel.ngos = (JSON.parse(ngos));
             },
             error: function (e) {
                 console.log("error:", e);
@@ -36,11 +33,11 @@ var NgoModel = {
     },
     getNgosByCat_id: function (cat_id) {
         var temp = [];
-        $.map(NgoModel.getNgos(),function (ngos){
-          if(ngos.cat_id===cat_id){
-              temp.push(ngos);
-          }  
-        });        
+        $.map(NgoModel.getNgos(), function (ngos) {
+            if (ngos.cat_id === cat_id) {
+                temp.push(ngos);
+            }
+        });
         return temp;
     }
 };

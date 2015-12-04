@@ -16,7 +16,7 @@ var NgoModel = {
     },
     fetch: function (successCallback, errorCallback) {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
             crossDomain: true,
             url: URL + "index.php/ngo/fetchngo",

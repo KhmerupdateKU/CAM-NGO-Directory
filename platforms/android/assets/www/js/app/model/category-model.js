@@ -16,7 +16,7 @@ var CategoryModel = {
     },
     fetch: function () {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
             crossDomain: true,
             url: URL + "index.php/category/fetchcategory",
@@ -41,7 +41,7 @@ var CategoryModel = {
             }
         });
     },
-    set: function (cat) {
+    set: function (cat) {        
         CategoryModel.categoris.push(cat);
     },
     get: function () {

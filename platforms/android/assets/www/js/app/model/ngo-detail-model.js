@@ -2,7 +2,7 @@ var NgoDetailModel = {
     details: [],
     fetch: function () {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
             crossDomain: true,
             url: URL + "index.php/ngodetail/fetchdetail",
