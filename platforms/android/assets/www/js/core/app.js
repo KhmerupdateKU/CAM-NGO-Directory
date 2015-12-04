@@ -10,10 +10,10 @@ var App = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function () {                        
-        NgoModel.fetch();
-        NgoDetailModel.fetch();
-        CategoryModel.fetch();        
         AppCache.clearAll();
+        CategoryModel.fetch();                
+        NgoModel.fetch();
+        NgoDetailModel.fetch();        
     }
 };
 App.initialize();

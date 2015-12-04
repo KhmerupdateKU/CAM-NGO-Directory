@@ -19,7 +19,7 @@ var NgoDetailController = {
                 NgoDetailController.emails.push({'email': e});
             });
         });
-        var data = {detail: temps, url: URL, phones: NgoDetailController.phones, emails: NgoDetailController.emails};        
+        var data = {detail: temps, url: URL, phones: NgoDetailController.phones, emails: NgoDetailController.emails};
         NgoDetailView.renderDetail($element, data);
     }
 }
