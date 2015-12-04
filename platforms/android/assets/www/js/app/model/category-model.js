@@ -18,8 +18,8 @@ var CategoryModel = {
         $.ajax({
             type: "GET",
             datatype: "JSON",
-            crossDomain: true,
             url: URL + "index.php/category/fetchcategory",
+            crossDomain: true,
             success: function (categories) {
                 var ch = 1;
                 var cats = JSON.parse(categories);
@@ -34,17 +34,17 @@ var CategoryModel = {
                         category.block = 'ui-block-c';
                         ch = 1;
                     }
-                    CategoryModel.set(category);
+
                 });
+                CategoryModel.categoris = cats;
+                HomeController.getHome();
             }, error: function (e) {
                 console.log("error:", e);
             }
         });
     },
-    set: function (cat) {        
-        CategoryModel.categoris.push(cat);
-    },
     get: function () {
+        console.log("get")
         return CategoryModel.categoris;
     }
 };

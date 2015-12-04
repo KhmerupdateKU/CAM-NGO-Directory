@@ -7,10 +7,7 @@ var NgoDetailModel = {
             crossDomain: true,
             url: URL + "index.php/ngodetail/fetchdetail",
             success: function (details) {
-                var json = (JSON.parse(details));
-                $.map(json, function (detail) {
-                    NgoDetailModel.details.push(detail);
-                });
+                NgoDetailModel.details = (JSON.parse(details));
             },
             error: function (e) {
                 console.log("error:", e);
