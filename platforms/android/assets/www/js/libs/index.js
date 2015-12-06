@@ -1,3 +1,14 @@
+function exitFromApp()
+{
+    if (navigator.app) {
+        navigator.app.exitApp();
+    } else if (navigator.device) {
+        navigator.device.exitApp();
+    }
+}
+function load() {
+    HomeController.getHome();
+}
 function checkConnection() {
     var networkState = navigator.network.connection.type;
     var states = {};

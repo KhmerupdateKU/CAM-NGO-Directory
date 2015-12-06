@@ -1,0 +1,2 @@
+<!-- Add this into /res/xml/plugins.xml -->
+<plugin name="LoadingIndicator" value=" com.phonegap.plugins.PGLoadingDialog" />

@@ -14,13 +14,13 @@ var CategoryModel = {
     getName: function () {
         return CategoryModel.name;
     },
-    fetch: function () {
+    fetch: function () {        
         $.ajax({
             type: "GET",
             datatype: "JSON",
             url: URL + "index.php/category/fetchcategory",
             crossDomain: true,
-            success: function (categories) {
+            success: function (categories) {             
                 var ch = 1;
                 var cats = JSON.parse(categories);
                 $.map(cats, function (category) {
@@ -38,13 +38,12 @@ var CategoryModel = {
                 });
                 CategoryModel.categoris = cats;
                 HomeController.getHome();
-            }, error: function (e) {
+            }, error: function (e) {                
                 console.log("error:", e);
             }
         });
     },
-    get: function () {
-        console.log("get")
+    get: function () {        
         return CategoryModel.categoris;
     }
 };

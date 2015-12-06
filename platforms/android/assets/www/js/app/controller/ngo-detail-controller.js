@@ -2,8 +2,7 @@ var NgoDetailController = {
     phones: [],
     emails: [],
     getDetail: function () {
-        var $element = $('#page-ngo-detail');
-        $element.html("");
+        var $element = $('#page-ngo-detail');        
         var temps = NgoDetailModel.getDetailByNgo_Id(NgoModel.getId());
         $.map(temps, function (jsonNgo) {
             NgoDetailController.emails = [];
