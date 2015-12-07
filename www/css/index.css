@@ -3,7 +3,7 @@
     src:url(fonts/KhmerOSNew-Regular.ttf) format('woff'),
         url(fonts/KhmerOSNew-Regular.ttf) format('truetype')       
 }
-.category-logo{
+/*.category-logo{
     padding: 1px 1px 1px 1px;
 }
 core-toolbar {color: #f1f1f1;fill: #f1f1f1;}core-toolbar {color: #f1f1f1;fill: #f1f1f1;}core-list {
@@ -50,8 +50,8 @@ core-list .item {
 }
 .ui-header{
     background-color: #009688;;
-}
-.line-big{
+}*/
+/*.line-big{
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -84,7 +84,7 @@ hr {
     font-size: 9pt;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-}
+}*/
 
 .khmer-regular{    
     font-family:'Khmer';     
