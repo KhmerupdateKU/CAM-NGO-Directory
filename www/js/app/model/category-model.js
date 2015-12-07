@@ -1,34 +1,49 @@
 var CategoryModel = {
-    category: [],
-    catId: null,
-    catName: null,
-    setCatId: function (id) {
-        CategoryModel.catId = id;
+    id: null,
+    name: null,
+    categoris: [],
+    setId: function (id) {
+        CategoryModel.id = id;
     },
-    getCatId: function () {
-        return CategoryModel.catId;
+    getId: function () {
+        return CategoryModel.id;
     },
-    setCatName: function (name) {
-        CategoryModel.catName = name;
+    setName: function (name) {
+        CategoryModel.name = name;
     },
-    getCatName: function () {
-        return CategoryModel.catName;
+    getName: function () {
+        return CategoryModel.name;
     },
-    setCategory: function () {
-        CategoryModel.category.push(
-                {'id': '1', "name": "Technology", "image":"img/technology.png"},
-                {'id': '2', "name": "Education" , "image":"img/educationhome.png"},
-                {'id': '3', "name": "Politic", "image":"img/Political.png"},
-                {'id': '4', "name": "Disable Persion", "image":"img/disable.png"} ,
-                {'id': '5', "name": "TRADITIONAL", "image":"img/traditional.png"},
-                {'id': '6', "name": "Children", "image":"img/children.png"},
-                {'id': '7', "name": "Sex traffic Abuse", "image":"img/humanabuse.png"},
-                {'id': '8', "name": "Drug Abuse", "image":"img/drugabuse.png"},
-                {'id': '9', "name": "Human Right", "image":"img/humanright.png"},
-                {'id': '10', "name": "Health", "image":"img/health.png"}
-        );
+    fetch: function () {        
+        $.ajax({
+            type: "GET",
+            datatype: "JSON",
+            url: URL + "index.php/category/fetchcategory",
+            crossDomain: true,
+            success: function (categories) {             
+                var ch = 1;
+                var cats = JSON.parse(categories);
+                $.map(cats, function (category) {
+                    if (ch === 1) {
+                        category.block = 'ui-block-a';
+                        ch += 1;
+                    } else if (ch === 2) {
+                        category.block = 'ui-block-b';
+                        ch += 1;
+                    } else {
+                        category.block = 'ui-block-c';
+                        ch = 1;
+                    }
+
+                });
+                CategoryModel.categoris = cats;
+                HomeController.getHome();
+            }, error: function (e) {                
+                console.log("error:", e);
+            }
+        });
     },
-    getCategory: function () {
-        return CategoryModel.category;
+    get: function () {        
+        return CategoryModel.categoris;
     }
 };

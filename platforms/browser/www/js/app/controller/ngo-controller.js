@@ -1,6 +1,7 @@
 var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
+<<<<<<< HEAD
         var $element = $('#page-ngo');
         var ngos = NgoModel.getNgos();
         NgoView.renderNgos($element, ngos);
@@ -39,6 +40,17 @@ var NgoController = {
             ;
         });
 
+=======
+        var $element = $('#page-ngo');       
+        $element.html("");
+        NgoModel.fetByCat_id(function (ngos) {
+            var jsonNgos = JSON.parse(ngos);
+            var data = {ngos: jsonNgos, ngo_category: CategoryModel.getName(), url: URL};
+            NgoView.renderNgos($element, data);                        
+        }, function (error) {
+            console.log('error ; ', error);
+        });
+>>>>>>> NGO-Category
     }
 };
 

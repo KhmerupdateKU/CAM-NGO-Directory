@@ -3,7 +3,6 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
         "id": "cordova-plugin-inappbrowser.inappbrowser",
-        "pluginId": "cordova-plugin-inappbrowser",
         "clobbers": [
             "cordova.InAppBrowser.open",
             "window.open"
@@ -12,12 +11,18 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-whitelist/whitelist.js",
         "id": "cordova-plugin-whitelist.whitelist",
+<<<<<<< HEAD
         "pluginId": "cordova-plugin-whitelist",
+=======
+>>>>>>> NGO-Category
         "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{}
+{
+    "cordova-plugin-inappbrowser": "1.0.1",
+    "cordova-plugin-whitelist": "1.0.0"
+}
 // BOTTOM OF METADATA
 });

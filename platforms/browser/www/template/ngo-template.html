@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div data-role="header">
     <a href="#page-home" class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left">&nbsp;</a>
     <a href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Search</a>
@@ -10,4 +11,27 @@
         <li><a href="#page-ngo-detail" id={{id}} data-cat_name = {{cat_name}} data-ngo_id = {{ngo_id}}><h2>{{ngo_name}} {{ngo_id}}</h2></a></li>
         {{/each}}        
     </ul>
+=======
+<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h1>          
+    <a href="#filter-ngo" id="btn-search" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-search zmd-2x"></i></a>    
+    <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                            
+    <div class="ui-hidden-accessible wow fadeIn" id="search-block" data-wow-delay='0.4s' style="padding-left: 10px;padding-right: 10px">
+        <input id="filter-ngo" class="khmer-regular ui-input-text" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
+    </div>
+</div>
+<div data-role="main" class="nd2-banner">       
+
+    <ul data-role="listview" data-icon="false" class="ui-listview" data-filter="true"          
+        data-filter-placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...." data-input="#filter-ngo" id="list-ngo">
+        {{#each ngos}}
+        <li class="ui-btn-a ui-body-a ui-li-has-thumb">
+            <a href="#page-ngo-detail" class="ui-btn waves-effect waves-button waves-effect waves-button" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>                
+                <img src="{{../url}}img/ngo/{{logo}}" class="ui-thumbnail ui-thumbnail-circular" onError="this.onerror=null;this.src='img/app/na.png';"/>                             
+                <h1 class="khmer-regular" style="margin-top: 18px;font-size: 15pt">{{name_kh}}</h1>                
+            </a>
+        </li>
+        {{/each}}        
+    </ul>     
+>>>>>>> NGO-Category
 </div>    

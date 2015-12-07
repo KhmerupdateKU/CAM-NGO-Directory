@@ -1,26 +1,43 @@
 var NgoModel = {
-    ngo: [],
-    ngoCat:[],
-    setNgo: function () {
-        NgoModel.ngo.push(
-                {"id": "1", "name": "InSTEDD"},
-                {"id": "2", "name": "HRD Center"},
-                {"id": "3", "name": "UNESCO"},
-                {"id": "4", "name": "Human Right of Commity"}
-        );
+    id: null,
+    name: null,
+    ngos: [],
+    getName: function () {
+        return NgoModel.name;
+    },
+    setId: function (id) {
+        NgoModel.id = id;
+    },
+    getId: function () {
+        return NgoModel.id;
+    },
+    setName: function (name) {
+        NgoModel.name = name;
+    },
+    fetch: function () {
+        $.ajax({
+            type: "GET",
+            datatype: "JSON",
+            crossDomain: true,
+            url: URL + "index.php/ngo/fetchngo",
+            success: function (ngos) {
+                NgoModel.ngos = (JSON.parse(ngos));
+            },
+            error: function (e) {
+                console.log("error:", e);
+            }
+        });
     },
     getNgos: function () {
-        return NgoModel.ngo;
+        return NgoModel.ngos;
     },
-    setNgosCat:function (){
-        NgoModel.ngoCat.push(
-                {"id": "1","cat-id":"4","ngo-id":"1", "name": "InSTEDD"},
-                {"id": "2","cat-id":"2","ngo-id":"2", "name": "HRD Center"},
-                {"id": "3","cat-id":"2","ngo-id":"3",  "name": "UNESCO"},
-                {"id": "4","cat-id":"3","ngo-id":"4",  "name": "Human Right of Commity"}
-        );
-    },
-    getNgosCat:function (){
-        return NgoModel.ngoCat;
+    getNgosByCat_id: function (cat_id) {
+        var temp = [];
+        $.map(NgoModel.getNgos(), function (ngos) {
+            if (ngos.cat_id === cat_id) {
+                temp.push(ngos);
+            }
+        });
+        return temp;
     }
 };

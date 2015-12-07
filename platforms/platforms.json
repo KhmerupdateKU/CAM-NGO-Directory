@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
     "ios": "3.9.2",
+=======
+>>>>>>> NGO-Category
     "browser": "4.0.0",
     "android": "4.1.1"
 }
