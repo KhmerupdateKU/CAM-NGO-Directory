@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.camngo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>NGO Directory</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
+        volunteer at ngo by providing the phone email website address and map
     </description>
-    <author email="limmouyleng@gmail.com">
-        LIM Mouyleng
+    <author email="n/a@n/a.com">
+        NGO Team
     </author>
     <content src="index.html" />    
     <content src="index.html"/>
@@ -18,7 +19,7 @@
         <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png"/>        
     </platform>
              
-<!--    
+    <!--    
     <platform name="ios">
         <icon height="180" src="res/ios/icon-60@3x.png" width="180"/>
         <icon height="60" src="res/ios/icon-60.png" width="60"/>
@@ -57,14 +58,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-
-    
-    <platform name="android"> 
-        <icon density="ldpi" src="res/android/drawable-ldpi/ic_launcher.png"/>
-        <icon density="mdpi" src="res/android/drawable-mdpi/ic_launcher.png"/>
-        <icon density="hdpi" src="res/android/drawable-hdpi/ic_launcher.png"/>
-        <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png"/>
-    </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />

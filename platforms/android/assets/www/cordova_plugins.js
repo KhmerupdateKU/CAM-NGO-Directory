@@ -11,10 +11,6 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-whitelist/whitelist.js",
         "id": "cordova-plugin-whitelist.whitelist",
-<<<<<<< HEAD
-        "pluginId": "cordova-plugin-whitelist",
-=======
->>>>>>> NGO-Category
         "runs": true
     }
 ];

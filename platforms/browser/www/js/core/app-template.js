@@ -17,21 +17,10 @@ var AppTemplate = {
                 }
             });
         }
-<<<<<<< HEAD
-      });      
-    }
-  },
-  compile: function (templateText, templateData, callback) {    
-    var template = Handlebars.compile(templateText);    
-    var content = template(templateData);    
-    callback(content);
-  }
-=======
     },
     compile: function (templateText, templateData, callback) {
         var template = Handlebars.compile(templateText);
         var content = template(templateData);
         callback(content);
     },
->>>>>>> NGO-Category
 };

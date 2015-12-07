@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.camngo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
@@ -14,10 +14,11 @@
     <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png" />
     <name>NGO Directory</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
+        volunteer at ngo by providing the phone email website address and map
     </description>
-    <author email="limmouyleng@gmail.com">
-        LIM Mouyleng
+    <author email="n/a@n/a.com">
+        NGO Team
     </author>
     <content src="index.html" />
     <icon src="res/ios/icon.png" />
