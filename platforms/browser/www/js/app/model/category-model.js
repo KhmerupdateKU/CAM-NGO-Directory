@@ -1,6 +1,7 @@
 var CategoryModel = {
     id: null,
-    name: null,    
+    name: null,
+    categoris: [],
     setId: function (id) {
         CategoryModel.id = id;
     },
@@ -13,14 +14,36 @@ var CategoryModel = {
     getName: function () {
         return CategoryModel.name;
     },
-    fetch: function (successCallback, errorCallback) {
+    fetch: function () {        
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
-            crossDomain: true,            
             url: URL + "index.php/category/fetchcategory",
-            success: successCallback,
-            error: errorCallback
+            crossDomain: true,
+            success: function (categories) {             
+                var ch = 1;
+                var cats = JSON.parse(categories);
+                $.map(cats, function (category) {
+                    if (ch === 1) {
+                        category.block = 'ui-block-a';
+                        ch += 1;
+                    } else if (ch === 2) {
+                        category.block = 'ui-block-b';
+                        ch += 1;
+                    } else {
+                        category.block = 'ui-block-c';
+                        ch = 1;
+                    }
+
+                });
+                CategoryModel.categoris = cats;
+                HomeController.getHome();
+            }, error: function (e) {                
+                console.log("error:", e);
+            }
         });
+    },
+    get: function () {        
+        return CategoryModel.categoris;
     }
 };

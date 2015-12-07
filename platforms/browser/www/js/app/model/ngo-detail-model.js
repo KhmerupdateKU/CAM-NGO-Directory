@@ -1,13 +1,30 @@
 var NgoDetailModel = {
-    fetchDetail: function (successCallback, errorCallback) {
+    details: [],
+    fetch: function () {
         $.ajax({
-            type: "POST",
+            type: "GET",
             datatype: "JSON",
             crossDomain: true,
-            url: URL + "index.php/ngodetail/fetchdetailbyngo_id/" + NgoModel.getId(),
-            success: successCallback,
-            error: errorCallback
+            url: URL + "index.php/ngodetail/fetchdetail",
+            success: function (details) {
+                NgoDetailModel.details = (JSON.parse(details));
+            },
+            error: function (e) {
+                console.log("error:", e);
+            }
         });
+    },
+    getDetail: function () {
+        return NgoDetailModel.details;
+    },
+    getDetailByNgo_Id: function (ngo_id) {
+        var temp = [];
+        $.map(NgoDetailModel.getDetail(), function (detail) {
+            if (detail.ngo_id === ngo_id) {
+                temp.push(detail);
+            }
+        });
+        return temp;
     }
 };
 

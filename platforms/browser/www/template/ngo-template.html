@@ -6,17 +6,21 @@
         <input id="filter-ngo" class="khmer-regular ui-input-text" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
     </div>
 </div>
-<div data-role="main" class="nd2-banner">       
+<div data-role="main" class="nd2-banner">           
+    {{#each ngos}}
+    <div class="nd2-card" id="list-ngo">
+        <a style="text-decoration: none" href="#page-ngo-detail" data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>            
+            <div class="card-title has-avatar">
+                <img src="{{../url}}img/ngo/{{logo}}" class="card-avatar" onError="this.onerror=null;this.src='img/app/na.png';"/>                             
+                <h6 class="card-primary-title">{{name_short}}</h6>
+            </div>
+            <div class="card-action">
+                <div class="card-supporting-text">
+                    <h5 class="khmer-regular">{{name_kh}}</h5>                
+                </div>
+            </div>
+        </a>        
+    </div>
 
-    <ul data-role="listview" data-icon="false" class="ui-listview" data-filter="true"          
-        data-filter-placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...." data-input="#filter-ngo" id="list-ngo">
-        {{#each ngos}}
-        <li class="ui-btn-a ui-body-a ui-li-has-thumb">
-            <a href="#page-ngo-detail" class="ui-btn waves-effect waves-button waves-effect waves-button" id={{ngo_id}} data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>                
-                <img src="{{../url}}img/ngo/{{logo}}" class="ui-thumbnail ui-thumbnail-circular" onError="this.onerror=null;this.src='img/app/na.png';"/>                             
-                <h1 class="khmer-regular" style="margin-top: 18px;font-size: 15pt">{{name_kh}}</h1>                
-            </a>
-        </li>
-        {{/each}}        
-    </ul>     
-</div>    
+    {{/each}}                
+</div>
