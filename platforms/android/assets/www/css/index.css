@@ -3,14 +3,11 @@
     src:url(fonts/KhmerOSNew-Regular.ttf) format('woff'),
         url(fonts/KhmerOSNew-Regular.ttf) format('truetype')       
 }
-
 .khmer-regular{    
     font-family:'Khmer';     
     margin: 0 0 0 0;
   
 }
-body { opacity: 0; }
-
 #map-block {
     width:100%;
     height:250px;    

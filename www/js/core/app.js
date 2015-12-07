@@ -4,6 +4,8 @@ var URL = "http://www.camngo.website/";
 var App = {
     initialize: function () {
         this.bindEvents();
+        this.ajaxSetupDefault();
+
     },
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -12,6 +14,16 @@ var App = {
         AppCache.clearAll();
         HomeController.getHome();
     },
+    ajaxSetupDefault: function(){
+        $.ajax({
+            datatype: "JSON",
+            crossDomain : true,
+            complete: function(){
+                ViewLoading.setBusy(false);
+            }
+        });
+        
+    }
 //    checkConnection: function ()
 //    {
 //        alert("connection");
@@ -28,4 +40,3 @@ var App = {
 //        alert('Connection type: ' + states[networkState]);
 //    }
 };
-App.initialize();
