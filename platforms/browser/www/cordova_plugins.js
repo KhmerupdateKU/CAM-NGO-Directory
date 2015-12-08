@@ -10,19 +10,12 @@ module.exports = [
         ]
     },
     {
-<<<<<<< HEAD:platforms/android/platform_www/cordova_plugins.js
-        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-        "id": "cordova-plugin-whitelist.whitelist",
-        "pluginId": "cordova-plugin-whitelist",
-        "runs": true
-=======
         "file": "plugins/cordova-plugin-inappbrowser/src/browser/InAppBrowserProxy.js",
         "id": "cordova-plugin-inappbrowser.InAppBrowserProxy",
         "pluginId": "cordova-plugin-inappbrowser",
         "merges": [
             ""
         ]
->>>>>>> NGO-Category:platforms/browser/www/cordova_plugins.js
     }
 ];
 module.exports.metadata = 
