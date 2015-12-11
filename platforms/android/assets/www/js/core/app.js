@@ -9,9 +9,11 @@ var App = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function () {
+    
         AppCache.clearAll();
         HomeController.getHome();
-    },
+          
+    }
 //    checkConnection: function ()
 //    {
 //        alert("connection");

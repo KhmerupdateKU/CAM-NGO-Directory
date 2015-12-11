@@ -1,36 +1,9 @@
-<<<<<<< HEAD
-<div data-role="header">
-    <a href="#page-home" class="ui-btn ui-btn-b ui-corner-all  ui-icon-back ui-btn-icon-left">&nbsp;</a>
-    <a href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Search</a>
-    <h1>NGO Detail</h1>
-    <br>
-  </div>
-<div data-role="main" class="ui-content">       
-     <h1>{{ngo_name}}</h1> 
-     <h2>Detail about NGO</h2>
-     <h3>{{description}}</h3>
-     <h2>Contacts:</h2>
-     <h3><pre>Telephone: {{phone}}</pre></h3>
-     <h3><pre>Website  : {{website}}</pre></h3>
-     <h3><pre>Email    : {{email}}</pre></h3>
-     <h3><pre>Address  : {{address}}</pre></h3>
-     
-    <div data-role="page" id="map-page" data-url="map-page">
-    <div data-role="header" data-theme="a">
-    <h1>Maps</h1>
-    </div>
-    <div role="main" class="ui-content" id="map-canvas">
-        <!-- map loads here... -->
-    </div>
-</div> 
-</div>    
-=======
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">    
     <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'>
         <i class="zmdi zmdi-arrow-back zmd-2x"></i>
     </a>
     {{#each detail}}    
-    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-detail-header">{{name_kh}}</h1>    
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-detail-header">{{name_short}}</h1>    
 </div>
 <div data-role="main" class="nd2-banner">           
     <div class="nd2-card">
@@ -132,4 +105,3 @@
 
 
 
->>>>>>> NGO-Category
