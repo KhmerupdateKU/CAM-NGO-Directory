@@ -1,19 +1,23 @@
-//var URL = "http://localhost:8088/Ad-ngos/";
-var URL = "http://www.camngo.website/";
+var URL = "http://localhost:8088/Ad-ngos/";
+//var URL = "http://www.camngo.website/";
 var App = {
-    initialize: function () {
-        this.bindEvents();        
+        initialize: function () {
+        this.bindEvents();
     },
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    onDeviceReady: function () {        
+    resetDB:function (){
+        performance.reset();
+        performance.schemaSync();
+    },
+    onDeviceReady: function () {      
         AppCache.clearAll();
-        HomeController.getHome();                
+        HomeController.getHome();
     },
     ajaxSetupDefault: function () {
-       // $.ajax({
-          
+        // $.ajax({
+
         //});
     }
 //    checkConnection: function ()

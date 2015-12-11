@@ -24,7 +24,7 @@ var CategoryModel = {
                 ViewLoading.setBusy(true);
             },
             beforeSend: function () {
-                //ViewLoading.setBusy(true);
+                ViewLoading.setBusy(true);
             },
             afterSend: function (){
                 ViewLoading.setBusy(true);

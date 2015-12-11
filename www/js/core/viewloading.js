@@ -2,11 +2,9 @@ var ViewLoading = {
     __busy: false,
     setBusy: function (busy) {
         ViewLoading.__busy = busy;
-        if (ViewLoading.__busy) {
-            console.log("reach1");
+        if (ViewLoading.__busy) {                    
             Spinner.show();
-        } else {
-            console.log("r2");
+        } else {            
             Spinner.hide();
         }
     }
