@@ -5,7 +5,7 @@
             <url>www/template/ngo-detail-template.html</url>
             <bookmark id="1">
                 <name/>
-                <line>48</line>
+                <line>22</line>
                 <key/>
             </bookmark>
         </file>
@@ -14,9 +14,10 @@
         <group>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/home-template.html</file>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/core/app.js</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/libs/index.js</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/model/category-model.js</file>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/controller/home-controller.js</file>
             <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/index.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/core/viewloading.js</file>
         </group>
     </open-files>
 </project-private>

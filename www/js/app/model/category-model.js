@@ -1,7 +1,6 @@
 var CategoryModel = {
     id: null,
     name: null,
-    categoris: [],
     setId: function (id) {
         CategoryModel.id = id;
     },
@@ -14,15 +13,25 @@ var CategoryModel = {
     getName: function () {
         return CategoryModel.name;
     },
-    fetch: function (success, error) {        
+    fetch: function (successCallback) {        
         $.ajax({
             type: "GET",
+            datatype: "JSON",
+            crossDomain: true,
             url: URL + "index.php/category/fetchcategory",
-            success: success,
-            error:error
+            success: successCallback,
+            error: function () {
+                ViewLoading.setBusy(true);
+            },
+            beforeSend: function () {
+                //ViewLoading.setBusy(true);
+            },
+            afterSend: function (){
+                ViewLoading.setBusy(true);
+            },
+            complete: function () {
+                //ViewLoading.setBusy(true);
+            },
         });
-    },
-    get: function () {        
-        return CategoryModel.categoris;
     }
 };

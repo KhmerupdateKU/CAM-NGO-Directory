@@ -2,9 +2,11 @@ var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
         var $element = $('#page-ngo');        
-        var jsonNgos = NgoModel.getNgosByCat_id(CategoryModel.getId());
-        var data = {ngos: jsonNgos, ngo_category: CategoryModel.getName(), url: URL};
-        NgoView.renderNgos($element, data);
+        NgoModel.fetByCat_id(function (ngos) {
+            var jsonNgos = JSON.parse(ngos);
+            var data = {ngos: jsonNgos, ngo_category: CategoryModel.getName(), url: URL};
+            NgoView.renderNgos($element, data);
+        });
     }
 };
 

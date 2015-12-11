@@ -1,28 +1,20 @@
 //var URL = "http://localhost:8088/Ad-ngos/";
 var URL = "http://www.camngo.website/";
-
 var App = {
     initialize: function () {
-        this.bindEvents();
-        this.ajaxSetupDefault();
-
+        this.bindEvents();        
     },
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    onDeviceReady: function () {
+    onDeviceReady: function () {        
         AppCache.clearAll();
-        HomeController.getHome();
+        HomeController.getHome();                
     },
-    ajaxSetupDefault: function(){
-        $.ajax({
-            datatype: "JSON",
-            crossDomain : true,
-            complete: function(){
-                ViewLoading.setBusy(false);
-            }
-        });
-        
+    ajaxSetupDefault: function () {
+       // $.ajax({
+          
+        //});
     }
 //    checkConnection: function ()
 //    {
@@ -40,3 +32,4 @@ var App = {
 //        alert('Connection type: ' + states[networkState]);
 //    }
 };
+App.initialize();
