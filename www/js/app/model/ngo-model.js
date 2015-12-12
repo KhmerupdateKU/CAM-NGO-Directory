@@ -2,21 +2,27 @@ var NgoModel = {
     id: null,
     name: null,
     getName: function () {
-        return NgoModel.name;
+        return this.name;
     },
     setId: function (id) {
-        NgoModel.id = id;
+        this.id = id;
     },
     getId: function () {
-        return NgoModel.id;
+        return this.id;
     },
     setName: function (name) {
-        NgoModel.name = name;
+        this.name = name;
     },
-    fetByCat_id: function (successCallback) {
+    fetchByCat_id: function (successCallback) {        
         $.ajax({
-            url: URL + "index.php/ngo/fetchngobycat_id/" + CategoryModel.getId(),
+            url: URL + "index.php/ngo/fetchngobycat_id/" + CategoryModel.getId(),            
             success: successCallback            
         });
-    },
+    },    
+    fetch: function (successCallback) {        
+        $.ajax({
+            url: URL + "index.php/ngo/fetchngo",            
+            success: successCallback            
+        });
+    }
 };

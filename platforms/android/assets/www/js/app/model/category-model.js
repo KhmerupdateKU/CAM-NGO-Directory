@@ -1,6 +1,6 @@
 var CategoryModel = {
     id: null,
-    name: null,    
+    name: null,
     setId: function (id) {
         CategoryModel.id = id;
     },
@@ -14,9 +14,9 @@ var CategoryModel = {
         return CategoryModel.name;
     },
     fetch: function (successCallback) {
-        $.ajax({                     
+        $.ajax({
             url: URL + "index.php/category/fetchcategory",
-            success: successCallback,            
+            success: successCallback
         });
     }
 };

@@ -13,25 +13,10 @@ var CategoryModel = {
     getName: function () {
         return CategoryModel.name;
     },
-    fetch: function (successCallback) {        
+    fetch: function (successCallback) {
         $.ajax({
-            type: "GET",
-            datatype: "JSON",
-            crossDomain: true,
             url: URL + "index.php/category/fetchcategory",
-            success: successCallback,
-            error: function () {
-                ViewLoading.setBusy(true);
-            },
-            beforeSend: function () {
-                ViewLoading.setBusy(true);
-            },
-            afterSend: function (){
-                ViewLoading.setBusy(true);
-            },
-            complete: function () {
-                //ViewLoading.setBusy(true);
-            },
+            success: successCallback
         });
     }
 };

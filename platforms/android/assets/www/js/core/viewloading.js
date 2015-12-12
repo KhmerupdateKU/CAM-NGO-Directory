@@ -1,33 +1,29 @@
 var ViewLoading = {
-    __busy : false,
-    setBusy: function(busy){
+    __busy: false,
+    setBusy: function (busy) {
         ViewLoading.__busy = busy;
-        if(ViewLoading.__busy){
+        if (ViewLoading.__busy) {                    
             Spinner.show();
-        }else{
+        } else {            
             Spinner.hide();
         }
     }
 }
 
 var Spinner = {
-    show: function(){
+    show: function () {
 //        console.log("mobile activepage : ", $.mobile.activePage)
 //        $.mobile.activePage.addClass("ui-disabled");
-        $.mobile.loading( 'show', {
-                text: 'foo',
-                textVisible: true,
-                theme: 'z',
-                html: ""
+        $.mobile.loading('show', {
+            text: 'Loading',
+            textVisible: true,            
         });
     },
-    hide: function(){
+    hide: function () {
 //        $.mobile.activePage.removeClass("ui-disabled");
         $.mobile.loading('hide', {
-            text: 'foo',
-            textVisible: true,
-            theme: 'z',
-                html: ""
+            text: 'Complete',
+            textVisible: true,            
         });
     }
 }
