@@ -1,6 +1,5 @@
 //var URL = "http://localhost:8088/Ad-ngos/";
 var URL = "http://www.camngo.website/";
-
 var App = {
     __db_size: 10 * 1024 * 124,
     __db_name: 'ngos',
@@ -20,8 +19,7 @@ var App = {
         connectionDB(this.__db_name, this.__db_size);
         createTable();
         AppCache.clearAll();
-        HomeController.getHome();
-        //console.log("is online:", this.isOnline());
+        HomeController.getHome();        
         App.checkConnection();
     },
     ajaxSetupDefault: function () {
@@ -54,8 +52,8 @@ var App = {
 //    },
     checkConnection: function () {               
         var networkState = navigator.connection.type;
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown connection';
+        var states = {};        
+        //states[Connection.UNKNOWN] = 'Unknown connection';
         states[Connection.ETHERNET] = 'Ethernet connection';
         states[Connection.WIFI] = 'WiFi connection';
         states[Connection.CELL_2G] = 'Cell 2G connection';

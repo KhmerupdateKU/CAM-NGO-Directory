@@ -2,7 +2,7 @@ var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
         var $element = $('#page-ngo');
-        NgoModel.fetch(function (ngos) {
+        NgoModel.fetchByCat_id(function (ngos) {
             var jsonNgos = JSON.parse(ngos);
             NgoController.sync(jsonNgos);
         });

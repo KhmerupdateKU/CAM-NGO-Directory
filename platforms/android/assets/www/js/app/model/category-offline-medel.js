@@ -17,8 +17,9 @@ var CategoryOfflineModel = {
     update: function (oldCategories, newCategories) {
         $.map(newCategories, function (newCategory) {
             var isNew = true;
-            $.each(oldCategories, function (oldCategory) {
-                if (oldCategory.cat_id() === newCategory.cat_id) {
+            $.each(oldCategories, function (tag, oldCategory) {
+                if (oldCategory.cat_id() == newCategory.cat_id) {
+                    console.log("equal");
                     isNew = false;
                     oldCategory.name_kh(newCategory.name_kh);
                     oldCategory.name_en(newCategory.name_en);

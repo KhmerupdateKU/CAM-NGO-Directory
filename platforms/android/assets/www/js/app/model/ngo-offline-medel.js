@@ -20,8 +20,8 @@ var NgoOfflineModel = {
     update: function (oldNgos, newNgos) {
         $.map(newNgos, function (newNgo) {
             var isNew = true;
-            $.each(oldNgos, function (oldNgo) {
-                if (oldNgo.ngo_id() === newNgo.ngo_id) {
+            $.each(oldNgos, function (tag, oldNgo) {
+                if (oldNgo.ngo_id() == newNgo.ngo_id) {
                     isNew = false;
                     oldNgo.cat_id(newNgo.cat_id);
                     oldNgo.name_kh(newNgo.name_kh);
