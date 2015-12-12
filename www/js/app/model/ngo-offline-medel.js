@@ -14,8 +14,11 @@ var NgoOfflineModel = {
     fetch: function (callback) {
         Ngos.all().list(callback);
     },
-    fetchby_cat_id: function (callback) {
-        Ngos.all().filter("cat_id", '=', CategoryModel.getId()).list(callback);
+    fetchbycat_id: function (cat_id, callback) {
+        Ngos.all().filter("cat_id", '=', cat_id).list(callback);
+    },
+    fetchbyngo_id: function (ngo_id, callback) {
+        Ngos.all().filter("ngo_id", '=', ngo_id).one(callback);
     },
     update: function (oldNgos, newNgos) {
         $.map(newNgos, function (newNgo) {

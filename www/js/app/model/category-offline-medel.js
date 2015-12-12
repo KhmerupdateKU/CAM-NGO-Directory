@@ -14,11 +14,11 @@ var CategoryOfflineModel = {
     fetch: function (callback) {
         Category.all().list(callback);
     },
-    update: function (oldCategories, newCategories) {
+    update: function (oldCategories, newCategories, callback) {
         $.map(newCategories, function (newCategory) {
             var isNew = true;
             $.each(oldCategories, function (tag, oldCategory) {
-                if (oldCategory.cat_id() == newCategory.cat_id) {                    
+                if (oldCategory.cat_id() == newCategory.cat_id) {
                     isNew = false;
                     oldCategory.name_kh(newCategory.name_kh);
                     oldCategory.name_en(newCategory.name_en);
@@ -33,5 +33,8 @@ var CategoryOfflineModel = {
                 CategoryOfflineModel.add(newCategory);
             }
         });
+        CategoryOfflineModel.fetch(function (categories) {
+            callback(categories);
+        });
     }
-}
+};

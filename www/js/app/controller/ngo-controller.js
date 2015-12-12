@@ -1,12 +1,13 @@
 var NgoController = {
     tmpNgoDetail: [],
     getNgos: function () {
+        var cat_id = CategoryModel.getId();
         var $element = $('#page-ngo');
-        NgoModel.fetchByCat_id(function (ngos) {
+        NgoModel.fetchByCat_id(cat_id, function (ngos) {
             var jsonNgos = JSON.parse(ngos);
             NgoController.sync(jsonNgos);
         });
-        NgoOfflineModel.fetchby_cat_id(function (ngos) {
+        NgoOfflineModel.fetchbycat_id(cat_id, function (ngos) {
             var temp_ngo = $.map(ngos, function (ngo) {
                 return{
                     ngo_id: ngo.ngo_id(),

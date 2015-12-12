@@ -19,7 +19,7 @@ var App = {
         connectionDB(this.__db_name, this.__db_size);
         createTable();
         AppCache.clearAll();
-        HomeController.getHome();        
+        HomeController.start();
         App.checkConnection();
     },
     ajaxSetupDefault: function () {
@@ -28,16 +28,16 @@ var App = {
             datatype: "JSON",
             crossDomain: true,
             beforeSend: function () {
-                ViewLoading.setBusy(true);
+                //          ViewLoading.setBusy(true);
             },
             afterSend: function () {
-                ViewLoading.setBusy(true);
+                //        ViewLoading.setBusy(true);
             },
             complete: function () {
-                ViewLoading.setBusy(false);
+                //      ViewLoading.setBusy(false);
             },
             error: function () {
-                ViewLoading.setBusy(true);
+                //    ViewLoading.setBusy(true);
             }
         });
     },
@@ -50,9 +50,9 @@ var App = {
 //        online = navigator.onLine; //browser
 //        return online;
 //    },
-    checkConnection: function () {               
+    checkConnection: function () {
         var networkState = navigator.connection.type;
-        var states = {};        
+        var states = {};
         //states[Connection.UNKNOWN] = 'Unknown connection';
         states[Connection.ETHERNET] = 'Ethernet connection';
         states[Connection.WIFI] = 'WiFi connection';

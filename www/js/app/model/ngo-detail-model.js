@@ -1,8 +1,8 @@
 var NgoDetailModel = {
-    fetchDetail: function (successCallback) {
+    fetchDetailByngo_id: function (ngo_id, successCallback) {
         $.ajax({
-            url: URL + "index.php/ngodetail/fetchdetailbyngo_id/" + NgoModel.getId(),
-            success: successCallback,            
+            url: URL + "index.php/ngodetail/fetchdetailbyngo_id/" + ngo_id,
+            success: successCallback,
         });
     }
 };

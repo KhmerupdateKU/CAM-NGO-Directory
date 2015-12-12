@@ -13,16 +13,16 @@ var NgoModel = {
     setName: function (name) {
         this.name = name;
     },
-    fetchByCat_id: function (successCallback) {        
+    fetchByCat_id: function (cat_id, successCallback) {
         $.ajax({
-            url: URL + "index.php/ngo/fetchngobycat_id/" + CategoryModel.getId(),            
-            success: successCallback            
+            url: URL + "index.php/ngo/fetchngobycat_id/" + cat_id,
+            success: successCallback
         });
-    },    
-    fetch: function (successCallback) {        
+    },
+    fetch: function (successCallback) {
         $.ajax({
-            url: URL + "index.php/ngo/fetchngo",            
-            success: successCallback            
+            url: URL + "index.php/ngo/fetchngo",
+            success: successCallback
         });
     }
 };
