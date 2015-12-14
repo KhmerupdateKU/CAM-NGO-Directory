@@ -2,6 +2,9 @@
 var URL = "http://www.camngo.website/";
 
 var App = {
+    
+    DB_SIZE: 10 * 1024 * 1024,
+    DB_NAME: 'camnfydr_ngo',
     initialize: function () {
         this.bindEvents();
     },
@@ -9,9 +12,16 @@ var App = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function () {
+        console.log(' ondevice ready')
+        connectionDB(App.DB_NAME,App.DB_SIZE);
+        createTables();
+    
         AppCache.clearAll();
         HomeController.getHome();
-    },
+        
+        
+          
+    }
 //    checkConnection: function ()
 //    {
 //        alert("connection");

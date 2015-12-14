@@ -5,6 +5,7 @@ var HomeController = {
         if (cats.length !== 0) {
             var data = {categories: cats, url: URL, class: "ui-hidden-accessible"};
             HomeView.renderHome($element, data);
+            persistence.add();
         } else {
             HomeView.renderHome($element, null);
             setInterval(function () {

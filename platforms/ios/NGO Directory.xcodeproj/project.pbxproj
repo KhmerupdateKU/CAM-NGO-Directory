@@ -40,6 +40,8 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		AF06265E2BD54538A2965C0F /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 337D5C49CC9A4E0EB564B1C4 /* CDVInAppBrowser.m */; };
+		F9284EBED1A84CE79D48BE5B /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE9F8153774EF8B3E3BD1B /* CDVSplashScreen.m */; };
+		D18A97ECB9754C73BE8F0812 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8E602E254447159023CDF6 /* CDVViewController+SplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "NGO Directory/config.xml"; sourceTree = "<group>"; };
 		337D5C49CC9A4E0EB564B1C4 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		01C5E6D110044A1489F684D8 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9BCE9F8153774EF8B3E3BD1B /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BA8E602E254447159023CDF6 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		B00C662090A94E1284A5430E /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		0C77A92F535C4D3F83548F9D /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,10 @@
 			children = (
 				337D5C49CC9A4E0EB564B1C4 /* CDVInAppBrowser.m */,
 				01C5E6D110044A1489F684D8 /* CDVInAppBrowser.h */,
+				9BCE9F8153774EF8B3E3BD1B /* CDVSplashScreen.m */,
+				BA8E602E254447159023CDF6 /* CDVViewController+SplashScreen.m */,
+				B00C662090A94E1284A5430E /* CDVSplashScreen.h */,
+				0C77A92F535C4D3F83548F9D /* CDVViewController+SplashScreen.h */,
 			);
 			name = Plugins;
 			path = "NGO Directory/Plugins";
@@ -392,6 +402,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				AF06265E2BD54538A2965C0F /* CDVInAppBrowser.m in Sources */,
+				F9284EBED1A84CE79D48BE5B /* CDVSplashScreen.m in Sources */,
+				D18A97ECB9754C73BE8F0812 /* CDVViewController+SplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
