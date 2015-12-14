@@ -14,7 +14,10 @@
         <group>
             <file>file:/Users/ku/Desktop/CAM-NGO-Directory/config.xml</file>
             <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/template/about-template.html</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/index.html</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/js/app/controller/home-controller.js</file>
             <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/template/ngo-detail-template.html</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/js/app/controller/ngo-controller.js</file>
             <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/js/core/app.js</file>
         </group>
     </open-files>
