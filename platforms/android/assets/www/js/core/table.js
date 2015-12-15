@@ -14,12 +14,13 @@ function createTable() {
         name_short: 'TEXT',
         logo: 'TEXT',
     });
-    Detail = persistence.define('tblDetail', {
+    Details = persistence.define('tblDetail', {
         nd_id: 'INT',
         ngo_id: 'INT',
         phone: 'TEXT',
         email: 'TEXT',
         website: 'TEXT',
+        address: 'TEXT',
         map: 'TEXT',
         description: 'TEXT'
     });

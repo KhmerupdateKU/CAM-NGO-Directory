@@ -1,10 +1,11 @@
 var NgoDetailView = {
-    renderDetail: function ($element, data) {                
-        AppTemplate.process("ngo-detail-template.html", data, function (content) {                      
-            $element.html(content);            
+    renderDetail: function ($element, data) {
+        AppTemplate.process("ngo-detail-template.html", data, function (content) {
+            $element.html(content);
+            ViewLoading.setBusy(true);
             $element.trigger("create");
         });
-    },    
+    },
 };
 
 

@@ -1,29 +1,30 @@
 var ViewLoading = {
     __busy: false,
     setBusy: function (busy) {
+        console.log( 'busy : ', busy);
         ViewLoading.__busy = busy;
-        if (ViewLoading.__busy) {                    
+        if (ViewLoading.__busy) {
             Spinner.show();
-        } else {            
+        } else {
+            console.log('hide loading');
             Spinner.hide();
         }
     }
 }
-
 var Spinner = {
     show: function () {
-//        console.log("mobile activepage : ", $.mobile.activePage)
-//        $.mobile.activePage.addClass("ui-disabled");
         $.mobile.loading('show', {
-            text: 'Loading',
-            textVisible: true,            
+            text: 'Complete',
+            textVisible: true,
+            html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><img src='img/app/FlipFlop.gif'/></span><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>សូមមេត្តារងចាំ</h4></span></div></center>"
         });
+        $.mobile.activePage.addClass("ui-disabled");
     },
     hide: function () {
-//        $.mobile.activePage.removeClass("ui-disabled");
+        $.mobile.activePage.removeClass("ui-disabled");
         $.mobile.loading('hide', {
             text: 'Complete',
-            textVisible: true,            
+            textVisible: true,
         });
     }
 }

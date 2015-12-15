@@ -14,7 +14,7 @@ var CategoryOfflineModel = {
     fetch: function (callback) {
         Category.all().list(callback);
     },
-    update: function (oldCategories, newCategories, callback) {
+    update: function (oldCategories, newCategories) {
         $.map(newCategories, function (newCategory) {
             var isNew = true;
             $.each(oldCategories, function (tag, oldCategory) {
@@ -32,9 +32,6 @@ var CategoryOfflineModel = {
             if (isNew) {
                 CategoryOfflineModel.add(newCategory);
             }
-        });
-        CategoryOfflineModel.fetch(function (categories) {
-            callback(categories);
         });
     }
 };

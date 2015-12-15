@@ -19,21 +19,18 @@ var NgoDetailOfflineModel = {
     fetch: function (callback) {
         Details.all().list(callback);
     },
-    update: function (ngo_id, newDetail) {
-
-        this.fetchbyngo_id(ngo_id, function (oldDetail) {
-            if (oldDetail != null) {                
-                oldDetail.nd_id(newDetail.nd_id);
-                oldDetail.ngo_id(newDetail.ngo_id);
-                oldDetail.phone(newDetail.phone);
-                oldDetail.email(newDetail.email);
-                oldDetail.website(newDetail.website);
-                oldDetail.address(newDetail.address);
-                oldDetail.map(newDetail.map);
-                oldDetail.description(newDetail.description);
-            } else {               
-                NgoDetailOfflineModel.add(newDetail);
-            }
-        });
+    update: function (oldDetail, newDetail) {
+        if (oldDetail != null) {
+            oldDetail.nd_id(newDetail.nd_id);
+            oldDetail.ngo_id(newDetail.ngo_id);
+            oldDetail.phone(newDetail.phone);
+            oldDetail.email(newDetail.email);
+            oldDetail.website(newDetail.website);
+            oldDetail.address(newDetail.address);
+            oldDetail.map(newDetail.map);
+            oldDetail.description(newDetail.description);
+        } else {
+            NgoDetailOfflineModel.add(newDetail);
+        }
     }
 }

@@ -20,7 +20,7 @@ var App = {
         createTable();
         AppCache.clearAll();
         HomeController.start();
-        App.checkConnection();
+        //setTimeout(App.checkConnection(), 1000);
     },
     ajaxSetupDefault: function () {
         $.ajax({
@@ -34,33 +34,33 @@ var App = {
                 //        ViewLoading.setBusy(true);
             },
             complete: function () {
-                //      ViewLoading.setBusy(false);
+                ViewLoading.setBusy(false);
             },
             error: function () {
                 //    ViewLoading.setBusy(true);
             }
         });
     },
-//    isOnline: function () {
-//        var online = false;
-//        if (navigator.connection) {
-//            online = (navigator.connection.type !== Connection.NONE);
-//            return online;
-//        }
-//        online = navigator.onLine; //browser
-//        return online;
-//    },
-    checkConnection: function () {
-        var networkState = navigator.connection.type;
-        var states = {};
-        //states[Connection.UNKNOWN] = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI] = 'WiFi connection';
-        states[Connection.CELL_2G] = 'Cell 2G connection';
-        states[Connection.CELL_3G] = 'Cell 3G connection';
-        states[Connection.CELL_4G] = 'Cell 4G connection';
-        states[Connection.CELL] = 'Cell generic connection';
-        states[Connection.NONE] = 'No network connection';
-        alert('Connection type: ' + states[networkState]);
-    }
+    isOnline: function () {
+        var online = false;
+        if (navigator.connection) {
+            online = (navigator.connection.type !== Connection.NONE);
+            return online;
+        }
+        online = navigator.onLine; //browser
+        return online;
+    },
+//    checkConnection: function () {
+//        var networkState = navigator.connection.type;
+//        var states = {};
+//        states[Connection.UNKNOWN] = 'Unknown connection';
+//        states[Connection.ETHERNET] = 'Ethernet connection';
+//        states[Connection.WIFI] = 'WiFi connection';
+//        states[Connection.CELL_2G] = 'Cell 2G connection';
+//        states[Connection.CELL_3G] = 'Cell 3G connection';
+//        states[Connection.CELL_4G] = 'Cell 4G connection';
+//        states[Connection.CELL] = 'Cell generic connection';
+//        states[Connection.NONE] = 'No network connection';
+//        alert('Connection type: ' + states[networkState]);
+//    }
 };

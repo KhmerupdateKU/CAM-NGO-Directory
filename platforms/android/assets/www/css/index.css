@@ -6,7 +6,7 @@
 .khmer-regular{    
     font-family:'Khmer';     
     margin: 0 0 0 0;
-  
+
 }
 #map-block {
     width:100%;
@@ -19,4 +19,10 @@
     width: 200px;
     z-index: 0;
     position: relative;    
+}
+.loading{
+    background-color: white;
+    width: 400px;
+    height: 200px;   
+    align-content: center;
 }

@@ -16,7 +16,7 @@ var CategoryModel = {
     fetch: function (successCallback) {
         $.ajax({
             url: URL + "index.php/category/fetchcategory",
-            success: successCallback
+            success: successCallback            
         });
     }
 };

@@ -1,6 +1,6 @@
 $(function () {
     $(document).delegate("#page-ngo-detail", "pagebeforeshow", function () {
-        NgoDetailController.getDetail();                    
+        NgoDetailController.start();                    
     });
     $(document).delegate("#page-ngo-detail", "pageshow", function () {                    
         

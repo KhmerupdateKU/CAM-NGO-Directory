@@ -5,17 +5,16 @@
             <url>www/template/ngo-detail-template.html</url>
             <bookmark id="1">
                 <name/>
-                <line>22</line>
+                <line>21</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/core/app.js</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/controller/home-controller.js</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/action/home-action.js</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/model/category-offline-medel.js</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/favorite-template.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/ngo-detail-template.html</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/view/ngo-detail-view.js</file>
         </group>
     </open-files>
 </project-private>
