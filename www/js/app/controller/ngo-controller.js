@@ -9,25 +9,19 @@ var NgoController = {
         var cat_id = CategoryModel.getId();
         if (App.isOnline()) {
             NgoModel.fetchByCat_id(cat_id, function (ngos) {
-                var newNgos = JSON.parse(ngos);
-                NgoController.prepareOnline(newNgos, function (finalngos) {
-                    NgoController.getNgos(finalngos);
-                });
-                NgoController.sync(cat_id, newNgos);
+                var ngosJson = JSON.parse(ngos);
+                NgoController.render(ngosJson);
             });
-        } 
+        }
     },
-    prepareOnline: function (ngos, callback) {
-        callback(ngos);
-    },    
-    getNgos: function (ngos) {
+    render: function (ngos) {
         var $element = $('#page-ngo');
         var data = {ngos: ngos, header: CategoryModel.getName(), url: URL};
         NgoView.renderNgos($element, data);
         ViewLoading.setBusy(false);
     },
-    sync: function (cat_id, newNgos) {
-        NgoOfflineModel.fetchbycat_id(cat_id, function (oldNgos) {
+    sync: function (ngo_id, newNgos) {
+        NgoOfflineModel.fetchbyngo_id(ngo_id, function (oldNgos) {
             NgoOfflineModel.update(oldNgos, newNgos);
         });
     },

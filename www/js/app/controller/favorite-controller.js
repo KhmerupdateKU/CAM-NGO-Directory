@@ -49,10 +49,10 @@ var FavoriteController = {
                 }];
         });
     },
-    addNgo: function (ngo_id, cat_name) {
-
-    },
-    addDetail: function (ngo_id) {
+    addNgo: function (ngo_id, ngo) {
+        NgoController.sync(ngo_id,ngo);
+    },   
+    addDetail: function (ngo_id,detail) {
 
     }
 };
