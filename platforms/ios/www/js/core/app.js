@@ -13,12 +13,13 @@ var App = {
     },
     onDeviceReady: function () {
         console.log(' ondevice ready')
+     
         connectionDB(App.DB_NAME,App.DB_SIZE);
         createTables();
-    
+   
         AppCache.clearAll();
         HomeController.getHome();
-        
+    
         
           
     }

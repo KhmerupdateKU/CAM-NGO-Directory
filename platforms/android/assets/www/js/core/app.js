@@ -16,6 +16,7 @@ var App = {
      
         connectionDB(App.DB_NAME,App.DB_SIZE);
         createTables();
+        
    
         AppCache.clearAll();
         HomeController.getHome();
