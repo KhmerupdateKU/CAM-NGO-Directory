@@ -4,7 +4,7 @@ var NgoDetailView = {
             $element.html(content);            
             $element.trigger("create");
         });
-    },
+    }
 };
 
 

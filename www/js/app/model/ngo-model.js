@@ -24,5 +24,11 @@ var NgoModel = {
             url: URL + "index.php/ngo/fetchngo",
             success: successCallback
         });
+    },
+    favorite: function (ngo_id, status, successCallback) {
+        $.ajax({
+            url: URL + "index.php/favorite/update/" + ngo_id + "/" + status,
+            success: successCallback
+        });
     }
 };

@@ -49,28 +49,26 @@ var HomeController = {
         var data = {categories: cats, url: URL};
         HomeView.renderHome($element, data);
     },
-    getOnline: function(){
+    getOnline: function () {
         CategoryModel.fetch(function (category) {
-                var newCategories = JSON.parse(category);
-                HomeController.prepareOnline(newCategories, function (cats) {
-                    HomeController.render(cats);
-                });
-                HomeController.sync(newCategories);
+            var newCategories = JSON.parse(category);
+            HomeController.prepareOnline(newCategories, function (cats) {
+                HomeController.render(cats);
             });
+            HomeController.sync(newCategories);
+        });
     },
-    getOffline: function(){
+    getOffline: function () {
         CategoryOfflineModel.fetch(function (categories) {
-                HomeController.prepareOffnline(categories, function (cats) {
-                    HomeController.render(cats);
-                });
-                console.log("do offline");
+            HomeController.prepareOffnline(categories, function (cats) {
+                HomeController.render(cats);
             });
+            console.log("do offline");
+        });
     },
     get: function () {
         if (App.isOnline())
             HomeController.getOnline();
-        else 
-            HomeController.getOffline();
     },
     sync: function (newCategories) {
         CategoryOfflineModel.fetch(function (oldCategories) {

@@ -44,30 +44,31 @@ var HomeController = {
         });
         callback(categories);
     },
-    getHome: function (cats) {
+    render: function (cats) {
         var $element = $('#page-home');
         var data = {categories: cats, url: URL};
         HomeView.renderHome($element, data);
-        ViewLoading.setBusy(false);
+    },
+    getOnline: function () {
+        CategoryModel.fetch(function (category) {
+            var newCategories = JSON.parse(category);
+            HomeController.prepareOnline(newCategories, function (cats) {
+                HomeController.render(cats);
+            });
+            HomeController.sync(newCategories);
+        });
+    },
+    getOffline: function () {
+        CategoryOfflineModel.fetch(function (categories) {
+            HomeController.prepareOffnline(categories, function (cats) {
+                HomeController.render(cats);
+            });
+            console.log("do offline");
+        });
     },
     get: function () {
         if (App.isOnline())
-            CategoryModel.fetch(function (category) {
-                var newCategories = JSON.parse(category);
-                HomeController.prepareOnline(newCategories, function (cats) {
-                    HomeController.getHome(cats);
-                });
-                HomeController.sync(newCategories);
-                console.log("do online");
-            });
-        else {
-            CategoryOfflineModel.fetch(function (categories) {
-                HomeController.prepareOffnline(categories, function (cats) {
-                    HomeController.getHome(cats);
-                });
-                console.log("do offline");
-            });
-        }
+            HomeController.getOnline();
     },
     sync: function (newCategories) {
         CategoryOfflineModel.fetch(function (oldCategories) {
@@ -75,6 +76,3 @@ var HomeController = {
         });
     }
 };
-
-
-

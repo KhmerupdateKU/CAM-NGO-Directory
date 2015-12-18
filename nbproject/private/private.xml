@@ -12,9 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/favorite-template.html</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/template/ngo-detail-template.html</file>
-            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/app/view/ngo-detail-view.js</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/platforms/android/res/xml/config.xml</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/www/js/core/app.js</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/platforms/android/AndroidManifest.xml</file>
+            <file>file:/C:/Users/Channy/CAM-NGO-Directory/config.xml</file>
         </group>
     </open-files>
 </project-private>

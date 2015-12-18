@@ -1,9 +1,9 @@
-<div data-role="header" data-position="fixed" data-fullscreen="false">
+<div data-role="header" data-position="fixed" data-fullscreen="false">    
+    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>{{header}}</h1>
     <a href="#" data-rel="back" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>
-    <a href="#" id="btn-favorite" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i id="favorite" class="zmdi zmdi-favorite zmd-2x"></i></a>    
-    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-detail-header">{{header}}</h1>    
+    <a href="#" id="btn-favorite" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i id="favorite" class="zmdi {{favorite}} zmd-2x"></i></a>     
 </div>
-<div data-role="main" class="nd2-banner">           
+<div data-role="main" class="nd2-banner">               
     {{#each detail}}    
     <div class="nd2-card">
         <div class="card-media">
@@ -97,8 +97,8 @@
             </script>
         </div>            
     </div>
+    {{/each}}   
 </div>    
-{{/each}}      
 
 
 

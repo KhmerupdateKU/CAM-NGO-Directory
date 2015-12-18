@@ -1,7 +1,6 @@
 var NgoDetailOfflineModel = {
     add: function (detail) {
-        var detailParam = {
-            nd_id: detail.nd_id,
+        var detailParam = {           
             ngo_id: detail.ngo_id,
             phone: detail.phone,
             email: detail.email,
@@ -20,8 +19,7 @@ var NgoDetailOfflineModel = {
         Details.all().list(callback);
     },
     update: function (oldDetail, newDetail) {
-        if (oldDetail != null) {
-            oldDetail.nd_id(newDetail.nd_id);
+        if (oldDetail && oldDetail.ngo_id() == newDetail.ngo_id) {            
             oldDetail.ngo_id(newDetail.ngo_id);
             oldDetail.phone(newDetail.phone);
             oldDetail.email(newDetail.email);

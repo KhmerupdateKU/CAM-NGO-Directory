@@ -18,12 +18,16 @@ var NgoController = {
         var $element = $('#page-ngo');
         var data = {ngos: ngos, header: CategoryModel.getName(), url: URL};
         NgoView.renderNgos($element, data);
-        ViewLoading.setBusy(false);
     },
-    sync: function (ngo_id, newNgos) {
-        NgoOfflineModel.fetchbyngo_id(ngo_id, function (oldNgos) {
-            NgoOfflineModel.update(oldNgos, newNgos);
+    sync: function (ngo_id, newNgo) {
+        console.log("fuckin old new:", newNgo);
+        NgoOfflineModel.fetchbyngo_id(ngo_id, function (oldNgo) {
+            console.log("fuckin old ngo:", oldNgo);
+            NgoOfflineModel.update(oldNgo, newNgo);
         });
+    },
+    remove: function (ngo_id) {
+        NgoOfflineModel.remove(ngo_id);
     },
 };
 

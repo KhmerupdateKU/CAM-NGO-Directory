@@ -9,46 +9,25 @@ var NgoController = {
         var cat_id = CategoryModel.getId();
         if (App.isOnline()) {
             NgoModel.fetchByCat_id(cat_id, function (ngos) {
-                var newNgos = JSON.parse(ngos);
-                NgoController.prepareOnline(newNgos, function (finalngos) {
-                    NgoController.getNgos(finalngos);
-                });
-                NgoController.sync(cat_id, newNgos);
-            });
-        } else {
-            NgoOfflineModel.fetchbycat_id(cat_id, function (ngos) {
-                NgoController.prepareOffline(ngos, function (finalngos) {
-                    NgoController.getNgos(finalngos);
-                });
+                var ngosJson = JSON.parse(ngos);
+                NgoController.render(ngosJson);
             });
         }
     },
-    prepareOnline: function (ngos, callback) {
-        callback(ngos);
-    },
-    prepareOffline: function (ngos, callback) {
-        var temp_ngo = $.map(ngos, function (ngo) {
-            return{
-                ngo_id: ngo.ngo_id(),
-                cat_id: ngo.cat_id(),
-                name_kh: ngo.name_kh(),
-                name_en: ngo.name_en(),
-                name_short: ngo.name_short(),
-                logo: ngo.logo()
-            }
-        });
-        callback(temp_ngo);
-    },
-    getNgos: function (ngos) {
+    render: function (ngos) {
         var $element = $('#page-ngo');
         var data = {ngos: ngos, header: CategoryModel.getName(), url: URL};
         NgoView.renderNgos($element, data);
-        ViewLoading.setBusy(false);
     },
-    sync: function (cat_id, newNgos) {
-        NgoOfflineModel.fetchbycat_id(cat_id, function (oldNgos) {
-            NgoOfflineModel.update(oldNgos, newNgos);
+    sync: function (ngo_id, newNgo) {
+        console.log("fuckin old new:", newNgo);
+        NgoOfflineModel.fetchbyngo_id(ngo_id, function (oldNgo) {
+            console.log("fuckin old ngo:", oldNgo);
+            NgoOfflineModel.update(oldNgo, newNgo);
         });
+    },
+    remove: function (ngo_id) {
+        NgoOfflineModel.remove(ngo_id);
     },
 };
 

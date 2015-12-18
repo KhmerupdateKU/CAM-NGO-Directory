@@ -3,15 +3,12 @@ $(function () {
         $('#favorite').toggleClass("zmdi-favorite");
         $('#favorite').toggleClass("zmdi-favorite-outline");
         if ($('#favorite').hasClass('zmdi-favorite')) {
-            alert("zmdi-favorite");
+            FavoriteController.add(NgoModel.getId());           
         } else {
-            alert("zmdi-favorite-outline");
+            FavoriteController.remove(NgoModel.getId());            
         }
     });
     $(document).delegate("#page-ngo-detail", "pagebeforeshow", function () {
         NgoDetailController.start();
-    });
-    $(document).delegate("#btn-favorite", "click", function () {
-        FavoriteController.add(CategoryModel.getName(), NgoModel.getId());
     });
 });

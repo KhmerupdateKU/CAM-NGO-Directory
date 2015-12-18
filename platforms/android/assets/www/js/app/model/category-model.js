@@ -17,6 +17,6 @@ var CategoryModel = {
         $.ajax({
             url: URL + "index.php/category/fetchcategory",
             success: successCallback
-        });
+        });        
     }
 };

@@ -1,64 +1,61 @@
 var NgoDetailController = {
     phones: [],
     emails: [],
+    __favorite: "zmdi-favorite-outline",
     start: function () {
         var $element = $('#page-ngo-detail');
+        var ngo_id = NgoModel.getId();
         var data = {header: NgoModel.getName()};
         NgoDetailView.renderDetail($element, data);
-        NgoDetailController.get();
+        NgoDetailController.get(ngo_id);
     },
-    get: function () {
-        var ngo_id = NgoModel.getId();
-        if (!(App.isOnline())) {
+    get: function (ngo_id) {
+        if ((App.isOnline())) {
             NgoDetailModel.fetchDetailByngo_id(ngo_id, function (ngodetail) {
-                var newdtail = JSON.parse(ngodetail);
-                NgoDetailController.prepareDataOnline(newdtail, function (finaldetail) {
-                    NgoDetailController.render(finaldetail);
+                var detailJson = JSON.parse(ngodetail);               
+                NgoDetailController.favorite(ngo_id, function () {
+                    NgoDetailController.render(detailJson);
                 });
-                NgoDetailController.sync(ngo_id, newdtail);
-                console.log("do online");
             });
         } else {
-            console.log("do offline");
-            NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (details) {
-                NgoDetailController.prepareDataOffline(ngo_id, details, function (finaldetail) {
-                    NgoDetailController.render(finaldetail);
+            NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (data) {
+                NgoDetailController.preparetOfflineData(ngo_id, data, function (detail) {
+                    NgoDetailController.render(detail);
                 });
             });
         }
     },
+    preparetOfflineData: function (ngo_id, data, callback) {
+        NgoOfflineModel.fetchbyngo_id(ngo_id, function (ngo) {
+            var detail = [{
+                    ngo_id: ngo_id,
+                    cat_id: ngo.cat_id(),
+                    cat_name_kh: ngo.cat_name_kh(),
+                    cat_name_en: ngo.cat_name_en(),
+                    name_kh: ngo.name_kh(),
+                    name_en: ngo.name_en(),
+                    name_short: ngo.name_short(),
+                    logo: ngo.logo(),
+                    phone: data.phone(),
+                    email: data.email(),
+                    website: data.website(),
+                    address: data.address(),
+                    map: data.map(),
+                    description: data.description()
+                }];
+            callback(detail);
+        });
+    },
     render: function (details) {
         var $element = $('#page-ngo-detail');
         NgoDetailController.prepareContact(details);
-        var data = {detail: details, header: NgoModel.getName(), url: URL, phones: this.phones, emails: this.emails};
+        var data = {detail: details, header: NgoModel.getName(), url: URL, phones: this.phones, emails: this.emails, favorite: NgoDetailController.__favorite};
         NgoDetailView.renderDetail($element, data);
-        ViewLoading.setBusy(false);
     },
     prepareContact: function (details) {
         $.map(details, function (detail) {
             NgoDetailController.phones = NgoDetailController.splitdata(detail.phone, 'phone', ',');
             NgoDetailController.emails = NgoDetailController.splitdata(detail.email, 'email', ',');
-        });
-    },
-    prepareDataOnline: function (detail, callback) {
-        callback(detail);
-    },
-    prepareDataOffline: function (ngo_id, detail, callback) {
-        NgoOfflineModel.fetchbyngo_id(ngo_id, function (ngo) {
-            console.log("NGOS", detail);
-            NgoDetailController.details = [{
-                    logo: ngo.logo(),
-                    name_en: ngo.name_en(),
-                    name_kh: ngo.name_kh(),
-                    name_short: ngo.name_short(),
-                    phone: detail.phone(),
-                    email: detail.email(),
-                    website: detail.website(),
-                    address: detail.address(),
-                    map: detail.map(),
-                    description: detail.description()
-                }];
-            callback(details);
         });
     },
     sync: function (ngo_id, newDetails) {
@@ -79,5 +76,14 @@ var NgoDetailController = {
                 elementname.push({'email': sub});
             });
         return elementname;
-    },   
+    },
+    favorite: function (ngo_id, callback) {
+        NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (ngo) {
+            if (ngo != null)
+                NgoDetailController.__favorite = "zmdi-favorite";
+            else
+                NgoDetailController.__favorite = "zmdi-favorite-outline";
+            callback();
+        });
+    }
 }
