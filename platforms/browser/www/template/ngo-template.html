@@ -1,5 +1,5 @@
-<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
-    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-ngo-header">{{ngo_category}}</h1>          
+<div data-role="header" data-position="fixed" data-fullscreen="false">
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.4s' id="page-ngo-header">{{header}}</h1>          
     <a href="#filter-ngo" id="btn-search" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-search zmd-2x"></i></a>    
     <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                            
     <div class="ui-hidden-accessible wow fadeIn" id="search-block" data-wow-delay='0.4s' style="padding-left: 10px;padding-right: 10px">
@@ -8,19 +8,18 @@
 </div>
 <div data-role="main" class="nd2-banner">           
     {{#each ngos}}
-    <div class="nd2-card" id="list-ngo">
-        <a style="text-decoration: none" href="#page-ngo-detail" data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_kh}}'>            
-            <div class="card-title has-avatar">
-                <img src="{{../url}}img/ngo/{{logo}}" class="card-avatar" onError="this.onerror=null;this.src='img/app/na.png';"/>                             
-                <h6 class="card-primary-title">{{name_short}}</h6>
-            </div>
-            <div class="card-action">
-                <div class="card-supporting-text">
-                    <h5 class="khmer-regular">{{name_kh}}</h5>                
+    <ul data-role="listview" data-filter="true" data-input="#filter-ngo">
+        <div class="nd2-card" id="list-ngo">
+            <a style="text-decoration: none" href="#page-ngo-detail" data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_short}}'>
+                <div class="card-title has-avatar">
+                    <img src="{{../url}}img/ngo/{{logo}}" class="card-avatar" onError="this.onerror=null;this.src='img/app/na.png';"/>                             
+                    <h6 class="card-primary-title" style="margin-top: 12px; color: black">{{name_short}}</h6>                    
+                    <div class="card-supporting-text">
+                        <h5 class="khmer-regular" style="color: black">{{name_kh}}</h5>                
+                    </div>
                 </div>
-            </div>
-        </a>        
-    </div>
-
+            </a>        
+        </div>
+    </ul>
     {{/each}}                
 </div>

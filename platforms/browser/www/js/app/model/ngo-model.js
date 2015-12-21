@@ -1,43 +1,34 @@
 var NgoModel = {
     id: null,
     name: null,
-    ngos: [],
     getName: function () {
-        return NgoModel.name;
+        return this.name;
     },
     setId: function (id) {
-        NgoModel.id = id;
+        this.id = id;
     },
     getId: function () {
-        return NgoModel.id;
+        return this.id;
     },
     setName: function (name) {
-        NgoModel.name = name;
+        this.name = name;
     },
-    fetch: function () {
+    fetchByCat_id: function (cat_id, successCallback) {
         $.ajax({
-            type: "GET",
-            datatype: "JSON",
-            crossDomain: true,
+            url: URL + "index.php/ngo/fetchngobycat_id/" + cat_id,
+            success: successCallback
+        });
+    },
+    fetch: function (successCallback) {
+        $.ajax({
             url: URL + "index.php/ngo/fetchngo",
-            success: function (ngos) {
-                NgoModel.ngos = (JSON.parse(ngos));
-            },
-            error: function (e) {
-                console.log("error:", e);
-            }
+            success: successCallback
         });
     },
-    getNgos: function () {
-        return NgoModel.ngos;
-    },
-    getNgosByCat_id: function (cat_id) {
-        var temp = [];
-        $.map(NgoModel.getNgos(), function (ngos) {
-            if (ngos.cat_id === cat_id) {
-                temp.push(ngos);
-            }
+    favorite: function (ngo_id, status, successCallback) {
+        $.ajax({
+            url: URL + "index.php/favorite/update/" + ngo_id + "/" + status,
+            success: successCallback
         });
-        return temp;
     }
 };

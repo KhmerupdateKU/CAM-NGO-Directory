@@ -1,12 +1,29 @@
 @font-face{
-    font-family:Khmer;
+    font-family:khmerregular;
     src:url(fonts/KhmerOSNew-Regular.ttf) format('woff'),
-        url(fonts/KhmerOSNew-Regular.ttf) format('truetype')       
+        url(fonts/KhmerOSNew-Regular.ttf) format('truetype');
+}
+@font-face{
+    font-family:khmermuol;
+    src:url(fonts/KhmerMuol.ttf) format('woff'),
+        url(fonts/KhmerMuol.ttf) format('truetype')       
 }
 .khmer-regular{    
-    font-family:'Khmer';     
+    font-family:'khmerregular';     
     margin: 0 0 0 0;
+}
 
+.khmer-moul{    
+    font-family:'khmermuol';     
+    color: #009688;
+    margin: 0 0 0 0;
+}
+.link{
+    color: blue;
+}
+.khmer-moul-header{    
+    font-family:'khmermuol';     
+    color: white;    
 }
 #map-block {
     width:100%;

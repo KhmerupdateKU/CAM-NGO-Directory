@@ -46,21 +46,13 @@ var App = {
         });
     },
     isOnline: function () {
-        //alert("Fucken check online");
-        //App.checkConnection();
-//        if (navigator.onLine) {           
-//            return true;
-//        } else {            
-//            return false;
-//        }
         var online = false;
-        if (navigator.connection) {
-            online = (navigator.connection.type !== Connection.NONE);            
-            return online;
-        }
+//        if (navigator.connection) {
+//            online = (navigator.connection.type !== Connection.NONE);            
+//            return online;
+//        }
         online = navigator.onLine; //browser
         return online;
-        return true;
     },
     checkConnection: function () {
         var networkState = navigator.connection.type;

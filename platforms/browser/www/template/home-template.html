@@ -1,38 +1,38 @@
-<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+<div data-role="header" data-position="fixed" data-fullscreen="false">
     <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><img src="img/app/ic_launcher.png" width="100%" height="100%"></a>
-    <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s'>CAM NGO</h1>
-    <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"        
-       style="visibility: visible; animation-name: fadeIn; animation-delay: 1.2s;" href="#home-bottom" data-role="button" 
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.4s'>CAM NGO</h1>
+    <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"
+       style="visibility: visible; animation-name: fadeIn; animation-delay: 1.2s;" href="#home-bottom" data-role="button"
        data-rel="popup"
        data-wow-delay="1.2s"><i class="zmdi zmdi-more-vert zmd-2x"></i></a>
 </div>
-<div data-role="main" class="ui-content">               
-    <div class="nd2-card {{class}}">        
-        <div class="card-title">            
-            <img src='img/app/FlipFlop.gif' class="card-avatar"/>                             
-            <h4 class="card-primary-title khmer-regular">សូមមេត្តារងចាំ</h4>
-            <h6 class="card-subtitle khmer-regular">កំពុងទាញយកទិន្នន័យពីរសឺវើ....</h6>
-        </div>            
-    </div>            
-    <div class="ui-grid-b">        
-        {{#each categories}}        
-        <div class='{{block}}'>                        
-            <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
-                <div class="menu-elem" id="card-menu"> 
-                    <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
-                        <div class="menu-img">                                                       
-                            <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/> 
-                        </div>                                                                        
-                    </a> 
-                </div>
+<div data-role="main" class="ui-content">    
+</div>
+<div class="ui-grid-b">
+    {{#each categories}}
+    <div class='{{block}}'>
+        <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
+            <div class="menu-elem" id="card-menu">
+                <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                    <div class="menu-img">
+                        <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>
+                    </div>
+                </a>
             </div>
-        </div>        
-        {{/each}}            
+        </div>
     </div>
+    {{/each}}
+</div>
 </div>
 <div data-role="panel" id="home-bottom" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
-    <div class="ui-panel-inner">        
+    <div class="ui-panel-inner">
         <div class="row around-xs">
+            <div class="col-xs-auto">
+                <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
+                   waves-effect waves-button" href="#page-favorite" data-ajax="false"><i class="zmdi zmdi-favorite zmd-2x"></i>
+                    <strong>ចំណូលចិត្ត</strong>
+                </a>
+            </div>
             <div class="col-xs-auto">
                 <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
                    waves-effect waves-button" href="#" data-ajax="false"><i class="zmdi zmdi-star zmd-2x"></i>
@@ -40,17 +40,17 @@
                 </a>
             </div>
             <div class="col-xs-auto">
-                <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
                    waves-effect waves-button" href="#page-about" data-ajax="false"><i class="zmdi zmdi-collection-text zmd-2x"></i>
                     <strong>អំពីពួកយើង</strong>
                 </a>
             </div>
             <div class="col-xs-auto">
-                <a id='btn_exit' class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button 
+                <a id='btn_exit' class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button waves-effect waves-button
                    waves-effect waves-button" href="#" onclick="exitFromApp()" data-ajax="false"><i class="zmdi zmdi-close zmd-2x"></i>
                     <strong>ចាកចេញពីកម្មវិធី</strong>
                 </a>
             </div>
-        </div>        
+        </div>
     </div>
 </div>

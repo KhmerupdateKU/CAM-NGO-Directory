@@ -9,7 +9,7 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         },
                         {
@@ -18,26 +18,44 @@
                         }
                     ]
                 }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.cordova.camngo"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.camngo"
         }
     },
     "dependent_plugins": {},
     "modules": [
         {
-            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-            "id": "cordova-plugin-inappbrowser.inappbrowser",
-            "pluginId": "cordova-plugin-inappbrowser",
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
             "clobbers": [
-                "cordova.InAppBrowser.open",
-                "window.open"
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
             ]
         },
         {
@@ -46,5 +64,9 @@
             "pluginId": "cordova-plugin-whitelist",
             "runs": true
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-network-information": "1.1.0",
+        "cordova-plugin-whitelist": "1.2.0"
+    }
 }

@@ -7,31 +7,41 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.cordova.camngo"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.cordova.camngo"
         }
     },
     "dependent_plugins": {},
     "modules": [
         {
-            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-            "id": "cordova-plugin-inappbrowser.inappbrowser",
-            "pluginId": "cordova-plugin-inappbrowser",
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
             "clobbers": [
-                "cordova.InAppBrowser.open",
-                "window.open"
+                "navigator.connection",
+                "navigator.network.connection"
             ]
         },
         {
-            "file": "plugins/cordova-plugin-inappbrowser/src/browser/InAppBrowserProxy.js",
-            "id": "cordova-plugin-inappbrowser.InAppBrowserProxy",
-            "pluginId": "cordova-plugin-inappbrowser",
-            "merges": [
-                ""
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/src/browser/network.js",
+            "id": "cordova-plugin-network-information.NetworkInfoProxy",
+            "pluginId": "cordova-plugin-network-information",
+            "runs": true
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-network-information": "1.1.0",
+        "cordova-plugin-whitelist": "1.2.0"
+    }
 }
