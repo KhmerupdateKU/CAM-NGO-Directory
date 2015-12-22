@@ -12,6 +12,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.camngo"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "io.cordova.camngo"
         }
     },
     "dependent_plugins": {},
@@ -38,10 +41,19 @@
             "id": "cordova-plugin-network-information.NetworkInfoProxy",
             "pluginId": "cordova-plugin-network-information",
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+            "id": "cordova-sqlite-storage.SQLitePlugin",
+            "pluginId": "cordova-sqlite-storage",
+            "clobbers": [
+                "SQLitePlugin"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-network-information": "1.1.0",
-        "cordova-plugin-whitelist": "1.2.0"
+        "cordova-plugin-whitelist": "1.2.0",
+        "cordova-sqlite-storage": "0.7.14"
     }
 }

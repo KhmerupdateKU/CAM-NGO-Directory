@@ -8,21 +8,28 @@
 </div>
 <div data-role="main" class="ui-content">    
 </div>
-<div class="ui-grid-b">
+<div class="ui-grid-b" style="margin: 10px 10px 10px 10px">
     {{#each categories}}
     <div class='{{block}}'>
-        <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
-            <div class="menu-elem" id="card-menu">
-                <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
-                    <div class="menu-img">
-                        <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>
-                    </div>
-                </a>
-            </div>
+        <!--        <div class="nd2-card" id="card-menu">
+                    <a class="ui-link ui-btn waves-effect waves-button waves-effect waves-button" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                        <div class="card-media">
+                            <img src="{{../url}}img/category/{{logo}}" style="width: 100%" onError="this.onerror=null;this.src='img/app/na.png';"/>
+                        </div>     
+                        
+                    </a>
+                </div>-->
+
+
+        <div class="menu-elem" id="card-menu">
+            <a class=" ui-btn waves-effect waves-button waves-effect waves-button" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                <div class="menu-img">
+                    <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>                    
+                </div>                    
+            </a>
         </div>
     </div>
     {{/each}}
-</div>
 </div>
 <div data-role="panel" id="home-bottom" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
     <div class="ui-panel-inner">

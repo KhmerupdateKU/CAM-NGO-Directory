@@ -9,15 +9,15 @@
         <div class="card-media">
             <img src="img/app/logobackground.png" onError="this.onerror=null;this.src='img/app/na.png';"/>
             <div class="card-media-overlay">
-                <img src="{{../url}}img/ngo/{{logo}}" style="width: 40%;height: auto; margin-left: 30%;margin-bottom: 30%" onError="this.onerror=null;this.src='img/app/na.png';"/>
+                <img src="{{../url}}img/ngo/{{logo}}" style="width: 40%;height: auto; margin-left: 30%;margin-bottom: 20%" onError="this.onerror=null;this.src='img/app/na.png';"/>
             </div>
             <div class='card-media-overlay with-background card-supporting-text'>                            
-                <h4 class="khmer-moul-header">{{name_kh}}</h4>                
+                <h3 class="khmer-moul-header" style="margin-bottom: 5px; margin-bottom: 5px">{{name_kh}}</h3>                
             </div>
         </div>
         <div class="card-action">
             <div class='card-supporting-text'>                            
-                <h4 class="khmer-regular" >{{name_en}} ({{name_short}})</h4>                                                          
+                <h3 class="khmer-regular" style="color: black;"><strong>{{name_en}}</strong> ({{name_short}})</h3>                                                          
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
                 {{#each ../emails}}
                 <div class="align-left">  
                     <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
-                        <a href="mailto:{{email}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email'></i></a>
+                        <a href="mailto:{{email}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email link'></i></a>
                         {{email}}
                     </h5>                                
                 </div>
@@ -65,14 +65,12 @@
                 <h5 class="khmer-moul ui-btn-inline">វេបសាយ</h5>                      
             </div>
             <div class="card-supporting-text">
-                <div class="align-left">  
-                    <div class="row between-xs">                    
-                        <div class="align-left">  
-                            <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
-                                <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe'></i></a>
-                                {{website}}
-                            </h5>  
-                        </div>                    
+             <div class="card-supporting-text">   <div class="align-left">                      
+                    <div class="align-left">  
+                        <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
+                            <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe link'></i></a>
+                            {{website}}
+                        </h5>  
                     </div>
                 </div>
             </div> 
@@ -98,9 +96,9 @@
             <h4 class="khmer-moul ui-btn-inline">ផែនទី</h4>                            
         </div>
         <div class="card-media">            
-            <div id="map-block"></div>           
+            <div id="map-block"></div>                                                                      
             <script type="text/javascript">
-                getMap("map-block", '{{map}}');
+                NdgoDetailAction.getMap("map-block", '{{map}}');
             </script>
         </div>            
     </div>

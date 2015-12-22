@@ -42,7 +42,7 @@ persistence.store.websql.config = function(persistence, dbname, description, siz
   persistence.db.conn = null;
 
   // window object does not exist on Qt Declarative UI (http://doc.trolltech.org/4.7-snapshot/declarativeui.html)
-  if (window && window.openDatabase) {
+  if (window && (window.openDatabase || window.sqlitePlugin)) {
     persistence.db.implementation = "html5";
   } else if (window && window.google && google.gears) {
     persistence.db.implementation = "gears";
@@ -61,7 +61,9 @@ persistence.store.websql.config = function(persistence, dbname, description, siz
 
   persistence.db.html5.connect = function (dbname, description, size) {
     var that = {};
-    var conn = openDatabase(dbname, '1.0', description, size);
+    //var conn = openDatabase(dbname, '1.0', description, size);
+    var dbType = window.sqlitePlugin ? window.sqlitePlugin : window;
+    var conn = dbType.openDatabase(dbname, '1.0', description, size);
 
     that.transaction = function (fn) {
       return conn.transaction(function (sqlt) {

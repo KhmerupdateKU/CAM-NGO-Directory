@@ -5,22 +5,22 @@ var App = {
     __db_name: 'ngos',
     initialize: function () {
         App.bindEvents();
-        App.ajaxSetupDefault();
     },
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        window.addEventListener("offline", function (e) {
-            console.log("offline");
-        });
-        window.addEventListener("online", function (e) {
-            console.log("online");
-        });
+//        window.addEventListener("offline", function (e) {
+//            console.log("offline");
+//        });
+//        window.addEventListener("online", function (e) {
+//            console.log("online");
+//        });
     },
     resetDB: function () {
         persistence.reset();
         persistence.schemaSync();
     },
     onDeviceReady: function () {
+        App.ajaxSetupDefault();
         connectionDB(this.__db_name, this.__db_size);
         createTable();
         AppCache.clearAll();
@@ -46,13 +46,14 @@ var App = {
         });
     },
     isOnline: function () {
-        var online = false;
+//        var online = false;
 //        if (navigator.connection) {
-//            online = (navigator.connection.type !== Connection.NONE);            
+//            online = (navigator.connection.type !== Connection.NONE);
 //            return online;
 //        }
-        online = navigator.onLine; //browser
-        return online;
+//        online = navigator.onLine; //browser
+//        return online;
+        return true;
     },
     checkConnection: function () {
         var networkState = navigator.connection.type;
@@ -66,5 +67,25 @@ var App = {
         states[Connection.CELL] = 'Cell generic connection';
         states[Connection.NONE] = 'No network connection';
         alert('Connection type: ' + states[networkState]);
+    },
+    Toast: function (msg) {
+        $.mobile.toast({
+            message: msg
+        });
+//        $("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
+//                .css({display: "block",
+//                    "font-size": "12px",
+//                    opacity: 0.90,
+//                    position: "fixed",
+//                    padding: "7px",
+//                    "text-align": "center",
+//                    width: "270px",
+//                    left: ($(window).width() - 284) / 2,
+//                    top: $(window).height() / 1.5})
+//                .appendTo($.mobile.pageContainer).delay(1500)
+//                .fadeOut(400, function () {
+//                    $(this).remove();
+//                });
     }
 };
+App.initialize()

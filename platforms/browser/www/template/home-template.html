@@ -11,15 +11,23 @@
 <div class="ui-grid-b">
     {{#each categories}}
     <div class='{{block}}'>
-        <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
+        <div class="nd2-card">
+            <div class="card-media">
+                <img src="{{../url}}img/category/{{logo}}" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            </div>          
+        </div>
+<!--        <div class="ui-bar" style="padding: 10px 10px 10px 10px;" >
+            <div class="ui-content ui-overlay-a">                
+                {{ngo}}
+            </div>
             <div class="menu-elem" id="card-menu">
-                <a class="ui-link" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                <a class="ui-link ui-btn ui-btn-raised waves-effect waves-button waves-effect waves-button" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
                     <div class="menu-img">
                         <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>
                     </div>
                 </a>
             </div>
-        </div>
+        </div>-->
     </div>
     {{/each}}
 </div>
