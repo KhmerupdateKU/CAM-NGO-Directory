@@ -8,13 +8,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "io.cordova.camngo"
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.camngo"
-        },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "io.cordova.camngo"
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {}

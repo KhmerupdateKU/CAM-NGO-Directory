@@ -1,7 +1,7 @@
 var NgoDetailController = {
     phones: [],
     emails: [],
-    __favorite: "zmdi-favorite-outline",
+    __favorite: "zmdi-favorite",
     start: function () {
         var $element = $('#page-ngo-detail');
         var ngo_id = NgoModel.getId();
@@ -10,7 +10,7 @@ var NgoDetailController = {
         NgoDetailController.get(ngo_id);
     },
     get: function (ngo_id) {
-        if ((App.isOnline())) {
+        if (App.isOnline()) {
             NgoDetailModel.fetchDetailByngo_id(ngo_id, function (ngodetail) {
                 var detailJson = JSON.parse(ngodetail);               
                 NgoDetailController.favorite(ngo_id, function () {

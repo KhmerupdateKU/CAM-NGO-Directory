@@ -9,15 +9,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SQLitePlugin\"><param name=\"android-package\" value=\"io.liteglue.SQLitePlugin\" /></feature>",
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -36,18 +32,21 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "io.cordova.camngo"
-        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.camngo"
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "io.cordova.camngo"
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
+        },
         {
             "file": "plugins/cordova-plugin-network-information/www/network.js",
             "id": "cordova-plugin-network-information.network",
@@ -64,25 +63,10 @@
             "clobbers": [
                 "Connection"
             ]
-        },
-        {
-            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-            "id": "cordova-plugin-whitelist.whitelist",
-            "pluginId": "cordova-plugin-whitelist",
-            "runs": true
-        },
-        {
-            "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-            "id": "cordova-sqlite-storage.SQLitePlugin",
-            "pluginId": "cordova-sqlite-storage",
-            "clobbers": [
-                "SQLitePlugin"
-            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-network-information": "1.1.0",
         "cordova-plugin-whitelist": "1.2.0",
-        "cordova-sqlite-storage": "0.7.14"
+        "cordova-plugin-network-information": "1.1.0"
     }
 }

@@ -1,30 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.camngo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <feature name="NetworkStatus">
-        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="SQLitePlugin">
-        <param name="android-package" value="io.liteglue.SQLitePlugin" />
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
-    <icon density="ldpi" src="res/android/drawable-ldpi/ic_launcher.png" />
-    <icon density="mdpi" src="res/android/drawable-mdpi/ic_launcher.png" />
-    <icon density="hdpi" src="res/android/drawable-hdpi/ic_launcher.png" />
-    <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png" />
-    <name>NGO Directory</name>
+    <allow-intent href="market:*" />
+    <name>HelloCordova</name>
     <description>
-        The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
-        volunteer at ngo by providing the phone email website address and map
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="n/a@n/a.com">
-        NGO Team
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <content src="index.html" />
-    <icon src="res/ios/icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

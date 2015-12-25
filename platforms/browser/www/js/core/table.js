@@ -1,11 +1,4 @@
-function createTable() {
-    Category = persistence.define('tblcategory', {
-        cat_id: 'INT',
-        name_kh: 'TEXT',
-        name_en: 'TEXT',
-        logo: 'TEXT',
-        ngo: 'INT'
-    });
+function createTable() {    
     Ngos = persistence.define('tblNgo', {
         ngo_id: 'INT',
         cat_id: 'INT',

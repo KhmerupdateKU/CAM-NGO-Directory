@@ -1,59 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.camngo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="NetworkStatus">
-        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-    </feature>
-    <name>NGO Directory</name>
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HelloCordova</name>
     <description>
-        The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
-        volunteer at ngo by providing the phone email website address and map
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="n/a@n/a.com">
-        NGO Team
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
-    <content src="index.html" />    
-    <content src="index.html"/>
-    <icon src="res/ios/icon.png"/>
-
-    <platform name="android"> 
-        <icon density="ldpi" src="res/android/drawable-ldpi/ic_launcher.png"/>
-        <icon density="mdpi" src="res/android/drawable-mdpi/ic_launcher.png"/>
-        <icon density="hdpi" src="res/android/drawable-hdpi/ic_launcher.png"/>
-        <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png"/>        
-    </platform>
-             
-    <!--    
-    <platform name="ios">
-        <icon height="180" src="res/ios/icon-60@3x.png" width="180"/>
-        <icon height="60" src="res/ios/icon-60.png" width="60"/>
-        <icon height="120" src="res/ios/icon-60@2x.png" width="120"/>
-        <icon height="76" src="res/ios/icon-76.png" width="76"/>
-        <icon height="152" src="res/ios/icon-76@2x.png" width="152"/>
-        <icon height="40" src="res/ios/icon-40.png" width="40"/>
-        <icon height="80" src="res/ios/icon-40@2x.png" width="80"/>
-        <icon height="57" src="res/ios/icon.png" width="57"/>
-        <icon height="114" src="res/ios/icon@2x.png" width="114"/>
-        <icon height="72" src="res/ios/icon-72.png" width="72"/>
-        <icon height="144" src="res/ios/icon-72@2x.png" width="144"/>
-        <icon height="29" src="res/ios/icon-small.png" width="29"/>
-        <icon height="58" src="res/ios/icon-small@2x.png" width="58"/>
-        <icon height="50" src="res/ios/icon-50.png" width="50"/>
-        <icon height="100" src="res/ios/icon-50@2x.png" width="100"/>
-    </platform>
-    -->
-    <!--  <platform name="ios">
-        <splash height="480" src="res/screen/ios/Default~iphone.png" width="320"/>
-        <splash height="960" src="res/screen/ios/Default@2x~iphone.png" width="640"/>
-        <splash height="1024" src="res/screen/ios/Default-Portrait~ipad.png" width="768"/>
-        <splash height="2048" src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536"/>
-        <splash height="768" src="res/screen/ios/Default-Landscape~ipad.png" width="1024"/>
-        <splash height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048"/>
-        <splash height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" width="640"/>
-        <splash height="1334" src="res/screen/ios/Default-667h@2x.png" width="750"/>
-        <splash height="2208" src="res/screen/ios/Default-Portrait-736h@3x.png" width="1242"/>
-        <splash height="1242" src="res/screen/ios/Default-Landscape-736h@3x.png" width="2208"/>
-    </platform>   -->
-    <plugin name="cordova-plugin-whitelist" version="1" />
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -61,12 +16,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
-
-
-    
-    

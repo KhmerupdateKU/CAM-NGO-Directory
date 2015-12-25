@@ -20,54 +20,55 @@ var App = {
         persistence.schemaSync();
     },
     onDeviceReady: function () {
-        App.ajaxSetupDefault();
         connectionDB(this.__db_name, this.__db_size);
         createTable();
         AppCache.clearAll();
         HomeController.start();
     },
-    ajaxSetupDefault: function () {
+    ajaxRequest: function (url, successCallback) {
         $.ajax({
             type: "GET",
             datatype: "JSON",
             crossDomain: true,
+            url: URL + url,
+            success: successCallback,
             beforeSend: function () {
-                ViewLoading.setBusy(true);
+                ViewLoading.setBusy("", true, true);
             },
             afterSend: function () {
-                ViewLoading.setBusy(true);
+                ViewLoading.setBusy("", true, true);
             },
             complete: function () {
-                ViewLoading.setBusy(false);
+                ViewLoading.setBusy(null, false, false);
             },
-            error: function () {
-                ViewLoading.setBusy(true);
+            error: function (e) {
+                alert("ពុំអាចទាញទិន្នន័យពីម៉ាស៊ីនមេបាន៕");
             }
         });
     },
     isOnline: function () {
-//        var online = false;
-//        if (navigator.connection) {
-//            online = (navigator.connection.type !== Connection.NONE);
-//            return online;
-//        }
-//        online = navigator.onLine; //browser
-//        return online;
-        return true;
+        var online = false;
+        if (navigator.connection) {
+            online = (navigator.connection.type !== Connection.NONE);
+            console.log("navigator");
+            return online;
+        }
+        online = navigator.onLine; //browser
+        return online;
     },
-    checkConnection: function () {
-        var networkState = navigator.connection.type;
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI] = 'WiFi connection';
-        states[Connection.CELL_2G] = 'Cell 2G connection';
-        states[Connection.CELL_3G] = 'Cell 3G connection';
-        states[Connection.CELL_4G] = 'Cell 4G connection';
-        states[Connection.CELL] = 'Cell generic connection';
-        states[Connection.NONE] = 'No network connection';
-        alert('Connection type: ' + states[networkState]);
-    },
+//    checkConnection: function () {
+//        var networkState = navigator.connection.type;
+//        var states = {};
+//        states[Connection.UNKNOWN] = 'Unknown connection';
+//        states[Connection.ETHERNET] = 'Ethernet connection';
+//        states[Connection.WIFI] = 'WiFi connection';
+//        states[Connection.CELL_2G] = 'Cell 2G connection';
+//        states[Connection.CELL_3G] = 'Cell 3G connection';
+//        states[Connection.CELL_4G] = 'Cell 4G connection';
+//        states[Connection.CELL] = 'Cell generic connection';
+//        states[Connection.NONE] = 'No network connection';
+//        alert('Connection type: ' + states[networkState]);
+//    },
     Toast: function (msg) {
         $.mobile.toast({
             message: msg
@@ -86,6 +87,34 @@ var App = {
 //                .fadeOut(400, function () {
 //                    $(this).remove();
 //                });
+    },
+    onExite: function ()
+    {
+        if (navigator.app) {
+            navigator.app.exitApp();
+        } else if (navigator.device) {
+            navigator.device.exitApp();
+        }
+    },
+    dialog: function (output_msg, title_msg)
+    {
+        console.log("dialog");
+        if (!title_msg)
+            title_msg = 'Alert';
+        if (!output_msg)
+            output_msg = 'No Message to Display.';
+        $("<div></div>").html(output_msg).dialog({
+            title: title_msg,
+            resizable: false,
+            modal: true,
+            buttons: {
+                "Ok": function ()
+                {
+                    $(this).dialog("close");
+                }
+            }
+        });
     }
+
 };
 App.initialize()

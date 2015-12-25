@@ -20,18 +20,19 @@ var App = {
         persistence.schemaSync();
     },
     onDeviceReady: function () {
-        App.ajaxSetupDefault();
         connectionDB(this.__db_name, this.__db_size);
         createTable();
         AppCache.clearAll();
         HomeController.start();
     },
-    ajaxSetupDefault: function () {
+    ajaxRequest: function (url, successCallback) {
         $.ajax({
             type: "GET",
             datatype: "JSON",
             crossDomain: true,
-            beforeSend: function () {
+            url: URL + url,
+            success: successCallback,
+            beforeSend: function () {    
                 ViewLoading.setBusy(true);
             },
             afterSend: function () {
@@ -40,8 +41,8 @@ var App = {
             complete: function () {
                 ViewLoading.setBusy(false);
             },
-            error: function () {
-                ViewLoading.setBusy(true);
+            error: function (e) {
+                alert("ពុំអាចទាញទិន្នន័យពីម៉ាស៊ីនមេបាន៕");
             }
         });
     },
@@ -53,20 +54,22 @@ var App = {
         }
         online = navigator.onLine; //browser
         return online;
+        return true;
+        navigator.connection
     },
-    checkConnection: function () {
-        var networkState = navigator.connection.type;
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI] = 'WiFi connection';
-        states[Connection.CELL_2G] = 'Cell 2G connection';
-        states[Connection.CELL_3G] = 'Cell 3G connection';
-        states[Connection.CELL_4G] = 'Cell 4G connection';
-        states[Connection.CELL] = 'Cell generic connection';
-        states[Connection.NONE] = 'No network connection';
-        alert('Connection type: ' + states[networkState]);
-    },
+//    checkConnection: function () {
+//        var networkState = navigator.connection.type;
+//        var states = {};
+//        states[Connection.UNKNOWN] = 'Unknown connection';
+//        states[Connection.ETHERNET] = 'Ethernet connection';
+//        states[Connection.WIFI] = 'WiFi connection';
+//        states[Connection.CELL_2G] = 'Cell 2G connection';
+//        states[Connection.CELL_3G] = 'Cell 3G connection';
+//        states[Connection.CELL_4G] = 'Cell 4G connection';
+//        states[Connection.CELL] = 'Cell generic connection';
+//        states[Connection.NONE] = 'No network connection';
+//        alert('Connection type: ' + states[networkState]);
+//    },
     Toast: function (msg) {
         $.mobile.toast({
             message: msg
@@ -85,6 +88,14 @@ var App = {
 //                .fadeOut(400, function () {
 //                    $(this).remove();
 //                });
+    },
+    onExite: function ()
+    {
+        if (navigator.app) {
+            navigator.app.exitApp();
+        } else if (navigator.device) {
+            navigator.device.exitApp();
+        }
     }
 };
 App.initialize()
