@@ -46,8 +46,7 @@ var NgoDetailController = {
                     phone: data.phone(),
                     email: data.email(),
                     website: data.website(),
-                    address: data.address(),
-                    map: data.map(),
+                    address: data.address(),                    
                     description: data.description()
                 }];
             callback(detail);

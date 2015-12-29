@@ -7,17 +7,29 @@
 </div>
 <div data-role="main" class="ui-content iscroll-wrapper">        
     {{#if noconnection}}
+    <div data-role="footer" data-position="fixed" data-fullscreen="false" style="background-color:black ">        
+        <div class="col-xs-auto">
+            <div class="card-action">
+                <div class="row between-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="App.refresh()"><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 align-right">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="App.refresh()"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
+                        </div>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+        </a>
+    </div>
     <div class="nd2-card">
         <div class="card-title center-xs">
-            <div>
-                <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"
-                   onclick="App.refresh()" href="#">
-                    <h6 class="khmer-regular">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6>                    
-                    <h6 style="font-size: 10px;color: red;" class="khmer-regular">ព្យាយាមម្តងទៀត</h6>
-                </a>
-            </div>
-            {{#if favorite}}
-            <hr>
+
+            {{#if favorite}}          
             <div class="card-supporting-text">                                
                 <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
                     <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក  <i class="zmdi zmdi-favorite"></i></h6>

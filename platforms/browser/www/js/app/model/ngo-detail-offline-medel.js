@@ -5,8 +5,7 @@ var NgoDetailOfflineModel = {
             phone: detail.phone,
             email: detail.email,
             website: detail.website,
-            address: detail.address,
-            map: detail.map,
+            address: detail.address,            
             description: detail.description,
         };
         persistence.add(new Details(detailParam));
@@ -24,8 +23,7 @@ var NgoDetailOfflineModel = {
             oldDetail.phone(newDetail.phone);
             oldDetail.email(newDetail.email);
             oldDetail.website(newDetail.website);
-            oldDetail.address(newDetail.address);
-            oldDetail.map(newDetail.map);
+            oldDetail.address(newDetail.address);            
             oldDetail.description(newDetail.description);
         } else {
             NgoDetailOfflineModel.add(newDetail);

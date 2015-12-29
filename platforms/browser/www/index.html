@@ -13,46 +13,7 @@
         <link href="css/vendor/waves/waves.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/nativedroid/nativedroid2.css" rel="stylesheet" type="text/css"/>
         <link href="css/index.css" rel="stylesheet" type="text/css"/>      
-        <link href="css/inherit.css" rel="stylesheet" type="text/css"/>
-
-        <script type="text/javascript">
-//            window.addEventListener("load", function () {
-//                window.scrollBy(0, 100);
-//            }, false);
-//
-//            window.document.addEventListener("scroll", function () {
-//                if (window.pageYOffset == 0)
-//                {
-//                    alert("Loading data using AJAX");
-//                    window.scrollBy(0, 100);
-//                }
-//            }, false);   
-            var document = untyped __js__("document");
-            document.addEventListener("deviceready", function (e)
-            {
-                new JQuery(function ()
-                {
-                    new JQuery(".iscroll-wrapper").bind(
-                            {
-                                iscroll_onpulldown: onPullDown,
-                                iscroll_onpullup: onPullUp
-                            });
-                });
-            });
-
-        </script>
-        <style type="text/css">
-            body
-            {
-                height: 6000px;
-                background-color: grey;
-            }
-
-            span
-            {
-                font-size: 100px;
-            }
-        </style>
+        <link href="css/inherit.css" rel="stylesheet" type="text/css"/>                      
 
         <title>Cam NGO</title>
     </head>
@@ -109,6 +70,9 @@
         <script src="js/libs/persistence/persistence.store.websql.js" type="text/javascript"></script>        
         <script src="js/core/db_connection.js" type="text/javascript"></script>
         <script src="js/core/table.js" type="text/javascript"></script>        
+        
+        <script src="js/core/handlebarhelper.js" type="text/javascript"></script>
+        
         <script>
             App.onDeviceReady();
         </script>

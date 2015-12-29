@@ -40,10 +40,10 @@ var App = {
                 ViewLoading.setBusy("ការតភ្ជាប់បានសម្រេច", true);
             },
             complete: function () {
-                ViewLoading.setBusy(null,false);
+                ViewLoading.setBusy(null, false);
             },
             error: function (e) {
-                ViewLoading.setBusy("ការតភ្ជាប់បរាជ័យ", true);                                
+                ViewLoading.setBusy("ការតភ្ជាប់បរាជ័យ", true);
             }
         });
     },
@@ -57,37 +57,10 @@ var App = {
         online = navigator.onLine; //browser
         return online;
     },
-//    checkConnection: function () {
-//        var networkState = navigator.connection.type;
-//        var states = {};
-//        states[Connection.UNKNOWN] = 'Unknown connection';
-//        states[Connection.ETHERNET] = 'Ethernet connection';
-//        states[Connection.WIFI] = 'WiFi connection';
-//        states[Connection.CELL_2G] = 'Cell 2G connection';
-//        states[Connection.CELL_3G] = 'Cell 3G connection';
-//        states[Connection.CELL_4G] = 'Cell 4G connection';
-//        states[Connection.CELL] = 'Cell generic connection';
-//        states[Connection.NONE] = 'No network connection';
-//        alert('Connection type: ' + states[networkState]);
-//    },
     Toast: function (msg) {
         $.mobile.toast({
             message: msg
         });
-//        $("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
-//                .css({display: "block",
-//                    "font-size": "12px",
-//                    opacity: 0.90,
-//                    position: "fixed",
-//                    padding: "7px",
-//                    "text-align": "center",
-//                    width: "270px",
-//                    left: ($(window).width() - 284) / 2,
-//                    top: $(window).height() / 1.5})
-//                .appendTo($.mobile.pageContainer).delay(1500)
-//                .fadeOut(400, function () {
-//                    $(this).remove();
-//                });
     },
     onExite: function ()
     {
@@ -116,15 +89,11 @@ var App = {
             }
         });
     },
-    refresh:function (){
+    refresh: function () {
         HomeController.start();
+    },
+    getMap: function (taget, latlong) {
+        Map.get(taget, latlong);
     }
 };
 App.initialize();
-Handlebars.registerHelper('ifparamator', function (value) {
-    console.log("reach ifparamator helper");
-    if (value)
-        return true;
-    else
-        return false;
-});
