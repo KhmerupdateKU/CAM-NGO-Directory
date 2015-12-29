@@ -1,5 +1,6 @@
 //var URL = "http://localhost:8088/Ad-ngos/";
 var URL = "http://www.camngo.website/";
+
 var App = {
     __db_size: 10 * 1024 * 124,
     __db_name: 'ngos',
@@ -32,17 +33,17 @@ var App = {
             crossDomain: true,
             url: URL + url,
             success: successCallback,
-            beforeSend: function () {    
-                ViewLoading.setBusy(true);
+            beforeSend: function () {
+                ViewLoading.setBusy("កំពុងតភ្ជាប់ទៅម៉ាស៊ីនមេ", true);
             },
             afterSend: function () {
-                ViewLoading.setBusy(true);
+                ViewLoading.setBusy("ការតភ្ជាប់បានសម្រេច", true);
             },
             complete: function () {
-                ViewLoading.setBusy(false);
+                ViewLoading.setBusy(null,false);
             },
             error: function (e) {
-                alert("ពុំអាចទាញទិន្នន័យពីម៉ាស៊ីនមេបាន៕");
+                ViewLoading.setBusy("ការតភ្ជាប់បរាជ័យ", true);                                
             }
         });
     },
@@ -50,12 +51,11 @@ var App = {
         var online = false;
         if (navigator.connection) {
             online = (navigator.connection.type !== Connection.NONE);
+            console.log("navigator");
             return online;
         }
         online = navigator.onLine; //browser
         return online;
-        return true;
-        navigator.connection
     },
 //    checkConnection: function () {
 //        var networkState = navigator.connection.type;
@@ -96,6 +96,35 @@ var App = {
         } else if (navigator.device) {
             navigator.device.exitApp();
         }
+    },
+    dialog: function (output_msg, title_msg)
+    {
+        console.log("dialog");
+        if (!title_msg)
+            title_msg = 'Alert';
+        if (!output_msg)
+            output_msg = 'No Message to Display.';
+        $("<div></div>").html(output_msg).dialog({
+            title: title_msg,
+            resizable: false,
+            modal: true,
+            buttons: {
+                "Ok": function ()
+                {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    },
+    refresh:function (){
+        HomeController.start();
     }
 };
-App.initialize()
+App.initialize();
+Handlebars.registerHelper('ifparamator', function (value) {
+    console.log("reach ifparamator helper");
+    if (value)
+        return true;
+    else
+        return false;
+});

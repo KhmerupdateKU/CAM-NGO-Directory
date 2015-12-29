@@ -14,21 +14,6 @@ var NgoModel = {
         this.name = name;
     },
     fetchByCat_id: function (cat_id, successCallback) {
-        $.ajax({
-            url: URL + "index.php/ngo/fetchngobycat_id/" + cat_id,
-            success: successCallback
-        });
-    },
-    fetch: function (successCallback) {
-        $.ajax({
-            url: URL + "index.php/ngo/fetchngo",
-            success: successCallback
-        });
-    },
-    favorite: function (ngo_id, status, successCallback) {
-        $.ajax({
-            url: URL + "index.php/favorite/update/" + ngo_id + "/" + status,
-            success: successCallback
-        });
-    }
+        App.ajaxRequest("index.php/ngo/fetchngobycat_id/" + cat_id,successCallback);        
+    }    
 };

@@ -5,33 +5,47 @@
        style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;" href="#home-bottom" data-role="button"
        data-rel="popup" data-wow-delay='0.2s' data-transition="slide"><i class="zmdi zmdi-more-vert zmd-2x"></i></a>
 </div>
-<div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content iscroll-wrapper">        
     {{#if noconnection}}
-    <div class="nd2-card" data-role="popup">
-        <div class="card-title center-xs">
-            <h6 class="khmer-regular">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-off"></i></h6>
-            {{..#if favorite}}
-            <div class="card-supporting-text">                
-                <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក</h6>                
-            </div>
-            {{/if}}
+    <div class="col-xs-auto">
+        <div data-role="footer" data-position="fixed" data-fullscreen="false" style="background-color:black ">
+            <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"
+               onclick="App.refresh()" href="#">
+                <h6 class="khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6>                                
+            </a>
+            <h6 style="font-size: 10px;color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6>            
         </div>
-    </div>    
-    {{/if}}
-    <div class="ui-grid-b">
-        {{#each categories}}
-        <div class='{{block}}'>        
-            <div class="menu-elem" id="card-menu">
-                <a class=" ui-btn waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
-                    <div class="menu-img">
-                        <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>                    
-                    </div>                    
+    </div>
+    <div class="nd2-card">
+        <div class="card-title center-xs">
+
+            {{#if favorite}}          
+            <div class="card-supporting-text">                                
+                <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
+                    <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក  <i class="zmdi zmdi-favorite"></i></h6>
                 </a>
             </div>
         </div>
-        {{/each}}
+        {{/if}}
+        {{else}}
+        <div class="ui-grid-b">
+            {{#each categories}}
+            <div class='{{block}}'>        
+                <div class="menu-elem" id="card-menu">
+                    <a class=" ui-btn waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide" href="#page-ngo" id="{{cat_id}}" data-cat_name = '{{name_kh}}'>
+                        <div class="menu-img">
+                            <img width="100%" src="{{../url}}img/category/{{logo}}"  style="border-radius:15%" onError="this.onerror=null;this.src='img/app/na.png';"/>                    
+                        </div>                    
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}    
     </div>
 </div>
+
+
 <div data-role="panel" id="home-bottom" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
     <div class="ui-panel-inner">
         <div class="row around-xs">

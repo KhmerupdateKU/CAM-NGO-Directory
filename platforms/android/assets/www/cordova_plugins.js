@@ -28,7 +28,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.2.0",
-    "cordova-plugin-network-information": "1.1.0"
+    "cordova-plugin-network-information": "1.1.0",
+    "cordova-plugin-crosswalk-webview": "1.4.0"
 }
 // BOTTOM OF METADATA
 });

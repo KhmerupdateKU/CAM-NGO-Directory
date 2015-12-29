@@ -7,7 +7,7 @@
     {{#each detail}}    
     <div class="nd2-card">
         <div class="card-media">
-            <img src="img/app/logobackground.png" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            <img src="img/app/logobackground.png" style="opacity: 10" onError="this.onerror=null;this.src='img/app/na.png';"/>
             <div class="card-media-overlay">
                 <img src="{{../url}}img/ngo/{{logo}}" style="width: 40%;height: auto; margin-left: 30%;margin-bottom: 20%" onError="this.onerror=null;this.src='img/app/na.png';"/>
             </div>
@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+    {{#if description}}
     <div class="nd2-card">
         <div class="card-title">            
             <h5 class="khmer-moul">អំពីអង្គការ</h5>
@@ -29,42 +30,40 @@
             </div>
         </div>
     </div>
+    {{/if}}
+{{#ifcontact ../phones ../emails website}}
     <div class="nd2-card">
         <div class="card-title">                                 
-            <h5 class="khmer-moul">លេខទូរស័ព្ទ</h5>            
+            <h5 class="khmer-moul">ទំនាក់ទំនង</h5>            
             <div class="card-supporting-text">
-                {{#each ../phones}}                
-                <div class="align-left"> 
+                <div>                
+                    {{#each ../phones}}                                                
                     <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
                         <a href="tel:{{phone}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-phone link'></i></a>
                         {{phone}}                    
-                    </h6>                    
+                    </h6>                 
+                    {{/each}}                                    
                 </div>
-                {{/each}}                                    
-            </div>
-        </div>            
-        <div class="card-title">                        
-            <h5 class="khmer-moul">សារអេឡិចត្រូនិច</h5>            
-            <div class="card-supporting-text">
-                {{#each ../emails}}                
-                <div class="align-left"> 
+                <div>
+                    {{#each ../emails}}                                               
                     <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
                         <a href="mailto:{{email}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email link'></i></a>
                         {{email}}
                     </h6>     
+                    {{/each}} 
                 </div>
-                {{/each}}                                    
+                <div>
+                    <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
+                        <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe link'></i></a>
+                        {{website}}
+                    </h6>       
+                </div>
             </div>
-        </div>                
-        <div class="card-title">                      
-            <h5 class="khmer-moul">វេបសាយ</h5>                                  
-            <div class="card-supporting-text">                                
-                <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
-                    <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe link'></i></a>
-                    {{website}}
-                </h6>                  
-            </div>
-        </div>
+        </div>                    
+    </div>
+{{/ifcontact}}
+    {{#if address}}
+    <div class="nd2-card">
         <div class="card-title">
             <div class="align-left">                    
                 <h4 class="khmer-moul">អាស័យដ្ឋាន</h4>
@@ -76,6 +75,8 @@
             </div>        
         </div>
     </div>
+    {{/if}}
+    {{#if map}}    
     <div class="nd2-card">
         <div class="card-title">                          
             <h5 class="khmer-moul ui-btn-inline">ផែនទី</h5>                            
@@ -83,11 +84,11 @@
         <div class="card-media">            
             <div id="map-block"></div>                                                                      
             <script type="text/javascript">
-                NdgoDetailAction.getMap("map-block", '{{map}}');
+                App.getMap("map-block", '{{map}}');
             </script>
         </div>            
     </div>
-
+    {{/if}}
     {{/each}}   
 </div>    
 

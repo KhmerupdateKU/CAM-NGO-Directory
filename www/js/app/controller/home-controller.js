@@ -38,10 +38,11 @@ var HomeController = {
         var data;
         NgoOfflineModel.count(function (c) {
             if (c > 0) {
-                data = {noconnection: "ពុំមានអ៊ីនធឺណិតតភ្ជាប់ !", favorite: "លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក", ngo: "មាន " + c + " អង្គការ"};
+                data = {noconnection: true, favorite: "លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក", ngo: "មាន " + c + " អង្គការ"};
             } else {
-                data = {noconnection: "ពុំមានអ៊ីនធឺណិតតភ្ជាប់ !"};
+                data = {noconnection: true};
             }
+            console.log('data : ', data);
             HomeView.renderHome($element, data);
         });
 

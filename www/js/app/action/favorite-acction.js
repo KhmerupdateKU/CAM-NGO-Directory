@@ -3,6 +3,9 @@ $(function () {
         FavoriteController.start();
     });    
     $(document).delegate("#list-ngo-offline a", "click", function () {
+        if(!NgoOfflineModel.getOffline()){
+            NgoOfflineModel.setOffline(true);
+        }
         NgoModel.setId($(this).attr("data-offline-ngo_id"));
         NgoModel.setName($(this).attr("data-offline-ngo_name"));
     });

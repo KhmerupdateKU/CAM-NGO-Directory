@@ -14,8 +14,7 @@ function createTable() {
         phone: 'TEXT',
         email: 'TEXT',
         website: 'TEXT',
-        address: 'TEXT',
-        map: 'TEXT',
+        address: 'TEXT',        
         description: 'TEXT'
     });
 }

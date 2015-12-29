@@ -2,8 +2,7 @@ var NgoController = {
     start: function () {
         var $element = $('#page-ngo');
         var data = {header: CategoryModel.getName()};
-        NgoView.renderNgos($element, data);
-        NgoController.get();
+        NgoView.renderNgos($element, data);        
     },
     get: function () {
         var cat_id = CategoryModel.getId();

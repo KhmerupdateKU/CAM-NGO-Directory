@@ -1,4 +1,11 @@
 var NgoOfflineModel = {
+    offline: true,
+    setOffline: function (type) {
+        NgoOfflineModel.offline = type;
+    },
+    getOffline: function () {
+        return NgoOfflineModel.offline;
+    },
     add: function (ngo) {
         var ngoParam = {
             ngo_id: ngo.ngo_id,

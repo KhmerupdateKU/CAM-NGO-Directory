@@ -6,9 +6,9 @@
 @font-face{
     font-family:khmermuol;
     src:url(fonts/KhmerMuol.ttf) format('woff'),
-        url(fonts/KhmerMuol.ttf) format('truetype')       
+        url(fonts/KhmerMuol.ttf) format('truetype')               
 }
-.khmer-regular{    
+.khmer-regular{        
     font-family:'khmerregular';     
     margin: 0 0 0 0;
 }

@@ -1,19 +1,26 @@
 var NgoDetailController = {
     phones: [],
     emails: [],
+    ngo: [],
     __favorite: "zmdi-favorite",
+    setNgo: function (ngo) {
+        NgoDetailController.ngo = [];
+        NgoDetailController.ngo = ngo;
+    },
+    getNgo: function () {
+        return NgoDetailController.ngo;
+    },
     start: function () {
         var $element = $('#page-ngo-detail');
-        var ngo_id = NgoModel.getId();
         var data = {header: NgoModel.getName()};
         NgoDetailView.renderDetail($element, data);
-        NgoDetailController.get(ngo_id);
     },
     get: function (ngo_id) {
-        if (App.isOnline()) {
+        if (App.isOnline() && !NgoOfflineModel.getOffline()) {
             NgoDetailModel.fetchDetailByngo_id(ngo_id, function (ngodetail) {
-                var detailJson = JSON.parse(ngodetail);               
-                NgoDetailController.favorite(ngo_id, function () {
+                var detailJson = JSON.parse(ngodetail);
+                NgoDetailController.setNgo(detailJson);
+                NgoDetailController.isfavorite(ngo_id, function () {
                     NgoDetailController.render(detailJson);
                 });
             });
@@ -39,8 +46,7 @@ var NgoDetailController = {
                     phone: data.phone(),
                     email: data.email(),
                     website: data.website(),
-                    address: data.address(),
-                    map: data.map(),
+                    address: data.address(),                    
                     description: data.description()
                 }];
             callback(detail);
@@ -77,7 +83,7 @@ var NgoDetailController = {
             });
         return elementname;
     },
-    favorite: function (ngo_id, callback) {
+    isfavorite: function (ngo_id, callback) {
         NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (ngo) {
             if (ngo != null)
                 NgoDetailController.__favorite = "zmdi-favorite";
@@ -85,5 +91,5 @@ var NgoDetailController = {
                 NgoDetailController.__favorite = "zmdi-favorite-outline";
             callback();
         });
-    }
+    },
 }

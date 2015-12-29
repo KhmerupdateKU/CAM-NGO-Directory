@@ -17,7 +17,8 @@ var Spinner = {
         $.mobile.loading('show', {
             text: 'Complete',
             textVisible: true,
-            html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><img src='img/app/FlipFlop.gif'/></span><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>" + message + "</h4></span></div></center>"
+            html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><img style='width: 25%' src='img/app/FlipFlop.gif'/></span><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>" + message + "</h4></span></div></center>"
+//           html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>" + message + "</h4></span></div></center>"
         });
         //$.mobile.activePage.addClass("ui-disabled");
     },

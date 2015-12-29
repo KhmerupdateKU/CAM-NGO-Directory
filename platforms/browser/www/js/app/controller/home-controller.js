@@ -19,7 +19,7 @@ var HomeController = {
             }
         });
         callback(cats);
-    },    
+    },
     render: function (cats) {
         var $element = $('#page-home');
         var data = {categories: cats, url: URL};
@@ -30,11 +30,28 @@ var HomeController = {
             var newCategories = JSON.parse(category);
             HomeController.prepareOnline(newCategories, function (cats) {
                 HomeController.render(cats);
-            });          
+            });
         });
-    },    
+    },
+    getOffline: function () {
+        var $element = $('#page-home');
+        var data;
+        NgoOfflineModel.count(function (c) {
+            if (c > 0) {
+                data = {noconnection: true, favorite: "លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក", ngo: "មាន " + c + " អង្គការ"};
+            } else {
+                data = {noconnection: true};
+            }
+            console.log('data : ', data);
+            HomeView.renderHome($element, data);
+        });
+
+    },
     get: function () {
         if (App.isOnline())
             HomeController.getOnline();
-    },   
+        else {
+            HomeController.getOffline();
+        }
+    },
 };
