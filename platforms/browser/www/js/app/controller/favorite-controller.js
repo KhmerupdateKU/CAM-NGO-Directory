@@ -61,7 +61,8 @@ var FavoriteController = {
         NgoDetailController.sync(ngo_id, detail);
     },
     remove: function (ngo_id) {
-        NgoController.remove(ngo_id);
+        NgoOfflineModel.remove(ngo_id);
+        NgoDetailOfflineModel.remove(ngo_id);
     }
 };
 

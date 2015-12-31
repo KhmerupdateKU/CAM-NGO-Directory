@@ -1,7 +1,6 @@
 $(function () {
     $(document).delegate("#page-ngo", "pagebeforeshow", function () {
-        NgoController.start();
-        NgoController.get();
+        NgoController.start();        
     });
     $(document).delegate("#list-ngo a", "click", function () {
         if (NgoOfflineModel.getOffline()) {
@@ -21,5 +20,4 @@ $(function () {
         $('#btn-search').toggleClass('ui-hidden-accessible');
     });
 });
-
 

@@ -14,6 +14,7 @@ var NgoDetailController = {
         var $element = $('#page-ngo-detail');
         var data = {header: NgoModel.getName()};
         NgoDetailView.renderDetail($element, data);
+        NgoDetailController.get(NgoModel.getId());
     },
     get: function (ngo_id) {
         if (App.isOnline() && !NgoOfflineModel.getOffline()) {
@@ -25,11 +26,15 @@ var NgoDetailController = {
                 });
             });
         } else {
-            NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (data) {
-                NgoDetailController.preparetOfflineData(ngo_id, data, function (detail) {
-                    NgoDetailController.render(detail);
+            if (NgoOfflineModel.getOffline()) {
+                NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (data) {
+                    NgoDetailController.preparetOfflineData(ngo_id, data, function (detail) {
+                        NgoDetailController.render(detail);
+                    });
                 });
-            });
+            } else {
+                NgoDetailController.getOffline();
+            }
         }
     },
     preparetOfflineData: function (ngo_id, data, callback) {
@@ -46,7 +51,7 @@ var NgoDetailController = {
                     phone: data.phone(),
                     email: data.email(),
                     website: data.website(),
-                    address: data.address(),                    
+                    address: data.address(),
                     description: data.description()
                 }];
             callback(detail);
@@ -92,4 +97,16 @@ var NgoDetailController = {
             callback();
         });
     },
+    getOffline: function () {
+        var $element = $('#page-ngo-detail');
+        var data;
+        NgoOfflineModel.count(function (c) {
+            if (c > 0) {
+                data = {noconnection: true, fav: true, ngo: "មាន " + c + " អង្គការ"};
+            } else {
+                data = {noconnection: true};
+            }
+            NgoDetailView.renderDetail($element, data);
+        });
+    }
 }

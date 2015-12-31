@@ -8,8 +8,8 @@ $(function () {
             FavoriteController.remove(NgoModel.getId());
         }
     });
-    $(document).delegate("#page-ngo-detail", "pagebeforeshow", function () {
-        NgoDetailController.start();
-        NgoDetailController.get(NgoModel.getId());
+    $(document).delegate("#page-ngo-detail", "pagebeforeshow", function () {        
+        NgoDetailController.start();        
     });
 });
+

@@ -1,9 +1,52 @@
-<div data-role="header" data-position="fixed" data-fullscreen="false">    
-    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s' data-transition="slide"><strong>{{header}}</strong></h1>
-    <a href="#" data-rel="back" data-wow-delay='0.2s' data-transition="slide" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>
-    <a href="#" id="btn-favorite" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s' data-transition="slide"><i id="favorite" class="zmdi {{favorite}} zmd-2x"></i></a>     
+<div data-role="header" data-position="fixed" data-fullscreen="false">
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s'>
+        {{#if header}}
+        <strong>{{header}}</strong>
+        {{else}}
+        អំពីអង្គការ        
+        {{/if}}
+    </h1>              
+    <a href="#" data-rel="back" data-transition="slide" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                                
+    <a href="" id="btn-favorite" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s' data-transition="slide"><i id="favorite" class="zmdi                                                                                                                          
+                                                                                                                         {{#if header}}        
+                                                                                                                         {{favorite}} 
+                                                                                                                         {{else}}
+                                                                                                                         zmdi-favorite-outline
+                                                                                                                         {{/if}}zmd-2x"></i></a>    
 </div>
 <div data-role="main" class="nd2-banner">               
+    {{#if noconnection}}
+    <div data-role="footer" data-position="fixed" data-fullscreen="false" style="background-color:black ">        
+        <div class="col-xs-auto">
+            <div class="card-action">
+                <div class="row between-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline"><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 align-right">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="NgoDetailController.start();"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
+                        </div>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+    </div>
+    {{/if}}        
+    {{#if fav}}          
+    <div class="nd2-card">
+        <div class="card-title center-xs">
+            <div class="card-supporting-text">                                
+                <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
+                    <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក  <i class="zmdi zmdi-favorite"></i></h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/if}}       
+    {{#if detail}}
     {{#each detail}}    
     <div class="nd2-card">
         <div class="card-media">
@@ -31,7 +74,7 @@
         </div>
     </div>
     {{/if}}
-{{#ifcontact ../phones ../emails website}}
+    {{#ifcontact ../phones ../emails website}}
     <div class="nd2-card">
         <div class="card-title">                                 
             <h5 class="khmer-moul">ទំនាក់ទំនង</h5>            
@@ -61,7 +104,7 @@
             </div>
         </div>                    
     </div>
-{{/ifcontact}}
+    {{/ifcontact}}
     {{#if address}}
     <div class="nd2-card">
         <div class="card-title">
@@ -84,15 +127,11 @@
         <div class="card-media">            
             <div id="map-block"></div>                                                                      
             <script type="text/javascript">
-                App.getMap("map-block", '{{map}}');
+                Map.get("map-block", '{{map}}');                
             </script>
         </div>            
     </div>
     {{/if}}
-    {{/each}}   
+    {{/each}}  
+    {{/if}}
 </div>    
-
-
-
-
-

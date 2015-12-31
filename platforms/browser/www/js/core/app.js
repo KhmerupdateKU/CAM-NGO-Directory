@@ -1,6 +1,4 @@
-//var URL = "http://localhost:8088/Ad-ngos/";
 var URL = "http://www.camngo.website/";
-
 var App = {
     __db_size: 10 * 1024 * 124,
     __db_name: 'ngos',
@@ -9,12 +7,6 @@ var App = {
     },
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-//        window.addEventListener("offline", function (e) {
-//            console.log("offline");
-//        });
-//        window.addEventListener("online", function (e) {
-//            console.log("online");
-//        });
     },
     resetDB: function () {
         persistence.reset();
@@ -34,33 +26,25 @@ var App = {
             url: URL + url,
             success: successCallback,
             beforeSend: function () {
-                ViewLoading.setBusy("កំពុងតភ្ជាប់ទៅម៉ាស៊ីនមេ", true);
-            },
-            afterSend: function () {
-                ViewLoading.setBusy("ការតភ្ជាប់បានសម្រេច", true);
+                ViewLoading.setBusy("កំពុងតភ្ជាប់", true);
             },
             complete: function () {
                 ViewLoading.setBusy(null, false);
             },
             error: function (e) {
-                ViewLoading.setBusy("ការតភ្ជាប់បរាជ័យ", true);
+                alert("អ៊ីនធឺណិតត្រូវបានកាត់ផ្តាច់");
             }
         });
     },
-    isOnline: function () {
-        var online = false;
-        if (navigator.connection) {
-            online = (navigator.connection.type !== Connection.NONE);
-            console.log("navigator");
-            return online;
-        }
-        online = navigator.onLine; //browser
-        return online;
-    },
-    Toast: function (msg) {
-        $.mobile.toast({
-            message: msg
-        });
+    isOnline: function () {        
+            var online = false;
+            if (navigator.connection) {
+                online = (navigator.connection.type !== Connection.NONE);
+                console.log("navigator");
+                return online;
+            }
+            online = navigator.onLine; //browser
+            return online;       
     },
     onExite: function ()
     {
@@ -69,31 +53,7 @@ var App = {
         } else if (navigator.device) {
             navigator.device.exitApp();
         }
-    },
-    dialog: function (output_msg, title_msg)
-    {
-        console.log("dialog");
-        if (!title_msg)
-            title_msg = 'Alert';
-        if (!output_msg)
-            output_msg = 'No Message to Display.';
-        $("<div></div>").html(output_msg).dialog({
-            title: title_msg,
-            resizable: false,
-            modal: true,
-            buttons: {
-                "Ok": function ()
-                {
-                    $(this).dialog("close");
-                }
-            }
-        });
-    },
-    refresh: function () {
-        HomeController.start();
-    },
-    getMap: function (taget, latlong) {
-        Map.get(taget, latlong);
     }
+    ,
 };
 App.initialize();

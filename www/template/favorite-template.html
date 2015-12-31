@@ -1,14 +1,15 @@
 <div data-role="header" data-position="fixed" data-fullscreen="false">
-    <a href="#" data-rel="back" data-wow-delay='0.2s' data-transition="slide" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>
     <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s' data-transition="slide" id="page-ngo-header">ចំណូលចិត្ត</h1>          
-    <a href="#filter-ngo-offline" id="btn-search-offline" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s'><i class="zmdi zmdi-search zmd-2x"></i></a>        
-    <div class="ui-hidden-accessible ui-overlay-b wow fadeIn" id="search-block-offline" data-wow-delay='0.4s' style="padding-left: 10px;padding-right: 10px">
-        <input id="filter-ngo-offline" class="khmer-regular ui-input-text" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
-    </div>
-</div>
-<div data-role="main" class="nd2-banner">                   
+    <a href="#" data-rel="back" data-wow-delay='0.2s' data-transition="slide" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>   
+    <a href="#filter-ngo-offline" id="btn-search-offline" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s'><i class="zmdi zmdi-search zmd-2x"></i></a>       
+
+</div> 
+<div data-role="main" class="nd2-banner"> 
+    <form class="ui-filterable">
+        <input id="filter-favorite" class="khmer-regular ui-input-text" style="margin-left: 5px;margin-right: 5px" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
+    </form>
     {{#each ngos}}    
-    <ul data-role="listview" data-filter="true" data-input="#filter-ngo-offline">        
+    <ul data-role="listview" data-filter="true" data-input="#filter-favorite">        
         <div class="nd2-card" id="list-ngo-offline">
             <a style="text-decoration: none"  href="#page-ngo-detail" data-wow-delay='0.2s' data-transition="slide" data-offline-ngo_id = '{{ngo_id}}' data-offline-ngo_name = '{{name_short}}'>                            
                 <div class="card-title has-avatar">                    

@@ -22,8 +22,7 @@ var NgoOfflineModel = {
     },
     remove: function (ngo_id) {
         NgoOfflineModel.fetchbyngo_id(ngo_id, function (ngo) {
-            persistence.remove(ngo);
-            console.log("param", ngoParam);
+            persistence.remove(ngo);            
             persistence.flush();
         });
     },

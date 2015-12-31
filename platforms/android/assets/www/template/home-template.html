@@ -1,6 +1,6 @@
-<div data-role="header" data-position="fixed" data-fullscreen="false">
-    <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.2s' data-transition="slide"><img src="img/app/ic_launcher.png" width="100%" height="100%"></a>
+<div data-role="header" data-position="fixed">    
     <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s'><strong>CAM NGO</strong></h1>
+    <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.2s' data-transition="slide"><img src="img/app/ic_launcher.png" width="100%" height="100%"></a>    
     <a class="ui-btn-right wow fadeIn ui-btn waves-effect waves-button  waves-effect waves-button waves-effect waves-button"
        style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;" href="#home-bottom" data-role="button"
        data-rel="popup" data-wow-delay='0.2s' data-transition="slide"><i class="zmdi zmdi-more-vert zmd-2x"></i></a>
@@ -13,12 +13,12 @@
                 <div class="row between-xs">
                     <div class="col-xs-4">
                         <div class="box">
-                            <a href="#" class="ui-btn ui-btn-inline" onclick="App.refresh()"><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
+                            <a href="#" class="ui-btn ui-btn-inline"><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
                         </div>
                     </div>
                     <div class="col-xs-8 align-right">
                         <div class="box">
-                            <a href="#" class="ui-btn ui-btn-inline" onclick="App.refresh()"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="HomeController.start();"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,6 @@
     {{#if favorite}}          
     <div class="nd2-card">
         <div class="card-title center-xs">
-
             <div class="card-supporting-text">                                
                 <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
                     <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក  <i class="zmdi zmdi-favorite"></i></h6>
@@ -72,12 +71,12 @@
                         <strong>វាយតម្លៃកម្មវិធី</strong>
                     </a>
                 </div>
-                <div class="col-xs-auto">
-                    <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline around-xs waves-effect waves-button" href="#page-about" data-wow-delay='0.2s' data-transition="slide">
-                        <i class="zmdi zmdi-collection-text zmd-2x"></i>
-                        <strong>អំពីពួកយើង</strong>
-                    </a>
-                </div>
+                <!--                <div class="col-xs-auto">
+                                    <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline around-xs waves-effect waves-button" href="#page-about" data-wow-delay='0.2s' data-transition="slide">
+                                        <i class="zmdi zmdi-collection-text zmd-2x"></i>
+                                        <strong>អំពីពួកយើង</strong>
+                                    </a>
+                                </div>-->
                 <div class="col-xs-auto">
                     <a class="khmer-regular ui-bottom-sheet-link ui-btn ui-btn-inline around-xs waves-effect waves-button" href="#" onclick="App.onExite()" data-ajax="false">
                         <i class="zmdi zmdi-close zmd-2x"></i>

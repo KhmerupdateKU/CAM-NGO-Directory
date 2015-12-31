@@ -1,14 +1,52 @@
 <div data-role="header" data-position="fixed" data-fullscreen="false">
-    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s' id="page-ngo-header">{{header}}</h1>          
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s' id="page-ngo-header">
+        {{#if header}}
+        {{header}}
+        {{else}}
+        បញ្ចីអង្គការ            
+        {{/if}}</h1>          
     <a href="#filter-ngo" id="btn-search" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s'><i class="zmdi zmdi-search zmd-2x"></i></a>    
-    <a href="#" data-rel="back" data-transition="slide" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                            
-    <div class="ui-hidden-accessible wow fadeIn" id="search-block" data-wow-delay='0.4s' style="padding-left: 10px;padding-right: 10px">
-        <input id="filter-ngo" class="khmer-regular ui-input-text" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
-    </div>
+    <a href="#" data-rel="back" data-transition="slide" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                                
 </div>
 <div data-role="main" class="nd2-banner">           
-    {{#each ngos}}
+    <div class="ui-hidden-accessible" id="search-block" data-wow-delay='0.4s'>
+        <input id="filter-ngo" style="margin-left: 5px;margin-right: 5px" class="khmer-regular ui-input-text" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
+    </div>
+    {{#if noconnection}}
+    <div data-role="footer" data-position="fixed" data-fullscreen="false" style="background-color:black ">        
+        <div class="col-xs-auto">
+            <div class="card-action">
+                <div class="row between-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" ><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 align-right">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="setTimeout(NgoController.start(), 1000);"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
+                        </div>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+    </div>
+    {{/if}}        
+    {{#if favorite}}          
+    <div class="nd2-card">
+        <div class="card-title center-xs">
+
+            <div class="card-supporting-text">                                
+                <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
+                    <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក <i class="zmdi zmdi-favorite"></i></h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/if}}        
+    {{#if ngos}}
     <ul data-role="listview" data-filter="true" data-input="#filter-ngo">
+        {{#each ngos}}
         <div class="nd2-card" id="list-ngo">
             <a class=" waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide" style="text-decoration: none" href="#page-ngo-detail" data-ngo_id = '{{ngo_id}}' data-ngo_name = '{{name_short}}'>
                 <div class="card-title has-avatar">
@@ -20,6 +58,7 @@
                 </div>
             </a>        
         </div>
+        {{/each}} 
     </ul>
-    {{/each}}                
+    {{/if}}
 </div>

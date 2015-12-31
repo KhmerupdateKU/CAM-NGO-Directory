@@ -38,14 +38,13 @@ var HomeController = {
         var data;
         NgoOfflineModel.count(function (c) {
             if (c > 0) {
-                data = {noconnection: true, favorite: "លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក", ngo: "មាន " + c + " អង្គការ"};
+                data = {noconnection: true, favorite: true, ngo: "មាន " + c + " អង្គការ"};
             } else {
                 data = {noconnection: true};
             }
             console.log('data : ', data);
             HomeView.renderHome($element, data);
         });
-
     },
     get: function () {
         if (App.isOnline())

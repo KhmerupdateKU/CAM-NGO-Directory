@@ -2,7 +2,8 @@ var NgoController = {
     start: function () {
         var $element = $('#page-ngo');
         var data = {header: CategoryModel.getName()};
-        NgoView.renderNgos($element, data);        
+        NgoView.renderNgos($element, data);
+        NgoController.get();
     },
     get: function () {
         var cat_id = CategoryModel.getId();
@@ -11,6 +12,8 @@ var NgoController = {
                 var ngosJson = JSON.parse(ngos);
                 NgoController.render(ngosJson);
             });
+        } else {
+            NgoController.getOffline();
         }
     },
     render: function (ngos) {
@@ -24,10 +27,20 @@ var NgoController = {
             console.log("fuckin old ngo:", oldNgo);
             NgoOfflineModel.update(oldNgo, newNgo);
         });
-    },
-    remove: function (ngo_id) {
-        NgoOfflineModel.remove(ngo_id);
-    },
+    },  
+    getOffline: function () {
+        var $element = $('#page-ngo');
+        var data;
+        NgoOfflineModel.count(function (c) {
+            if (c > 0) {
+                data = {noconnection: true, favorite: true, ngo: "មាន " + c + " អង្គការ"};
+            } else {
+                data = {noconnection: true};
+            }
+            console.log('data : ', data);
+            NgoView.renderNgos($element, data);
+        });
+    }
 };
 
 
