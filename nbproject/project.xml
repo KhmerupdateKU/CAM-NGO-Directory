@@ -3,10 +3,7 @@
     <type>org.netbeans.modules.web.clientproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
-            <name>Cam-NGOsearch</name>
+            <name>temporay</name>
         </data>
-        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
-            <word>tamplat</word>
-        </spellchecker-wordlist>
     </configuration>
 </project>

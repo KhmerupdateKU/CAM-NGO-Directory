@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -7,6 +8,8 @@
 <polygon points="14,5 9,5 7,0 5,5 0,5 4,8 2.625,13 7,10 11.375,13 10,8 "/>
 </svg>
 =======
+=======
+>>>>>>> ngo-database
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -14,4 +17,7 @@
 	 width="14px" height="14px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
 <polygon points="14,5 9,5 7,0 5,5 0,5 4,8 2.625,13 7,10 11.375,13 10,8 "/>
 </svg>
+<<<<<<< HEAD
 >>>>>>> e32b7c0eab0646130ec38d00a70a96ef74640398
+=======
+>>>>>>> ngo-database

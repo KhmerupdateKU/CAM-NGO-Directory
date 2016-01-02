@@ -1,16 +1,16 @@
 {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-network-information": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-whitelist@1"
+            "id": "cordova-plugin-network-information"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-inappbrowser": {
+    "cordova-plugin-whitelist": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-inappbrowser"
+            "id": "cordova-plugin-whitelist@1"
         },
         "is_top_level": true,
         "variables": {}

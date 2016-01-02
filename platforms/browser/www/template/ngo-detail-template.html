@@ -1,105 +1,151 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">    
     <a href="#" data-rel="back" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'>
         <i class="zmdi zmdi-arrow-back zmd-2x"></i>
     </a>
     {{#each detail}}    
     <h1 class="wow fadeIn khmer-regular" data-wow-delay='0.4s' id="page-detail-header">{{name_kh}}</h1>    
+=======
+<div data-role="header" data-position="fixed" data-fullscreen="false">
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s'>
+        {{#if header}}
+        {{header}}
+        {{else}}
+        អំពីអង្គការ        
+        {{/if}}
+    </h1>              
+    <a href="#" data-rel="back" data-transition="slide" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>                                
+    <a href="" id="btn-favorite" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s' data-transition="slide"><i id="favorite" class="zmdi                                                                                                                          
+                                                                                                                         {{#if header}}        
+                                                                                                                         {{favorite}} 
+                                                                                                                         {{else}}
+                                                                                                                         zmdi-favorite-outline
+                                                                                                                         {{/if}}zmd-2x"></i></a>    
+>>>>>>> ngo-database
 </div>
-<div data-role="main" class="nd2-banner">           
+<div data-role="main" class="nd2-banner">               
+    {{#if noconnection}}
+    <div data-role="footer" data-position="fixed" data-fullscreen="false" style="background-color:black ">        
+        <div class="col-xs-auto">
+            <div class="card-action">
+                <div class="row between-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline"><h6 class=" khmer-regular align-left"  style="color: white">ពុំមានអ៊ីនធឺណិតតភ្ជាប់ <i class="zmdi zmdi-network-wifi-off"></i></h6></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 align-right">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-btn-inline" onclick="NgoDetailController.start();"><h6 style="color: blue;" class="khmer-regular align-right">ព្យាយាមម្តងទៀត</h6></a>
+                        </div>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+    </div>
+    {{/if}}        
+    {{#if fav}}          
+    <div class="nd2-card">
+        <div class="card-title center-xs">
+            <div class="card-supporting-text">                                
+                <a class=" ui-btn ui-btn-inline waves-effect waves-button" data-wow-delay='0.2s' data-transition="slide"  href="#page-favorite">
+                    <h6 class="khmer-regular">លោកអ្នកអាចចូលទៅមើលចំណូលចិត្តរបស់អ្នក  <i class="zmdi zmdi-favorite"></i></h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/if}}       
+    {{#if detail}}
+    {{#each detail}}    
     <div class="nd2-card">
         <div class="card-media">
-            <img src="img/app/logobackground.png" onError="this.onerror=null;this.src='img/app/na.png';"/>
+            <img src="img/app/logobackground.png" style="opacity: 10" onError="this.onerror=null;this.src='img/app/na.png';"/>
             <div class="card-media-overlay">
-                <img src="{{../url}}img/ngo/{{logo}}" onError="this.onerror=null;this.src='img/app/na.png';"/>
+                <img src="{{../url}}img/ngo/{{logo}}" style="width: 40%;height: auto; margin-left: 30%;margin-bottom: 20%" onError="this.onerror=null;this.src='img/app/na.png';"/>
             </div>
-            <div class='card-media-overlay with-background card-supporting-text'>            
-                <div class="box" style="width: 100%">
-                    <h4 class="khmer-regular" style="color: white;margin-bottom: 20px">{{name_kh}}</h4>
-                </div>               
+            <div class='card-media-overlay with-background card-supporting-text'>                            
+                <h4 class="khmer-moul" style="color: white">{{name_kh}}</h4>                
             </div>
         </div>
         <div class="card-action">
-            <div class='card-supporting-text'>            
-                <div class="box" style="width: 100%">                    
-                    <h4 class="khmer-regular" >{{name_en}} ({{name_short}})</h4>                                          
-                </div>               
+            <div class='card-supporting-text'>                            
+                <h4 class="khmer-regular" style="color: black;"><strong>{{name_en}}</strong> ({{name_short}})</h4>
             </div>
         </div>
     </div>
+    {{#if description}}
     <div class="nd2-card">
         <div class="card-title">            
-            <h4 class="khmer-regular"><strong>អំពីអង្គការ</strong></h4>
-        </div>
-        <div class="card-supporting-text">
-            <p class="khmer-regular">{{description}}</p>
+            <h5 class="khmer-moul">អំពីអង្គការ</h5>
+            <div class="card-supporting-text">
+                <p class="khmer-regular">{{description}}</p>
+            </div>
         </div>
     </div>
+    {{/if}}
+    {{#ifcontact ../phones ../emails website}}
     <div class="nd2-card">
-        <div class="card-title">            
-            <h4 class="khmer-regular"><strong>ទំនាក់ទំនង</strong></h4>
-        </div>        
-        <div class="card-supporting-text">            
-            <div class="align-left">            
-                <h4 class="khmer-regular">លេខទូរស័ព្ទ</h4>
-            </div>        
-            {{#each ../phones}}
-            <div class="align-right col-xs-12">  
-                <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{phone}}
-                    <a href="tel:{{phone}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-phone'></i></a>
-                </h5>                                
-            </div>
-            {{/each}}                                    
-        </div>    
-        <hr>
-        <div class="card-supporting-text">            
-            <div class="align-left">            
-                <h4 class="khmer-regular">សារអេឡិចត្រូនិច</h4>
-            </div>        
-            {{#each ../emails}}
-            <div class="align-right col-xs-12">  
-                <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{email}}
-                    <a href="mailto:{{email}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email'></i></a>
-                </h5>                                
-            </div>
-            {{/each}}                                    
-        </div>        
-        <hr>
-        <div class="card-supporting-text">          
-
-            <div class="col-xs-0 align-left">                    
-                <h5 class="khmer-regular ui-btn-inline">វេបសាយ</h5>                      
-            </div>
-            <div class="align-right col-xs-12">  
-                <div class="row between-xs">                    
-                    <div class="align-right col-xs-12">  
-                        <h5 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">{{website}}
-                            <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe'></i></a>
-                        </h5>  
-                    </div>                    
+        <div class="card-title">                                 
+            <h5 class="khmer-moul">ទំនាក់ទំនង</h5>            
+            <div class="card-supporting-text">
+                <div>                
+                    {{#each ../phones}}                                                
+                    <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
+                        <a href="tel:{{phone}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-phone link'></i></a>
+                        {{phone}}                    
+                    </h6>                 
+                    {{/each}}                                    
+                </div>
+                <div>
+                    {{#each ../emails}}                                               
+                    <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
+                        <a href="mailto:{{email}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-email link'></i></a>
+                        {{email}}
+                    </h6>     
+                    {{/each}} 
+                </div>
+                <div>
+                    <h6 class="khmer-regular ui-btn-inline" style="margin-bottom: 10px">
+                        <a href="http://{{website}}" class="ui-btn ui-btn-inline ui-btn-fab"><i class='zmdi zmdi-globe link'></i></a>
+                        {{website}}
+                    </h6>       
                 </div>
             </div>
-        </div>                
-        <hr>
-        <div class="card-supporting-text">
-            <div class="align-left">
-                <h4 class="khmer-regular" style="margin-bottom: 10px">អាស័យដ្ឋាន</h4>
+        </div>                    
+    </div>
+    {{/ifcontact}}
+    {{#if address}}
+    <div class="nd2-card">
+        <div class="card-title">
+            <div class="align-left">                    
+                <h4 class="khmer-moul">អាស័យដ្ឋាន</h4>
             </div>
-            <p class="khmer-regular">{{address}}</p>
+            <div class="card-supporting-text">
+                <div class="align-left">                                         
+                    <p class="khmer-regular">{{address}}</p>                    
+                </div>
+            </div>        
         </div>
     </div>
+    {{/if}}
+    {{#if map}}    
     <div class="nd2-card">
         <div class="card-title">                          
-            <h4 class="khmer-regular ui-btn-inline"><strong>ផែនទី</strong></h4>                            
+            <h5 class="khmer-moul ui-btn-inline">ផែនទី</h5>                            
         </div>
         <div class="card-media">            
-            <div id="map-block"></div>           
+            <div id="map-block"></div>                                                                      
             <script type="text/javascript">
-                getMap("map-block", '{{map}}');
+                Map.get("map-block", '{{map}}');                
             </script>
         </div>            
     </div>
+    {{/if}}
+    {{/each}}  
+    {{/if}}
 </div>    
+<<<<<<< HEAD
 {{/each}}      
 
 
@@ -215,3 +261,5 @@
 
 
 >>>>>>> e32b7c0eab0646130ec38d00a70a96ef74640398
+=======
+>>>>>>> ngo-database

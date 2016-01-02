@@ -1,16 +1,30 @@
 @font-face{
-    font-family:Khmer;
+    font-family:khmerregular;
     src:url(fonts/KhmerOSNew-Regular.ttf) format('woff'),
-        url(fonts/KhmerOSNew-Regular.ttf) format('truetype')       
+        url(fonts/KhmerOSNew-Regular.ttf) format('truetype');
 }
-
-.khmer-regular{    
-    font-family:'Khmer';     
+@font-face{
+    font-family:khmermuol;
+    src:url(fonts/KhmerMuol.ttf) format('woff'),
+        url(fonts/KhmerMuol.ttf) format('truetype')               
+}
+.khmer-regular{        
+    font-family:'khmerregular';     
     margin: 0 0 0 0;
-  
 }
-body { opacity: 0; }
 
+.khmer-moul{    
+    font-family:'khmermuol';     
+    color: #009688;
+    margin: 0 0 0 0;
+}
+.link{
+    color: blue;
+}
+.khmer-moul-header{    
+    font-family:'khmermuol';     
+    color: white;    
+}
 #map-block {
     width:100%;
     height:250px;    
@@ -22,4 +36,13 @@ body { opacity: 0; }
     width: 200px;
     z-index: 0;
     position: relative;    
+}
+.loading{
+    background-color: white;
+    width: 400px;
+    height: 200px;   
+    align-content: center;
+}
+.h-serach{
+    width: 100%
 }

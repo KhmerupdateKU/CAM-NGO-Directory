@@ -1,6 +1,5 @@
 var AppTemplate = {
     process: function (templateURL, templateData, callback) {
-
         var path = "template/" + templateURL;
         var templateText = AppCache.get(templateURL);
         if (templateText)

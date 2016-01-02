@@ -1,23 +1,57 @@
 var HomeController = {
-    getHome: function () {    
-        var $element = $('#page-home');
-        var cats = CategoryModel.get();
-        if (cats.length !== 0) {
-            var data = {categories: cats, url: URL, class: "ui-hidden-accessible"};
-            HomeView.renderHome($element, data);
-        } else {
-            HomeView.renderHome($element, null);
-            setInterval(function () {
-                if (CategoryModel.get().length === 0)
-                    CategoryModel.fetch();
-                if (NgoModel.getNgos().length === 0)
-                    NgoModel.fetch();
-                if (NgoDetailModel.getDetail().length === 0)
-                    NgoDetailModel.fetch();
-            }, 3000);
+    $element: $('#page-home'),
+    start: function () {
+        HomeView.renderHome(HomeController.$element, null);
+        HomeController.get();
+    },
+    prepareOnline: function (cats, callback) {
+        ch = 1;
+        $.map(cats, function (category) {
+            if (ch === 1) {
+                category.block = 'ui-block-a';
+                ch += 1;
+            } else if (ch === 2) {
+                category.block = 'ui-block-b';
+                ch += 1;
+            } else {
+                category.block = 'ui-block-c';
+                ch = 1;
+            }
+        });
+        callback(cats);
+    },
+    render: function (cats) {
+        var data = {categories: cats, url: URL};
+        HomeView.renderHome(HomeController.$element, data);
+    },
+    getOnline: function () {
+        CategoryModel.fetch(function (category) {
+            var newCategories = JSON.parse(category);
+            HomeController.prepareOnline(newCategories, function (cats) {
+                HomeController.render(cats);
+            });
+        }, function (e) {
+            var data = {error: "ការតភ្ជាប់ត្រូវបានកាត់ផ្តាច់"};
+            HomeView.renderHome(HomeController.$element, data);            
+        });
+    },
+    getOffline: function () {
+        var data;
+        NgoOfflineModel.count(function (c) {
+            if (c > 0) {
+                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់", favorite: true, ngo: "មាន " + c + " អង្គការ"};
+            } else {
+                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់"};
+            }
+            console.log('data : ', data);
+            HomeView.renderHome(HomeController.$element, data);
+        });
+    },
+    get: function () {
+        if (App.isOnline())
+            HomeController.getOnline();
+        else {
+            HomeController.getOffline();
         }
-    }
+    },
 };
-
-
-
