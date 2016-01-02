@@ -15,14 +15,15 @@ var ViewLoading = {
 var Spinner = {
     show: function (message) {
         $.mobile.loading('show', {
-            text: 'Complete',
+            text: message,
             textVisible: true,
-            html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><img style='width: 25%' src='img/app/FlipFlop.gif'/></span><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>" + message + "</h4></span></div></center>"
+            //html: "<center><div class='nd2-card'><span class='ui-bar ui-overlay-c ui-corner-all'><img syle='width: 25%' src='img/app/FlipFlop.gif'/></span><span class='ui-bar ui-overlay-c ui-corner-all'><h4 class='khmer-regular'>" + message + "</h4></span></div></center>"
+            //html: "<center><div class='nd2-card' style='border-radius: 50%'><img syle='width: 25%' src='img/app/FlipFlop.gif'/></div></center>"
         });        
     },
     hide: function () {
         $.mobile.loading('hide', {
-            text: 'Complete',
+            text: '',
             textVisible: true,
         });        
     }

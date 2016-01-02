@@ -2,7 +2,7 @@ var HomeController = {
     $element: $('#page-home'),
     start: function () {
         HomeView.renderHome(HomeController.$element, null);
-        HomeController.get();
+        HomeController.get();     
     },
     prepareOnline: function (cats, callback) {
         ch = 1;
@@ -31,7 +31,7 @@ var HomeController = {
                 HomeController.render(cats);
             });
         }, function (e) {
-            var data = {error: "ការតភ្ជាប់ត្រូវបានកាត់ផ្តាច់"};
+            var data = {error: "????????????????????????????"};
             HomeView.renderHome(HomeController.$element, data);            
         });
     },
@@ -39,11 +39,10 @@ var HomeController = {
         var data;
         NgoOfflineModel.count(function (c) {
             if (c > 0) {
-                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់", favorite: true, ngo: "មាន " + c + " អង្គការ"};
+                data = {error: "?????????????????????", favorite: true, ngo: "??? " + c + " ???????"};
             } else {
-                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់"};
-            }
-            console.log('data : ', data);
+                data = {error: "?????????????????????"};
+            }            
             HomeView.renderHome(HomeController.$element, data);
         });
     },

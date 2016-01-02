@@ -13,9 +13,9 @@ var App = {
         persistence.schemaSync();
     },
     onDeviceReady: function () {
-        connectionDB(this.__db_name, this.__db_size);
-        createTable();        
         HomeController.start();
+        connectionDB(this.__db_name, this.__db_size);
+        createTable();
     },
     ajaxRequest: function (url, successCallback, errorCallback) {
         $.ajax({
@@ -36,7 +36,7 @@ var App = {
     isOnline: function () {
         var online = false;
         if (navigator.connection) {
-            online = (navigator.connection.type !== Connection.NONE);           
+            online = (navigator.connection.type !== Connection.NONE);
             return online;
         }
         online = navigator.onLine; //browser
@@ -49,7 +49,7 @@ var App = {
         } else if (navigator.device) {
             navigator.device.exitApp();
         }
-    }    
+    }
 };
 App.initialize();
 
