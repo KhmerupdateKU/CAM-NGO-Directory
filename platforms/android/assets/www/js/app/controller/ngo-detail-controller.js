@@ -22,6 +22,7 @@ var NgoDetailController = {
                 var detailJson = JSON.parse(ngodetail);
                 NgoDetailController.setNgo(detailJson);
                 NgoDetailController.isfavorite(ngo_id, function () {
+                    NgoDetailController.prepareContact(detailJson);
                     NgoDetailController.render(detailJson);
                 });
             }, function (e) {
@@ -32,6 +33,7 @@ var NgoDetailController = {
             if (NgoOfflineModel.getOffline()) {
                 NgoDetailOfflineModel.fetchbyngo_id(ngo_id, function (data) {
                     NgoDetailController.preparetOfflineData(ngo_id, data, function (detail) {
+                        NgoDetailController.__favorite = "zmdi-favorite";
                         NgoDetailController.render(detail);
                     });
                 });
@@ -61,7 +63,6 @@ var NgoDetailController = {
         });
     },
     render: function (details) {
-        NgoDetailController.prepareContact(details);
         var data = {detail: details, header: NgoModel.getName(), url: URL, phones: this.phones, emails: this.emails, favorite: NgoDetailController.__favorite};
         NgoDetailView.renderDetail(NgoDetailController.$element, data);
     },
@@ -76,7 +77,7 @@ var NgoDetailController = {
             NgoDetailOfflineModel.update(oldDetail, newDetails);
         });
     },
-    splitdata: function (data, fieldname, sep) {        
+    splitdata: function (data, fieldname, sep) {
         var elementname = [];
         var temp = data.split(sep);
         if (fieldname === 'phone')
