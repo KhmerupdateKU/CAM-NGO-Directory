@@ -13,7 +13,7 @@ var CategoryModel = {
     getName: function () {
         return CategoryModel.name;
     },
-    fetch: function (successCallback) {
-        App.ajaxRequest("index.php/category/fetchcategory", successCallback);
+    fetch: function (successCallback, errorCallback) {
+        App.ajaxRequest("index.php/category/fetchcategory", successCallback, errorCallback);
     }
 };

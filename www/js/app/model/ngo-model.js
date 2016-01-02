@@ -13,7 +13,7 @@ var NgoModel = {
     setName: function (name) {
         this.name = name;
     },
-    fetchByCat_id: function (cat_id, successCallback) {
-        App.ajaxRequest("index.php/ngo/fetchngobycat_id/" + cat_id,successCallback);        
-    }    
+    fetchByCat_id: function (cat_id, successCallback, errorCallback) {
+        App.ajaxRequest("index.php/ngo/fetchngobycat_id/" + cat_id, successCallback, errorCallback);
+    }
 };

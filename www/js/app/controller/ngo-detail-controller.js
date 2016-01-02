@@ -1,4 +1,5 @@
 var NgoDetailController = {
+    $element: $('#page-ngo-detail'),
     phones: [],
     emails: [],
     ngo: [],
@@ -11,9 +12,8 @@ var NgoDetailController = {
         return NgoDetailController.ngo;
     },
     start: function () {
-        var $element = $('#page-ngo-detail');
         var data = {header: NgoModel.getName()};
-        NgoDetailView.renderDetail($element, data);
+        NgoDetailView.renderDetail(NgoDetailController.$element, data);
         NgoDetailController.get(NgoModel.getId());
     },
     get: function (ngo_id) {
@@ -24,6 +24,9 @@ var NgoDetailController = {
                 NgoDetailController.isfavorite(ngo_id, function () {
                     NgoDetailController.render(detailJson);
                 });
+            }, function (e) {
+                var data = {error: "ការតភ្ជាប់ត្រូវបានកាត់ផ្តាច់"};
+                NgoDetailView.renderDetail(NgoDetailController.$element, data);
             });
         } else {
             if (NgoOfflineModel.getOffline()) {
@@ -58,10 +61,9 @@ var NgoDetailController = {
         });
     },
     render: function (details) {
-        var $element = $('#page-ngo-detail');
         NgoDetailController.prepareContact(details);
         var data = {detail: details, header: NgoModel.getName(), url: URL, phones: this.phones, emails: this.emails, favorite: NgoDetailController.__favorite};
-        NgoDetailView.renderDetail($element, data);
+        NgoDetailView.renderDetail(NgoDetailController.$element, data);
     },
     prepareContact: function (details) {
         $.map(details, function (detail) {
@@ -74,8 +76,7 @@ var NgoDetailController = {
             NgoDetailOfflineModel.update(oldDetail, newDetails);
         });
     },
-    splitdata: function (data, fieldname, sep) {
-        console.log("data", data);
+    splitdata: function (data, fieldname, sep) {        
         var elementname = [];
         var temp = data.split(sep);
         if (fieldname === 'phone')
@@ -98,15 +99,14 @@ var NgoDetailController = {
         });
     },
     getOffline: function () {
-        var $element = $('#page-ngo-detail');
         var data;
         NgoOfflineModel.count(function (c) {
             if (c > 0) {
-                data = {noconnection: true, fav: true, ngo: "មាន " + c + " អង្គការ"};
+                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់", favorite: true};
             } else {
-                data = {noconnection: true};
+                data = {error: "ពុំមានអីនធឺណិតតភ្ជាប់"};
             }
-            NgoDetailView.renderDetail($element, data);
+            NgoDetailView.renderDetail(NgoDetailController.$element, data);
         });
     }
 }

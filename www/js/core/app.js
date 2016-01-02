@@ -14,11 +14,10 @@ var App = {
     },
     onDeviceReady: function () {
         connectionDB(this.__db_name, this.__db_size);
-        createTable();
-        AppCache.clearAll();
+        createTable();        
         HomeController.start();
     },
-    ajaxRequest: function (url, successCallback) {
+    ajaxRequest: function (url, successCallback, errorCallback) {
         $.ajax({
             type: "GET",
             datatype: "JSON",
@@ -31,16 +30,13 @@ var App = {
             complete: function () {
                 ViewLoading.setBusy(null, false);
             },
-            error: function (e) {
-                alert("អ៊ីនធឺណិតត្រូវបានកាត់ផ្តាច់");
-            }
+            error: errorCallback
         });
     },
     isOnline: function () {
         var online = false;
         if (navigator.connection) {
-            online = (navigator.connection.type !== Connection.NONE);
-            console.log("navigator");
+            online = (navigator.connection.type !== Connection.NONE);           
             return online;
         }
         online = navigator.onLine; //browser
@@ -53,18 +49,7 @@ var App = {
         } else if (navigator.device) {
             navigator.device.exitApp();
         }
-    }
-    ,
+    }    
 };
 App.initialize();
 
-new $.nd2Search({
-    placeholder: "Input Placeholder", // Placeholder in the search field
-    defaultIcon: "globe-alt", // optional: icon | null
-    source: [{label: 'Displayed Value', value: 'real-value', icon: 'custom-icon'}], // autocomplete : option-source
-    fn: function (result) { // this function will be executed when a valid result item is selected
-        console.log('--- Your custom handling ---');
-        console.log('you picked: ');
-        console.log(result);
-    }
-});

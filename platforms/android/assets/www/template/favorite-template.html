@@ -1,13 +1,24 @@
-<div data-role="header" data-position="fixed" data-fullscreen="false">
-    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.2s' data-transition="slide" id="page-ngo-header">ចំណូលចិត្ត</h1>          
-    <a href="#" data-rel="back" data-wow-delay='0.2s' data-transition="slide" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back zmd-2x"></i></a>   
-    <a href="#filter-ngo-offline" id="btn-search-offline" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.2s'><i class="zmdi zmdi-search zmd-2x"></i></a>       
-
-</div> 
-<div data-role="main" class="nd2-banner">                   
-    <div class="ui-hidden-accessible" id="search-block-offline" data-wow-delay='0.4s'>
-        <input id="filter-ngo-offline" class="khmer-regular ui-input-text" style="margin-left: 5px;margin-right: 5px" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>
-    </div>
+<div data-role="header" data-position="fixed" data-fullscreen="false">    
+    <h1 class="wow fadeIn khmer-moul-header" data-wow-delay='0.0s' data-transition="slide" id="favorite-header">ចំណូលចិត្ត</h1>          
+    <a href="#" id="btn-back-favorite" data-rel="back" data-wow-delay='0.0s' data-transition="slide" class="ui-btn ui-btn-left"><i class="zmdi zmdi-arrow-back"></i></a>   
+    <a href="#" id="btn-back-search-favorite" data-wow-delay='0.0s' data-transition="slide" class="ui-btn ui-btn-left ui-hidden-accessible"><i class="zmdi zmdi-arrow-back"></i></a>   
+    {{#if ngos}}
+    <a href="#filter-ngo-offline" id='btn-search-offline' class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-search"></i></a>          
+    {{/if}}
+    <h1 class="ui-filterable ui-hidden-accessible ui-btn-inline" id="search-block-offline" style="display: inline-block;width: 80%;margin: 0px 0px 0px 0px;padding: 15px 60px 0px 50px;background-color: inherit">
+        <span style="display: inline">
+            <span style="width: 20px;float: left">
+                <i class="zmdi zmdi-search"></i>
+            </span>
+            <span style="float: left;width: 90%">            
+                <input id="filter-ngo-offline" class="khmer-regular ui-input-text" style="padding-top: 0px;padding-bottom: 0px; background-color: #009688;
+                       color: white;" data-role="search" placeholder="សរសេរឈ្មោះអង្គការ ដែលអ្នកចង់ស្វែងរក...."/>        
+            </span>
+        </span>
+    </h1>
+</div>
+<div data-role="main" class="nd2-banner"> 
+    {{#if ngos}}
     {{#each ngos}}    
     <ul data-role="listview" data-filter="true" data-input="#filter-ngo-offline">        
         <div class="nd2-card" id="list-ngo-offline">
@@ -24,5 +35,12 @@
             </a>        
         </div>
     </ul>
-    {{/each}}                
+    {{/each}}   
+    {{else}}
+    <div class="nd2-card" id="list-ngo-offline">        
+        <div class="card-supporting-text">                    
+            <p>ពុំមានអង្គការដែលលោកអ្នកចូលចិត្ត។</p>
+        </div>
+    </div>
+    {{/if}}
 </div>

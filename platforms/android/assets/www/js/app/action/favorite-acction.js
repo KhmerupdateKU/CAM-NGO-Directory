@@ -12,15 +12,22 @@ $(function () {
     $(document).delegate("#list-ngo-offline a", "longclick", function () {
         alert("Long");
     });
-    $(document).delegate("#btn-search-offline", "click", function () {
+    $(document).delegate("#btn-search-offline", "click", function () {       
         $(this).toggleClass('ui-hidden-accessible');
+        $('#favorite-header').toggleClass('ui-hidden-accessible');
+        $('#btn-back-favorite').toggleClass('ui-hidden-accessible');
+        $('#btn-back-search-favorite').toggleClass('ui-hidden-accessible');
         $('#search-block-offline').toggleClass('ui-hidden-accessible');
         $('#filter-ngo-offline').trigger("focus");
     });
 
-    $(document).delegate("#filter-ngo-offline", "blur", function () {
+    $(document).delegate("#btn-back-search-favorite", "click", function () {
+        $(this).toggleClass('ui-hidden-accessible');
+        $("#btn-back-favorite").toggleClass('ui-hidden-accessible');
+        $('#favorite-header').toggleClass('ui-hidden-accessible');
         $('#search-block-offline').toggleClass('ui-hidden-accessible');
         $('#btn-search-offline').toggleClass('ui-hidden-accessible');
+        $('#filter-ngo-offline').val("")
     });
 });
 
