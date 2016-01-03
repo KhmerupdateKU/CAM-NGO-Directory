@@ -13,9 +13,10 @@ var App = {
         persistence.schemaSync();
     },
     onDeviceReady: function () {        
+        HomeController.start();
         connectionDB(this.__db_name, this.__db_size);
         createTable();
-        HomeController.start();
+        HomeController.get();
     },
     ajaxRequest: function (url, successCallback, errorCallback) {
         $.ajax({
