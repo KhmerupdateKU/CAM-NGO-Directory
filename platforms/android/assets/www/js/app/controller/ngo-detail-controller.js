@@ -12,9 +12,9 @@ var NgoDetailController = {
         return NgoDetailController.ngo;
     },
     start: function () {
-        var data = {header: NgoModel.getName()};
-        NgoDetailView.renderDetail(NgoDetailController.$element, data);
         NgoDetailController.get(NgoModel.getId());
+        var data = {header: NgoModel.getName()};
+        NgoDetailView.renderDetail(NgoDetailController.$element, data);        
     },
     get: function (ngo_id) {
         if (App.isOnline() && !NgoOfflineModel.getOffline()) {

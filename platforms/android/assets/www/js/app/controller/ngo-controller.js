@@ -1,9 +1,9 @@
 var NgoController = {
     $element: $('#page-ngo'),
     start: function () {
-        var data = {header: CategoryModel.getName()};
-        NgoView.renderNgos(NgoController.$element, data);
         NgoController.get();
+        var data = {header: CategoryModel.getName()};        
+        NgoView.renderNgos(NgoController.$element, data);
     },
     get: function () {
         var cat_id = CategoryModel.getId();
@@ -13,7 +13,7 @@ var NgoController = {
                 NgoController.render(ngosJson);
             }, function (e) {
                 var data = {error: "ការតភ្ជាប់ត្រូវបានកាត់ផ្តាច់"};
-                NgoView.renderNgos(NgoController.$element, data);               
+                NgoView.renderNgos(NgoController.$element, data);
             });
         } else {
             NgoController.getOffline();

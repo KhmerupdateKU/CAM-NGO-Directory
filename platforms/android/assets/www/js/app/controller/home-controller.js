@@ -1,8 +1,8 @@
 var HomeController = {
     $element: $('#page-home'),
     start: function () {
-        HomeView.renderHome(HomeController.$element, null);
         HomeController.get();
+        HomeView.renderHome(HomeController.$element, null);        
     },
     prepareOnline: function (cats, callback) {
         ch = 1;

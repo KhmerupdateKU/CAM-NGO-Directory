@@ -12,10 +12,10 @@ var App = {
         persistence.reset();
         persistence.schemaSync();
     },
-    onDeviceReady: function () {
-        HomeController.start();
+    onDeviceReady: function () {        
         connectionDB(this.__db_name, this.__db_size);
         createTable();
+        HomeController.start();
     },
     ajaxRequest: function (url, successCallback, errorCallback) {
         $.ajax({
