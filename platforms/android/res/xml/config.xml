@@ -16,6 +16,7 @@
     <icon density="mdpi" src="res/android/drawable-mdpi/ic_launcher.png" />
     <icon density="hdpi" src="res/android/drawable-hdpi/ic_launcher.png" />
     <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png" />
+    <preference name="Orientation" value="portrait" />
     <name>CAM NGO</name>
     <description>
         The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
