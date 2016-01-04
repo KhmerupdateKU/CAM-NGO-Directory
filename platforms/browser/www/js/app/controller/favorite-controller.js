@@ -1,6 +1,6 @@
 var FavoriteController = {
     start: function () {
-        var $element = $('#page-favorite');        
+        var $element = $('#page-favorite');                
         FavoriteView.renderFavorite($element, null);
         FavoriteController.get();
     },

@@ -8,11 +8,15 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <icon density="ldpi" src="res/android/drawable-ldpi/ic_launcher.png" />
     <icon density="mdpi" src="res/android/drawable-mdpi/ic_launcher.png" />
     <icon density="hdpi" src="res/android/drawable-hdpi/ic_launcher.png" />
     <icon density="xhdpi" src="res/android/drawable-xhdpi/ic_launcher.png" />
-    <name>NGO Directory</name>
+    <name>CAM NGO</name>
     <description>
         The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
         volunteer at ngo by providing the phone email website address and map

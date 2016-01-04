@@ -12,13 +12,13 @@ var App = {
         persistence.reset();
         persistence.schemaSync();
     },
-    onDeviceReady: function () {
+    onDeviceReady: function () {        
+        HomeController.start();
         connectionDB(this.__db_name, this.__db_size);
         createTable();
-        AppCache.clearAll();
-        HomeController.start();
+        HomeController.get();
     },
-    ajaxRequest: function (url, successCallback) {
+    ajaxRequest: function (url, successCallback, errorCallback) {
         $.ajax({
             type: "GET",
             datatype: "JSON",
@@ -31,20 +31,17 @@ var App = {
             complete: function () {
                 ViewLoading.setBusy(null, false);
             },
-            error: function (e) {
-                alert("អ៊ីនធឺណិតត្រូវបានកាត់ផ្តាច់");
-            }
+            error: errorCallback
         });
     },
-    isOnline: function () {        
-            var online = false;
-            if (navigator.connection) {
-                online = (navigator.connection.type !== Connection.NONE);
-                console.log("navigator");
-                return online;
-            }
-            online = navigator.onLine; //browser
-            return online;       
+    isOnline: function () {
+        var online = false;
+        if (navigator.connection) {
+            online = (navigator.connection.type !== Connection.NONE);
+            return online;
+        }
+        online = navigator.onLine; //browser
+        return online;
     },
     onExite: function ()
     {
@@ -54,6 +51,6 @@ var App = {
             navigator.device.exitApp();
         }
     }
-    ,
 };
 App.initialize();
+

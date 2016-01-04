@@ -3,7 +3,7 @@
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
-    <name>NGO Directory</name>
+    <name>CAM NGO</name>
     <description>
         The app usefull for social. serve all people mostly freeland, ngo staff and student who seek for 
         volunteer at ngo by providing the phone email website address and map

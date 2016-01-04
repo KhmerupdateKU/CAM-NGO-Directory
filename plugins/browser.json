@@ -12,6 +12,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.camngo"
         }
     },
     "dependent_plugins": {}
