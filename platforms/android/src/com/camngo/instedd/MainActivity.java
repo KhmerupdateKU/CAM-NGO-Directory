@@ -17,7 +17,7 @@
        under the License.
  */
 
-package io.cordova.camngo;
+package com.camngo.instedd;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
