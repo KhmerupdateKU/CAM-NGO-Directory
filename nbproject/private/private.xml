@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/config.xml</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/build.gradle</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/www/template/about-template.html</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/xml/config.xml</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/drawable-xhdpi/ic_launcher.png</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/AndroidManifest.xml</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/drawable-land-mdpi/screen.png</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/drawable-mdpi/icon.png</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/project.properties</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/values/strings.xml</file>
+            <file>file:/Users/ku/Desktop/CAM-NGO-Directory/platforms/android/res/drawable-port-xhdpi/screen.png</file>
+        </group>
     </open-files>
 </project-private>
